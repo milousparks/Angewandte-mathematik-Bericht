@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  25 OCT 2021 13:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  26 OCT 2021 14:36
 entering extended mode
 **./main.tex
 (main.tex
@@ -1865,7 +1865,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 11.
-<resources/images/example.jpg, id=92, 602.25pt x 451.6875pt>
+<resources/images/example.jpg, id=93, 602.25pt x 451.6875pt>
 File: resources/images/example.jpg Graphic file (type jpg)
 <use resources/images/example.jpg>
 Package pdftex.def Info: resources/images/example.jpg  used on input line 25.
@@ -2016,8 +2016,8 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43236 strings out of 478907
- 833116 string characters out of 2851891
+ 43237 strings out of 478907
+ 834090 string characters out of 2851891
  1837311 words of memory out of 3000000
  60153 multiletter control sequences out of 15000+600000
  476284 words of font info for 118 fonts, out of 8000000 for 9000
@@ -2039,9 +2039,9 @@ an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/milan
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/milan/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/milan/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (19 pages, 501716 bytes).
+Output written on main.pdf (19 pages, 502234 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
  46282 words of extra memory for PDF output out of 51595 (max. 10000000)
 
