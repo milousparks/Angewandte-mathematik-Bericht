@@ -40,8 +40,8 @@
 
 \pagenumbering{Roman}
 
-\include{chapter/Vorwort} \clearpage
-\include{chapter/Abstract} \clearpage
+%\include{chapter/Vorwort} \clearpage
+%\include{chapter/Abstract} \clearpage
 
 %Inhaltsverzeichnis
 \tableofcontents \newpage
@@ -49,7 +49,7 @@
 %Hauptteil
 \pagenumbering{arabic}
 \input{chapter/Einleitung} \clearpage
-\input{chapter/Beispiele} \clearpage
+\input{chapter/FiniteDiff} \clearpage
 
 %Anhang
 \pagenumbering{Alph}
@@ -59,7 +59,7 @@
 %Tabellenverzeichnis
 \listoftables \clearpage
 %Quelltextverzeichnis
-\lstlistoflistings \clearpage
+%\lstlistoflistings \clearpage
 %Stichwortverzeichnis
 \printindex \clearpage
 %Glossar
@@ -68,14 +68,14 @@
 \printglossary[style=dottedlocations,type=\acronymtype,title={Abkürzungsverzeichnis}] \clearpage
 
 %Literaturverzeichnisse (getrennt nach Stichwort)
-\printbibliography[heading=bibintoc, keyword={book}, title={Literaturverzeichnis}]\clearpage
-\printbibliography[heading=bibintoc, keyword={online}, title={Onlinequellen}]\clearpage
-\printbibliography[heading=bibintoc, keyword={image}, title={Bildquellen}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={book}, %title={Literaturverzeichnis}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={online}, title={Onlinequellen}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={image}, title={Bildquellen}]\clearpage
 
 % Anhang
 \input{chapter/Anhang}
 
 % Eigenständigkeitserklärung
-\input{chapter/Eigenstaendigkeitserklaerung}
+%\input{chapter/Eigenstaendigkeitserklaerung}
 
 \end{document}

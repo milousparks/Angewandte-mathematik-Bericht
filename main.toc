@@ -3,48 +3,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Beispiele}{2}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Finite Differenzen der stationären Gleichung}{2}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Quelltext}{2}{section.2.1}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Bild}{2}{section.2.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Text Formatierungen und sonstiges}{3}{section.2.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Listen}{3}{subsection.2.3.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Text Hervorhebungen}{4}{subsection.2.3.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Tabelle}{4}{section.2.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Long-Table}{5}{section.2.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Literaturverweis}{6}{section.2.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Onlineverweise}{6}{section.2.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.8}Glossar}{6}{section.2.8}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.9}Abkürzungsverzeichnis}{6}{section.2.9}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.8}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.9}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Stichwortverzeichnis}{D}{section*.10}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{G}{appendix.A}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{G}{section.A.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{G}{section.A.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{G}{section.A.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{G}{section.A.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenständigkeitserklärung}{H}{chapter*.12}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.3}%
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
