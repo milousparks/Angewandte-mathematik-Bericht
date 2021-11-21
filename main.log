@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.14)  8 NOV 2021 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.14)  21 NOV 2021 13:40
 entering extended mode
 **./main.tex
 (main.tex
@@ -1810,62 +1810,53 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 58
 
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 60
-.
- (main.lot)
-\tf@lot=\write12
-\openout12 = `main.lot'.
+chapter without number
+(chapter/Anhang.tex)
 
- [2
+Package glossaries Warning: No \printglossary or \printglossaries found. 
+(Remove \makeglossaries if you don't want any glossaries.) 
+This document will not have a glossary.
 
-
-]
-runsystem(makeindex -s resources/styles/indexstyle.ist main.idx)...executed (al
-lowed).
-
- (main.ind)
-No file main.gls.
-[3
+[2
 
 
+] (main.aux)
 
-]
-No file main.acr.
-[4
+LaTeX Warning: There were undefined references.
 
-] (chapter/Anhang.tex) (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41856 strings out of 478927
- 810255 string characters out of 2852534
- 1787541 words of memory out of 3000000
- 58917 multiletter control sequences out of 15000+600000
- 443749 words of font info for 72 fonts, out of 8000000 for 9000
+ 41852 strings out of 478927
+ 809790 string characters out of 2852534
+ 1790628 words of memory out of 3000000
+ 58910 multiletter control sequences out of 15000+600000
+ 451552 words of font info for 79 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  115i,19n,111p,10637b,2331s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{cite.0@Prof.Dr.AndreasZeiser.April2021} has been 
-referenced but does not exist, replaced by a fixed one
-
-{C:/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}
-{C:/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/
-Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/User
-s/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/User
-s/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/User
-s/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users
-/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/
-milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/m
-ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/mil
-an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/mil
-an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (8 pages, 165086 bytes).
+{C:/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
+ers/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Us
+ers/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<C:/Us
+ers/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Us
+ers/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
+ers/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Use
+rs/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/User
+s/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users
+/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/m
+ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/m
+ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/m
+ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (6 pages, 183221 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)
- 24621 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 28725 words of extra memory for PDF output out of 29859 (max. 10000000)
 

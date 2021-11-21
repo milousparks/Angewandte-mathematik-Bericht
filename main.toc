@@ -5,8 +5,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Finite Differenzen der stationären Gleichung}{2}{chapter.2}%
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Lineare stationäre Gleichung}{2}{section.2.1}%
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.3}%
+\contentsline {chapter}{\nonumberline Literatur}{B}{chapter*.3}%
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

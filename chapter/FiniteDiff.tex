@@ -1,11 +1,22 @@
 \chapter{Finite Differenzen der stationären Gleichung}
+Im folgendem Kapitel soll die stationäre Verteilung der Ladungsträger bei kontinuierlicher Bestrahlung modelliert werden. 
+Dadurch kann die zeitliche Abhängigkeit vernachlässige werden ($\frac{\partial u}{\partial t}=0$)
+ 
 Die allgemeine DGL ist gegeben durch:
 \begin{equation}
 	\frac{\partial u}{\partial t}= D\cdot\frac{\partial ^2 u }{\partial z^2}-(k1+k2\cdot N_D)\cdot u -k2u^2 +s(t,z)
 \end{equation}
 
-Zu erst wird die stationäre DGL ohne zeitliche Abhängigkeit betrachtet:
+Mit $\frac{\partial u}{\partial t}=0$ folgt die stationäre Gleichung:
+
+\begin{equation}\label{eq:stationDGL}
+	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
+\end{equation}
+
+mit den Randbedingungen:
 
 \begin{equation}
-	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z)
+	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
 \end{equation}
+\section{Lineare stationäre Gleichung}
+Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne dden quadratischen Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
