@@ -1,0 +1,41 @@
+\chapter{Nicht Lineare stationäre Gleichung}
+Nichtlineare DGL:
+\begin{equation}
+	D\pdv[order={2}]{u}{z}-(k_1+k_2N_D)u-k_2u^2=-s(z)
+\end{equation}
+
+Diskretisierung der DGL:
+
+\begin{equation}
+	D\frac{u_{i+1}-2u_i+u_{i-1}}{h^2}-k\cdot u_i-k_2 \cdot u_i^2=z_i
+\end{equation}
+
+Mit den Randbedingung:
+
+\begin{equation}
+	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
+\end{equation}
+
+Und den approximation der ersten Ableitung der  Randbedingungen:
+\begin{equation}
+	u'(0)\approx \frac{u_1-u_{-1}}{2h} \quad u'(d)\approx \frac{u_{N+1}-u_{N-1}}{2h}
+\end{equation}
+Damit folgt für die Randbedingung:
+\begin{equation}
+	D\cdot \frac{u_1-u_{-1}}{2h}=S_Lu_0,\quad D\frac{u_{N+1}-u_{N-1}}{2h}=-S_Ru_N
+\end{equation}
+umgestellt nach $u_{-1}$
+ \begin{equation}
+	u_{-1}=\frac{-2h}{D}\cdot S_Lu_0-\frac{u_1}{D}
+\end{equation}
+umgestellt nach 
+
+
+
+Damit folgt für die Funktion $F$:
+
+\begin{align}
+	F_0= &\quad \frac{Du_1}{h^2}-\frac{2D+kD}{h^2}u_0+\frac{D}{h^2}\cdot\left( \frac{-2h}{D}\cdot S_Lu_0-\frac{u_1}{D}\right) -k_2u_0^2\\
+	F_N &= \frac{Du_{N+1}}{h^2}-\frac{2D+kD}{h^2}u_N+\frac{D}{h^2}\left( \frac{-2h}{D}\cdot S_Lu_0-\frac{u_1}{D}\right) -k_2u^2_N
+\end{align}
+
