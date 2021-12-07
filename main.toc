@@ -9,6 +9,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{B}{chapter*.3}%
-\defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
