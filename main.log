@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  30 NOV 2021 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  30 NOV 2021 16:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -1925,9 +1925,9 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47287 strings out of 478907
- 980679 string characters out of 2851891
- 1941056 words of memory out of 3000000
+ 47275 strings out of 478907
+ 980501 string characters out of 2851891
+ 1938056 words of memory out of 3000000
  64308 multiletter control sequences out of 15000+600000
  446947 words of font info for 75 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1947,9 +1947,9 @@ s/milan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users
 ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/m
 ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/m
 ilan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (9 pages, 195541 bytes).
+Output written on main.pdf (9 pages, 193347 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
  26693 words of extra memory for PDF output out of 29859 (max. 10000000)
 
