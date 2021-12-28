@@ -1,8 +1,21 @@
 \chapter{Implizite Einschrittverfahren}
+In diesem Kapitel werden Methoden zur Lösung von sogenannten steifen Anfangswertproblemen behandelt. 
+Dazu soll Folgendes Chemisches Problem anhand einer DGL untersucht werden.
+
+Die zu untersuchenden Reaktionsgleichungen sind:
+\begin{equation}
+	A\rightarrow B, \quad B+B \rightarrow C+B, \quad B+C\rightarrow A+C
+\end{equation}
+
+Die Dynamik der Konzentrationen der Komponenten werden durch folgende Anfangswertprobleme beschrieben:
+\begin{align*}
+	A&:y'_1&=-0.04 & y_1+10^4 & y_2y_3\\
+	B&:y'_2&=0.04 & y_1-10^4 & y_2y_3-3\cdot 10^7y_2^2\\
+	C&:y'_3&=\\
+\end{align*}
 
 \section{Entwicklung}
+\section{Anwendung}
 
-\begin{equation}
-	\delta 
-\end{equation}
+
 
