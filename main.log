@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.7)  7 DEC 2021 15:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.7)  3 JAN 2022 13:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1814,7 +1814,95 @@ den[[]].
 [2
 
 
-]) [3]
+] [3] [4]
+Overfull \hbox (516.27252pt too wide) detected at line 146
+[][][] \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 D \OMS/lmsy/m/n/12   \OML/lmm/m/it/1
+2 k \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]\OT1/lmr/m/n/12 0) = \OMS/lmsy/m/n/1
+2  \OML/lmm/m/it/12 s[]\OT1/lmr/m/n/12 0)[] [] \OMS/lmsy/m/n/12   []   [] \OT1/
+lmr/m/n/12 + [] \OMS/lmsy/m/n/12   \OML/lmm/m/it/12 k \OMS/lmsy/m/n/12  \OML/l
+mm/m/it/12 u[]\OT1/lmr/m/n/12 0) = \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 s[]\OT1/l
+mr/m/n/12 0)[] 2 \OMS/lmsy/m/n/12  []   []   []   \OML/lmm/m/it/12 k \OMS/lmsy
+/m/n/12  \OML/lmm/m/it/12 u[]\OT1/lmr/m/n/12 0) = \OMS/lmsy/m/n/12  \OML/lmm/m
+/it/12 s[]\OT1/lmr/m/n/12 0)[] 2 \OMS/lmsy/m/n/12  []  \OML/lmm/m/it/12 u[] \
+OMS/lmsy/m/n/12   \OT1/lmr/m/n/12 ([] + [] + \OML/lmm/m/it/12 k\OT1/lmr/m/n/12 
+) \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]\OT1/lmr/m/n/12 0) = \OMS/lmsy/m/n/12 
+ \OML/lmm/m/it/12 s[]\OT1/lmr/m/n/12 0)
+ []
+
+
+Overfull \hbox (240.16087pt too wide) detected at line 155
+[][]\OML/lmm/m/it/12 D \OMS/lmsy/m/n/12  []   \OML/lmm/m/it/12 k \OMS/lmsy/m/n
+/12  \OML/lmm/m/it/12 u[]i\OT1/lmr/m/n/12 ) = \OMS/lmsy/m/n/12  \OML/lmm/m/it/
+12 s[]i\OT1/lmr/m/n/12 )[] [] \OMS/lmsy/m/n/12   [] \OT1/lmr/m/n/12 + [] \OMS/l
+msy/m/n/12   \OML/lmm/m/it/12 k \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]i\OT1/lm
+r/m/n/12 ) = \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 s[]i\OT1/lmr/m/n/12 )[] [] + []
+ \OMS/lmsy/m/n/12   \OT1/lmr/m/n/12 ([] + \OML/lmm/m/it/12 k\OT1/lmr/m/n/12 ) \
+OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]i\OT1/lmr/m/n/12 ) = \OMS/lmsy/m/n/12  \O
+ML/lmm/m/it/12 s[]i\OT1/lmr/m/n/12 )[] 
+ []
+
+[5]
+Overfull \hbox (435.16913pt too wide) detected at line 164
+[][][] \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 D \OMS/lmsy/m/n/12   \OML/lmm/m/it/1
+2 k \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]N\OT1/lmr/m/n/12 ) = \OMS/lmsy/m/n/1
+2  \OML/lmm/m/it/12 s[]N\OT1/lmr/m/n/12 )[] [] \OMS/lmsy/m/n/12   []   [] \OT1/
+lmr/m/n/12 + [] \OMS/lmsy/m/n/12   \OML/lmm/m/it/12 k \OMS/lmsy/m/n/12  \OML/l
+mm/m/it/12 u[]N\OT1/lmr/m/n/12 ) = \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 s[]N\OT1/
+lmr/m/n/12 )[] 2 \OMS/lmsy/m/n/12  []   \OT1/lmr/m/n/12 ([] + [] + \OML/lmm/m/
+it/12 k\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 u[]N\OT1/lmr/m/n/1
+2 ) = \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 s[]N\OT1/lmr/m/n/12 )[] 
+ []
+
+[6] [7]
+chapter 3.
+[8
+
+]
+Overfull \hbox (52.90517pt too wide) in paragraph at lines 260--262
+[]\T1/lmr/m/n/12 (-10) und for-mu-lie-ren Sie je-weils die Glei-chung für als N
+ull-stel-len-pro-blem: $\OML/lmm/m/it/12 F[]uler\OT1/lmr/m/n/12 (-10) (\OML/lmm
+/m/it/12 z\OT1/lmr/m/n/12 (-10) ) = 0\OML/lmm/m/it/12 ; quadF[]rapez\OT1/lmr/m/
+n/12 (-10) (\OML/lmm/m/it/12 z\OT1/lmr/m/n/12 (-10) ) =
+ []
+
+[9]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.328 ...$ t\in [0,\sim], y(0) = $ \begin{bmatrix}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.332 \end{bmatrix}
+                     $$
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.52 \input{chapter/FiniteDiff} \clearpage
+                                          
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.52 \input{chapter/FiniteDiff} \clearpage
+                                          
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[10]
 Package tocbasic Info: character protrusion at lof deactivated on input line 58
 .
  (main.lof)
@@ -1853,28 +1941,33 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43147 strings out of 478659
- 854179 string characters out of 2845920
- 1779317 words of memory out of 3000000
- 60454 multiletter control sequences out of 15000+600000
- 447123 words of font info for 77 fonts, out of 8000000 for 9000
+ 43189 strings out of 478659
+ 854662 string characters out of 2845920
+ 1789319 words of memory out of 3000000
+ 60457 multiletter control sequences out of 15000+600000
+ 447487 words of font info for 81 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  115i,20n,109p,10637b,2331s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
-:/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
 :/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
+:/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C
+:/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
 :/Users/reeba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Us
 ers/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Us
+ers/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Us
 ers/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
-ers/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Use
-rs/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/User
-s/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users
-/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/r
-eeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/r
-eeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (6 pages, 176265 bytes).
+ers/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Use
+rs/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/User
+s/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users
+/reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/
+reeba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/re
+eba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/reeb
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/reeb
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/reeb
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (13 pages, 239318 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
- 26669 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 26693 words of extra memory for PDF output out of 29859 (max. 10000000)
 
