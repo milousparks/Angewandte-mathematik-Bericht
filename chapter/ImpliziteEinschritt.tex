@@ -129,7 +129,7 @@ $y' = f(t,y) = $
 \begin{equation}
 \begin{bmatrix}
 	-0.04y_1 + 10^4y_2y_3 \\
-	0.04y_1-10^4y_2y_3\cdot 10^7y^2_2 \\
+	0.04y_1-10^4y_2y_3-3\cdot 10^7y^2_2 \\
 	3 \cdot 10^7y^2_2 
 \end{bmatrix}  
 \end{equation}
@@ -144,3 +144,21 @@ mit $ t\in [0,\sim], y(0) = $
 \end{bmatrix}  
 \end{equation}
 
+2. Implementieren Sie die Funktion als Routine $ d_y = f_chem(t,y) $
+
+Code!
+
+3. Berechnen Sie die Jacobi-Matrix $ D_yf_chem(t,y) $ von $ f_chem $ bezüglich $ y $
+
+
+$ D_yf_chem(t,y) = $
+
+\begin{equation}
+\begin{bmatrix}
+	-0.04 & 10^4y_3 & 10^4y_2 \\
+	0.04 & -10^4y_3-6\cdot 10^7y_2 & -10^4y_2 \\
+	0 & 3\cdot 10^7 & 0 
+\end{bmatrix}
+\end{equation}
+
+4. Implementieren Sie die Funktion als Routine $ J = f-chem-jac(t,y) $
