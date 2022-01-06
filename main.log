@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.4)  6 JAN 2022 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.4)  6 JAN 2022 16:10
 entering extended mode
 **./main.tex
 (main.tex
@@ -1413,7 +1413,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'alphabetic.dbx' not found.
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count431
@@ -1522,12 +1522,23 @@ File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip21
 \c@smartand=\count507
 )
-Package biblatex Info: Trying to load bibliography style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
 
-(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\alphabetic
-.bbx
-File: alphabetic.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2021/03/25 v1.3e biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-co
+mp.bbx
+File: numeric-comp.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -1536,23 +1547,36 @@ bx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count508
 \c@bbx:relatedtotal=\count509
-))
-Package biblatex Info: Trying to load citation style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.cbx' found.
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
 
-(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\alphabetic
-.cbx
-File: alphabetic.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+File: ieee.cbx 2021/03/25 v1.3e biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-co
+mp.cbx
+File: numeric-comp.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count510
+\c@cbx@tempcntb=\count511
+\c@cbx@tempcntc=\count512
+\c@cbx@tempcntd=\count513
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -1681,22 +1705,22 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\c@lstlisting=\count510
+\c@lstlisting=\count514
 Package scrhack Info: undefining \float@addtolists on input line 33.
 
 (C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count511
+\scratchcounter=\count515
 \scratchdimen=\dimen317
 \scratchbox=\box132
-\nofMPsegments=\count512
-\nofMParguments=\count513
+\nofMPsegments=\count516
+\nofMParguments=\count517
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count514
+\MPscratchCnt=\count518
 \MPscratchDim=\dimen318
-\MPnumerator=\count515
-\makeMPintoPDFobject=\count516
+\MPnumerator=\count519
+\makeMPintoPDFobject=\count520
 \everyMPtoPDFconversion=\toks59
 )
 (C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1721,7 +1745,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count517
+\c@section@level=\count521
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -1744,7 +1768,7 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count518
+\BKM@id=\count522
 ))
 
 LaTeX hooks Warning: Generic hook
@@ -1814,14 +1838,14 @@ Package biblatex Info: Reference segment=0 on input line 33.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(256.0748pt, 517.84016pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 688.5567pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
-* \textheight=517.84016pt
+* \textheight=688.5567pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=143.92981pt
+* \topmargin=-26.78673pt
 * \headheight=18.125pt
 * \headsep=21.75pt
 * \topskip=12.0pt
@@ -1839,6 +1863,11 @@ Package biblatex Info: Reference segment=0 on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+<./Bilder/FB1_ET_rgb.jpg, id=6, 274.1442pt x 273.1806pt>
+File: ./Bilder/FB1_ET_rgb.jpg Graphic file (type jpg)
+<use ./Bilder/FB1_ET_rgb.jpg>
+Package pdftex.def Info: ./Bilder/FB1_ET_rgb.jpg  used on input line 39.
+(pdftex.def)             Requested size: 69.10059pt x 68.85986pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
 9.
  (C:\Users\milan\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
@@ -1868,14 +1897,25 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 39.
- [1
+<./Bilder/HTW_Logo_rgb.jpg, id=7, 115.632pt x 67.452pt>
+File: ./Bilder/HTW_Logo_rgb.jpg Graphic file (type jpg)
+<use ./Bilder/HTW_Logo_rgb.jpg>
+Package pdftex.def Info: ./Bilder/HTW_Logo_rgb.jpg  used on input line 39.
+(pdftex.def)             Requested size: 118.05598pt x 68.85986pt.
+
+Overfull \hbox (14.3609pt too wide) in paragraph at lines 39--39
+[]$[]$ $[]$ 
+ []
+
+[1
 
 \openout5 = `main.ist'.
 
 
 
 
-{C:/Users/milan/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/milan/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Bilder/FB1_ET
+_rgb.jpg> <./Bilder/HTW_Logo_rgb.jpg>]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 4
 7.
 
@@ -1962,13 +2002,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50347 strings out of 478681
- 1067828 string characters out of 2846535
- 1962282 words of memory out of 3000000
- 67525 multiletter control sequences out of 15000+600000
- 455734 words of font info for 92 fonts, out of 8000000 for 9000
+ 50486 strings out of 478681
+ 1071287 string characters out of 2846535
+ 1966653 words of memory out of 3000000
+ 67655 multiletter control sequences out of 15000+600000
+ 455322 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 115i,20n,109p,10637b,2331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,20n,109p,10637b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
 :/Users/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
 ers/milan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Us
@@ -1989,9 +2029,9 @@ an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/mil
 an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/mil
 an/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/mila
 n/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (17 pages, 318353 bytes).
+Output written on main.pdf (17 pages, 507444 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 31317 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 284 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 31327 words of extra memory for PDF output out of 35830 (max. 10000000)
 

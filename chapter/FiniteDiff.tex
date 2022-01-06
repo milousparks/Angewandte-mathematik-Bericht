@@ -21,12 +21,13 @@ mit den Randbedingungen:
 \section{Lineare stationäre Gleichung}
 Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne den quadratischen Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
 
-1. . Erarbeiten Sie sich Abschnitt 8.8 aus [1] und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung (6).
-
-Mit der Verwendung dieser Methode auf die Gleichung 6 lässt sich ein Matrix berechnen, womit man die zeitabhängige Stelle der Leitungsträgerdichte u mathematisch beschreiben kann.dadurch kann ein Modell aus der Diskretisierung der Methode erstellt, das die lange dieser Ladungsträgerdichte an einer Zeit beschreibt.
-
-2. Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  u0, u1, . . . , uN an den Punkten z0, . . . , zN her. Die Gleichungen enthalten $u_1 und u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ si = s(zi)$.
-
+\begin{enumerate}
+	\item Erarbeiten Sie sich Abschnitt 8.8 aus [1] und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung (6).
+	
+	Mit der Verwendung dieser Methode auf die Gleichung 6 lässt sich ein Matrix berechnen, womit man die zeitabhängige Stelle der Leitungsträgerdichte u mathematisch beschreiben kann. Dadurch kann ein Modell aus der Diskretisierung der Methode erstellt, das die lange dieser Ladungsträgerdichte an einer Zeit beschreibt.
+	\item Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  u0, u1, . . . , uN an den Punkten z0, . . . , zN her. Die Gleichungen enthalten $u_1 und u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ si = s(zi)$.
+\end{enumerate}
+ 
 
 \begin{equation}
 	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
