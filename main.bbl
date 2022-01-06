@@ -1,0 +1,97 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Atkinson.2004}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6ef9daa385688cbe68f62d197b6b8808}{%
+           family={Atkinson},
+           familyi={A\bibinitperiod},
+           given={Kendall\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4cdccd91cd0dddb30db3331d8ca33c11}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Weimin},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chichester}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \strng{fullhash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \strng{bibnamehash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \strng{authorbibnamehash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \strng{authornamehash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \strng{authorfullhash}{f2fe3de594da2bcc30e0579af9023cbb}
+      \field{labelalpha}{AH04}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd ed. / Kendall Atkinson, Weimin Han}
+      \field{isbn}{9780471433378}
+      \field{title}{Elementary numerical analysis}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb http://worldcatlibraries.org/wcpa/oclc/52418321
+      \endverb
+      \verb{url}
+      \verb http://worldcatlibraries.org/wcpa/oclc/52418321
+      \endverb
+      \keyw{Numerical analysis}
+    \endentry
+    \entry{Prof.Dr.AndreasZeiser.April2021}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6aeaa74e48dd1272a5fbc845ddddc14f}{%
+           family={{Prof. Dr. Andreas Zeiser}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {HTW Berlin}%
+      }
+      \list{location}{1}{%
+        {Moodle}%
+      }
+      \strng{namehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{fullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{bibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authorbibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authornamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authorfullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \field{labelalpha}{Pro}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Version 6.}
+      \field{title}{Angewandte Mathematik: Projekt Zeitaufgelöste Photolumineszenz}
+      \verb{file}
+      \verb TRPL{\_}Projekt{\_}AM{\_}Zeiser:Attachments/TRPL{\_}Projekt{\_}AM{\_}Zeiser.pdf:application/pdf
+      \endverb
+      \warn{\item Entry 'Prof.Dr.AndreasZeiser.April2021' (references/references.bib): Invalid format 'April 2021' of date field 'date' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

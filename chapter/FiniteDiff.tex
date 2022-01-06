@@ -137,31 +137,38 @@ für $z_N$:
 \end{equation}
 
 für $z_0$:
-
 \begin{equation}
-	\frac{u_1-2\cdot h\cdot S_L/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_(0) = -s_(0)\\
-	\frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}+\frac{D\cdot u_1}{h^2}-k\cdot u_(0) = -s_(0)\\
-	2\cdot \frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}-k\cdot u_(0) = -s_(0)\\
-	2\cdot \frac{D}{h^2}\cdot u_1-(\frac{2\cdot S_L}{h}+\frac{-2}{h}+k)\cdot u_(0) = -s_(0)
+	\begin{split}
+		\frac{u_1-2\cdot h\cdot S_L/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_(0) = -s_(0)\\
+		\frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}+\frac{D\cdot u_1}{h^2}-k\cdot u_(0) = -s_(0)\\
+		2\cdot \frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}-k\cdot u_(0) = -s_(0)\\
+		2\cdot \frac{D}{h^2}\cdot u_1-(\frac{2\cdot S_L}{h}+\frac{-2}{h}+k)\cdot u_(0) = -s_(0)
+	\end{split}
 \end{equation}
+
 
 für $z_i$:
 
-
 \begin{equation}
-	D\cdot \frac{u_i-1-2\cdot u_i+u_i+1}{h^2}-k\cdot u_(i) = -s_(i)\\
-	\frac{D\cdot u_i-1}{h^2}-\frac{2\cdot D\cdot u_i}{h^2}+\frac{-2\cdot u_0}{h}-k\cdot u_(i) = -s_(i)\\
-	\frac{D\cdot u_i-1}{h^2}+\frac{D\cdot u_i+1}{h^2}-(\frac{-2\cdot D}{h}+k)\cdot u_(i) = -s_(i)\\
+	\begin{split}
+		D\cdot \frac{u_i-1-2\cdot u_i+u_i+1}{h^2}-k\cdot u_(i) = -s_(i)\\
+		\frac{D\cdot u_i-1}{h^2}-\frac{2\cdot D\cdot u_i}{h^2}+\frac{-2\cdot u_0}{h}-k\cdot u_(i) = -s_(i)\\
+		\frac{D\cdot u_i-1}{h^2}+\frac{D\cdot u_i+1}{h^2}-(\frac{-2\cdot D}{h}+k)\cdot u_(i) = -s_(i)\\
+	\end{split}
 \end{equation}
+
+
 
 
 für $z_0$:
-
 \begin{equation}
-	\frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2} \cdot D-k\cdot u_(N) = -s_(N)\\
-	\frac{D\cdot u_N-1}{h^2}-\frac{2\cdot S_R\cdot u_N}{h}-\frac{2\cdot u_N\cdot D}{h}+\frac{D\cdot u_N}{h^2}-k\cdot u_(N) = -s_(N)\\
-	2\cdot \frac{D\cdot u_N-1}{h^2}-(\frac{2\cdot}{h^2} + \frac{2\cdot S_R}{h} + k)\cdot u_(N) = -s_(N)\\
+	\begin{split}
+		\frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2} \cdot D-k\cdot u_(N) = -s_(N)\\
+		\frac{D\cdot u_N-1}{h^2}-\frac{2\cdot S_R\cdot u_N}{h}-\frac{2\cdot u_N\cdot D}{h}+\frac{D\cdot u_N}{h^2}-k\cdot u_(N) = -s_(N)\\
+		2\cdot \frac{D\cdot u_N-1}{h^2}-(\frac{2\cdot}{h^2} + \frac{2\cdot S_R}{h} + k)\cdot u_(N) = -s_(N)\\
+	\end{split}
 \end{equation}
+
 
 
 
@@ -170,11 +177,13 @@ $ A\cdot u = b,\quad u = [u_i],\quad b = [b_i]$
 Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
 
 für $ u_1$:
-
 \begin{equation}
-	\frac{D\cdot u_1-1}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_1+1}{h^2} = -s_1\\
-	\frac{D\cdot u_0}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_2}{h^2} = -s_1\\
+	\begin{split}
+		\frac{D\cdot u_1-1}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_1+1}{h^2} = -s_1\\
+		\frac{D\cdot u_0}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_2}{h^2} = -s_1\\
+	\end{split}
 \end{equation}
+
 
 für $ u_N-1$:
 
@@ -186,15 +195,17 @@ für $ u_N-1$:
 
 Mit Hilfe der Matrixform $ A\cdot u = b $ lässt sich dieses Gleichungssystem mit Hilfe von Matlab durch  gelöst werden. Dazu wird die Koeffizientenmatrix
 
-
-$ \begin{bmatrix}
-	-\frac{(2*S_L}{h + 2} & \frac{2*D}{h^2} & ... & ... & ... & ... \\
-	\frac{D}{h^2} & -\frac{(2*D}{h^2 + k)} & \frac{D}{h^2} & ... & ... & ... \\
-	& ... & ... & ... &  &  \\
-	&  &  &  &  &  \\
-	&  &  & \frac{D}{h^2} & -\frac{(2*D}{h^2 + k))} & \frac{D}{h^2} \\
-	&  &  &  & \frac{2*D}{h^2} & -\frac{(2}{h^2 + 2*S_R} 
-\end{bmatrix}  $
+\begin{equation}
+	\begin{bmatrix}
+		-\frac{(2*S_L}{h + 2} & \frac{2*D}{h^2} & \dots &  \dots &  \dots &  \dots \\
+		\frac{D}{h^2} & -\frac{(2*D}{h^2 + k)} & \frac{D}{h^2} &  \dots &  \dots &  \dots \\
+	\vdots	&  \ddots &  \ddots &  \ddots &  &  \\
+	\vdots	& \ddots & \ddots & \ddots &  &  \\
+	\vdots	&  &  & \frac{D}{h^2} & -\frac{(2*D}{h^2 + k))} & \frac{D}{h^2} \\
+	\vdots	&  &  &  & \frac{2*D}{h^2} & -\frac{(2}{h^2 + 2*S_R} 
+	\end{bmatrix}
+\end{equation}
+ 
 
 der unbekannten Vektor:
 
@@ -204,129 +215,63 @@ und die rechte Seite:
 
 bestimmt.
 
+\section{Nicht Lineare stationäre Gleichung}
+Nichtlineare DGL:
+\begin{equation}
+	D\pdv[order={2}]{u}{z}-(k_1+k_2N_D)u-k_2u^2=-s(z)
+\end{equation}
 
-\chapter{Implizite Einschrittverfahren}
+Diskretisierung der DGL:
 
-Steife Systeme treten aber auch in der Modellierung von Reaktionen in der Chemie auf. Als Beispiel soll
-eine chemische Reaktion dreier Stoffe A;B;C aus [3] dienen:
+\begin{equation}
+	D\frac{u_{i+1}-2u_i+u_{i-1}}{h^2}-k\cdot u_i-k_2 \cdot u_i^2=z_i
+\end{equation}
 
-$ A \rightarrow B,quad B + B \rightarrow C+ B,quad B + C \rightarrow A + C. $
+Mit den Randbedingung:
 
-Die Dynamik der Konzentrationen der einzelnen Komponenten können durch Anfangswertproblem
+\begin{equation}
+	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
+\end{equation}
 
+Und den Approximationen der ersten Ableitung der  Randbedingungen:
+\begin{equation}
+	u'(0)\approx \frac{u_1-u_{-1}}{2h} \quad u'(d)\approx \frac{u_{N+1}-u_{N-1}}{2h}
+\end{equation}
+Damit folgt für die Randbedingung:
+\begin{equation}
+	D\cdot \frac{u_1-u_{-1}}{2h}=S_Lu_0,\quad D\frac{u_{N+1}-u_{N-1}}{2h}=-S_Ru_N
+\end{equation}
+umgestellt nach $u_{-1}$
+\begin{equation}
+	u_{-1}=-\frac{S_L 2h}{D}\cdot u_0+u_1
+\end{equation}
+umgestellt nach $u_{N+1}$
+\begin{equation}
+	u_{N+1}=-\frac{S_R2h}{D}\cdot u_N+u_{N-1}
+\end{equation}
+
+
+
+Damit folgt für die Funktion $F(u)=b$:
 
 \begin{align*}
-	A: y'_1 = -0.04y_1 + 10^4y_2y_2\\
-	B: y'_2 =  0.04y_1 - 10^4y_2y_3\cdot - 3\cdot 10^7y^2_2
-	C: y'_3 =                              3\cdot 10^7y^2_2
+	F_0&= \quad \frac{D}{h^2}u_1-\frac{2D+kh^2}{h^2}u_0+\frac{D}{h^2}\cdot\left( -\frac{S_L 2h}{D}\cdot u_0+u_1\right) -k_2u_0^2\\
+	\vdots \\
+	F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
+	\vdots \\
+	F_N &= \frac{D}{h^2}\left( -\frac{S_R2h}{D}\cdot u_N+u_{N-1}\right) -\frac{2D+kh^2}{h^2}u_N+\frac{D}{h^2} u_{N-1}-k_2u^2_N\\
 \end{align*}
 
-mit den Anfangswerten
 
-$ y_1(0) = 1, y^2_2(0) = 0, y_3(0) = 0 $
+Vereinfacht zu :
 
-modelliert werden. Anhand dieses Systems sollen im folgenden steife Differenzialgleichungen untersucht
-und ein effizientes numerisches Verfahren entwickelt werden.
-
-\section{Entwicklung}
-
-Ein allgemeines System von Anfangswertproblemen für eine Funktion y kann als folgendes geschrieben werden:
-
-$ y' = f(t,y) ,quad t \in [a,b],quad y(a) = y_a $
-
-
-Der Wert von y wird näherungsweise an den Zeitpunkten berechnet:
-
-$ y^(i) \approx y(t_i),quad i = 0,1,....;N $
-
-Das implizite Euler-Verfahren
-$ y^(i+1) = y(i) + hf(t_i+1,y^(i+1)] $
-
-Die implizite Trapezregel:
-$ y^(i+1) = y(i) + h/2[f(t_i, y^(i) + f(t_i+1,y^(i+1)))] $
+\begin{align*}
+	F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\left( \frac{S_L2h+2D+kh^2}{h^2}\right) u_0 -k_2u_0^2\\
+	\vdots \\
+	F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
+	\vdots \\
+	F_N &= -\frac{2D+kh^2+S_R2h}{h^2}u_N+2\frac{D}{h^2}u_{N-1}-k_2u^2_N\\
+\end{align*}
 
 
 
-Aufgabe 1.
-Erarbeiten Sie sich Abschnitt 8.4 aus Atkinson Han Elementary Numerical Analysis 2004 AuszugDatei und fassen Sie in eigenen Worten zusammen, was Sie unter steifen Differenzialgleichung verstehen.
-Unter einer starren Differentialgleichung versteht man eine Gleichung mit bestimmten numerischen Methoden, die besonders große Störungsfaktoren am Ausgang aufweisen, sofern die Schrittweite nicht allzu klein ausgewählt wird.
-
-
-
-Aufgabe 2:
-Setzen Sie in den Gleichungen des impliziten Euler-Verfahrens und der impliziten Trapezregel
-$ y^(i+1) = y(i) + z $
-
-und formulieren Sie jeweils die Gleichung für  als Nullstellenproblem:
-$ F_euler(z) = 0,quad F_trapez(z) = 0 $
-
-$ y^(i+1) = y(i) + hf(t_i+1,y^(i+1)] $
-
-und die implizite Trapezregel:
-$ y^(i+1) = y(i) + h/2[f(t_i, y^(i) + f(t_i+1,y^(i+1)))] $
-
-wir setzen nun
-$ y^(i+1) = y^(i) + z $
-
-in:
-
-$ y^(i) + z = y^(i) + hf(t_i+1,y^(i) + z) $
-
-und in:
-
-$ y^(i) + z = y^(i) + h/2 [f(t_i, y^(i) + f(t_i+1,y^(i) + z)] $
-
-ein. Formulieren wir nun beides als Nullstellenproblem für  erhalten wir
-
-$ F_euler(z) = z - hf(t_i+1, y^(i) + z) = 0 $
-
-und 
-
-$F_trapez(z) =  z - h/2 [f(t_i, y^(i) + f(t_i+1,y^(i) + z)] = 0$
-
-Aufgabe 3.
-Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von , d.h. der Jacobi-Matrix von  bezüglich .
-
-$ D\cdot F_euler(z) = D\cdot z - h\cdot D_(y)\cdot f(t_i+1, y^(i) + z) $
-
-für das implizite Euler-Verfahren und
-
-$ D\cdot F_euler(z) = h/2\cdot [D_(y)\cdot f(t_i+1, y^(i)) +  h\cdot D_(y)f(t_i+1, y^(i) + z)] - D\cdot z $
-
-für das implizite Trapez-Verfahren,
-
-wobei D, f =
-
-$ \begin{bmatrix}
-	\frac{\partial f_1 }{\partial y_1} & \frac{\partial f_1 }{\partial y_2} & ... & \frac{\partial f_1 }{\partial y_n} \\
-	\frac{\partial f_2 }{\partial y_1} & \frac{\partial f_2 }{\partial y_2} & ... & \frac{\partial f_2 }{\partial y_n} \\
-	... & ... & ... & ... \\
-	\frac{\partial f_n }{\partial y_1} & \frac{\partial f_n }{\partial y_2} & ... & \frac{\partial f_n }{\partial y_n} 
-\end{bmatrix}  $
-
-und Dz =
-
-$ \begin{bmatrix}
-	1 & 0 & ... & 0 \\
-	0 & 1 & ... & 0 \\
-	... & ... & ... & ... \\
-	0 & ... & 0 & 1 
-\end{bmatrix}  $
-
-
-\section{Anwendung}
-
-1. Formulieren Sie Gleichung (9) als System der Form (11) mit Funktion fchem(t; y).
-
-$y' = f(t,y) = $
-$ \begin{bmatrix}
-	-0.04y_1 + 10^4y_2y_3 \\
-	0.04y_1-10^4y_2y_3\cdot 10^7y^2_2 \\
-	3 \cdot 10^7y^2_2 
-\end{bmatrix}  $
-
-mit $ t\in [0,\sim], y(0) = $ \begin{bmatrix}
-	1 \\
-	0 \\
-	0 
-\end{bmatrix}  $$
