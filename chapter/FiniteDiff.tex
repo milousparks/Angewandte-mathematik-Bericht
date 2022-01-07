@@ -7,10 +7,19 @@ Die allgemeine DGL ist gegeben durch:
 	\frac{\partial u}{\partial t}= D\cdot\frac{\partial ^2 u }{\partial z^2}-(k1+k2\cdot N_D)\cdot u -k2u^2 +s(t,z)
 \end{equation}
 
+\begin{conditions}
+	s(t,z)     &  Ladungsträgerdichte durch Bestrahlung \\
+	D     &  Diffusionskonstante \\   
+	N_D &  Dotierungsdichte \\
+	k1,k2 &  Rekombinationskonstanten \\
+	\alpha & Absorptionskonstante\\
+	S_L,S_R  & Rekombinationsraten an den jeweiligen Grenzschichten
+\end{conditions}
+
 Mit $\frac{\partial u}{\partial t}=0$ folgt die stationäre Gleichung:
 
 \begin{equation}\label{eq:stationDGL}
-	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
+	D\cdot \pdv[2]{u}{z} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
 \end{equation}
 
 mit den Randbedingungen:
@@ -64,14 +73,15 @@ Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunab
 \label{fig:bsp_knotenpunkte}
  \end{figure}
 
-
+Stationäre Differenzialgleichung (\cref{eq:stationDGL}):
 \begin{equation}
-	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
-\end{equation}\label{eq:stationDGL}
+	D\cdot  \pdv[2]{u}{z} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
+\end{equation}
+
 \begin{align*}
 	k&=k_1+k_2*N_D\\
-	s_i&=s(z_i)\\
-	u(i)&\approx u_i
+	s_i&\approx s(z_i)\\
+	u_i&\approx u(i)
 \end{align*}
 
 \begin{equation}

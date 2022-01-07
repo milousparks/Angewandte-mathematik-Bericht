@@ -81,7 +81,13 @@
 \usepackage[hidelinks,german]{hyperref}
 \usepackage{cleveref}
 \usepackage{siunitx}
+\usepackage{physics}
 %Einbindung und Verwaltung von Literaturverzeichnissen
 \usepackage{csquotes} %wird von biber benötigt
 \usepackage[style=ieee, backend=biber, bibencoding=ascii]{biblatex}
 \addbibresource{references/references.bib}
+
+
+\newenvironment{conditions}[1][mit:]
+{#1 \begin{tabular}[t]{>{$}l<{$} @{${}={}$} l}}
+	{\end{tabular}\\[\belowdisplayskip]}
