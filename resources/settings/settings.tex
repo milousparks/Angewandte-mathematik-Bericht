@@ -82,6 +82,14 @@
 \usepackage{cleveref}
 \usepackage{siunitx}
 \usepackage{physics}
+\usepackage[most]{tcolorbox}
+\newtcolorbox{mybox}{
+	enhanced,
+	boxrule=0pt,frame hidden,
+	borderline west={4pt}{0pt}{green!75!black},
+	colback=green!10!white,
+	sharp corners
+}
 %Einbindung und Verwaltung von Literaturverzeichnissen
 \usepackage{csquotes} %wird von biber benötigt
 \usepackage[style=ieee, backend=biber, bibencoding=ascii]{biblatex}
