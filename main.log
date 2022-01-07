@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.7)  6 JAN 2022 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.7)  6 JAN 2022 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1920,14 +1920,17 @@ ull-stel-len-pro-blem: $\OML/lmm/m/it/12 F[]uler\OT1/lmr/m/n/12 (-10) (\OML/lmm
 n/12 (-10) (\OML/lmm/m/it/12 z\OT1/lmr/m/n/12 (-10) ) =
  []
 
-[11] [12]) [13]
-Package tocbasic Info: character protrusion at lof deactivated on input line 58
+[11] [12]) [13] (chapter/Zeitaufgelöste Simulation.tex) [14
+
+]
+Package tocbasic Info: character protrusion at lof deactivated on input line 59
 .
  (main.lof)
 \tf@lof=\write11
 \openout11 = `main.lof'.
 
- [1
+
+[1
 
 
 ]
@@ -1936,7 +1939,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-4.
+5.
 (C:\Users\reeba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1965,10 +1968,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50363 strings out of 478659
- 1066350 string characters out of 2845920
+ 50372 strings out of 478659
+ 1066706 string characters out of 2845920
  1963018 words of memory out of 3000000
- 67541 multiletter control sequences out of 15000+600000
+ 67544 multiletter control sequences out of 15000+600000
  455734 words of font info for 92 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  115i,20n,109p,10637b,2331s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1992,9 +1995,9 @@ ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/ree
 ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/ree
 ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/reeb
 a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (17 pages, 319783 bytes).
+Output written on main.pdf (18 pages, 321797 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  31317 words of extra memory for PDF output out of 35830 (max. 10000000)
 
