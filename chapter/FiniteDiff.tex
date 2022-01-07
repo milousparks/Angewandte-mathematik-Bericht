@@ -23,16 +23,47 @@ Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunab
 
 \begin{enumerate}
 	\item Erarbeiten Sie sich Abschnitt 8.8 aus [1] und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung (6).
+
+	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch Finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
+	Als Ergebnis erhält man eine Matrix , wodurch sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
 	
-\begin{comment}
-	Mit der Verwendung dieser Methode auf die Gleichung 6 lässt sich eine Matrix berechnen, womit man die zeitabhängige Stelle der Leitungsträgerdichte u mathematisch beschreiben kann. Dadurch kann ein Modell aus der Diskretisierung der Methode erstellt, das die lange dieser Ladungsträgerdichte an einer Zeit beschreibt.
-\end{comment}	
-	
-	
-	
-	\item Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0, \dots , z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ si = s(zi)$.
+	Für diese Methode sind drei Schritte Notwendig:
+	\begin{enumerate}
+		\item Diskretisierung eines Bereiches ($z\in [0,d]$) der Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$ (\cref{fig:bsp_knotenpunkte})
+		\item Diskretisierung der Differenzialgleichung an den Knotenpunkten mit Approximation der Ableitung ()
+	\end{enumerate}
+
+	\item Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots , z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.
 \end{enumerate}
  
+ \begin{figure}[htb]
+ 	\centering
+ 	 \begin{tikzpicture}
+ 		\begin{axis}[
+ 			axis x line = middle,
+ 			axis y line = middle,
+ 			 xmin=-1,
+ 			xmax=5,
+ 			ymin=-5,
+ 			ymax=20,
+ 			xtick={-1,0,1,2,3,4,5},
+ 			ytick={-5,0,5,10,15,20},
+ 			xticklabels={$z_{-1}$,$z_0$,$z_1$,$z_2$,$z_3$,$z_N$}
+ 			]
+ 			\addplot[domain=-1:5]{x^2-x+10};
+ 			\draw [dashed] (axis cs:1,1^2-1+10) -- (axis cs:1,0);
+ 			\draw [dashed] (axis cs:2,2^2-2+10) -- (axis cs:2,0);
+ 			
+ 			\draw [thick,decoration={brace,mirror,raise=2pt},decorate] 
+ 			(axis cs:1,0) --
+ 			node[below=7pt] {$h$} 
+ 			(axis cs:2,0);
+		\end{axis}
+ 	\end{tikzpicture}
+\caption{Beispieldarstellung: Knotenpunkte mit Schrittweite $h$}
+\label{fig:bsp_knotenpunkte}
+ \end{figure}
+
 
 \begin{equation}
 	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
@@ -44,11 +75,11 @@ Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunab
 \end{align*}
 
 \begin{equation}
-	\frac{\partial u}{\partial z} = (u_i+1 - u_i)/(2\cdot h)
+	\frac{\partial u}{\partial z} = \frac{(u_i+1 - u_i)}{2\cdot h}
 \end{equation}
 
 \begin{equation}
-	\frac{\partial ^2 u }{\partial z^2} = (u_i+1 - 2\cdot u_i + u_i-1)/(h^2) \quad i=1,2,\dots,N
+	\frac{\partial ^2 u }{\partial z^2} = \frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} \quad i=1,2,\dots,N
 \end{equation}
 
 \begin{equation}
