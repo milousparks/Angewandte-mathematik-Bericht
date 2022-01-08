@@ -36,18 +36,18 @@ Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunab
  	\textbf{Aufgabe 1.} Erarbeiten Sie sich Abschnitt 8.8 aus \cite{Atkinson.2004} und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung.\cite{Prof.Dr.AndreasZeiser.April2021} 
  \end{mybox}
 
-	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch Finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
-	Als Ergebnis erhält man eine Matrix , wodurch sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
+	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
+	Als Ergebnis erhält man eine Matrix, mit der sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
 	
-	Für diese Methode sind drei Schritte Notwendig:
+	Für diese Methode sind drei Schritte notwendig:
 	\begin{enumerate}
 		\item Diskretisierung eines Bereiches ($z\in [0,d]$) der Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$ (\cref{fig:bsp_knotenpunkte})
 		\item Diskretisierung der Differenzialgleichung an den Knotenpunkten mit Approximation der Ableitung (\cref{eq:approx_first_order,eq:approx_second_order})
-		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssysteme durch Eliminierung von $u_{-1}$ und $u_{N+1}$
+		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssystemes durch Eliminierung von $u_{-1}$ und $u_{N+1}$
 	\end{enumerate}
 
  \begin{mybox}
-	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots , z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
+	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots, z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
 \end{mybox}
 	
  
@@ -209,8 +209,8 @@ für $z_0$:
 für $z_N$:
 
 \begin{equation}
-	z_N: \frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2}\cdot  D-k\cdot u_(N) = -s_(N)
-\end{equation}
+	z_N: \frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2}\cdot  D-k\cdot u_N = -s_N
+q\end{equation}
 
 für $z_0$:
 \begin{equation}
@@ -237,6 +237,7 @@ für $z_i$:
 
 
 für $z_0$:
+\todo{Ist das nicht für $z_N$ ?}
 \begin{equation}
 	\begin{split}
 		\frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2} \cdot D-k\cdot u_(N) = -s_(N)\\
