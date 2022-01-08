@@ -36,18 +36,18 @@ Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunab
  	\textbf{Aufgabe 1.} Erarbeiten Sie sich Abschnitt 8.8 aus \cite{Atkinson.2004} und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung.\cite{Prof.Dr.AndreasZeiser.April2021} 
  \end{mybox}
 
-	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch Finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
-	Als Ergebnis erhält man eine Matrix , wodurch sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
+	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
+	Als Ergebnis erhält man eine Matrix, mit der sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
 	
-	Für diese Methode sind drei Schritte Notwendig:
+	Für diese Methode sind drei Schritte notwendig:
 	\begin{enumerate}
 		\item Diskretisierung eines Bereiches ($z\in [0,d]$) der Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$ (\cref{fig:bsp_knotenpunkte})
 		\item Diskretisierung der Differenzialgleichung an den Knotenpunkten mit Approximation der Ableitung (\cref{eq:approx_first_order,eq:approx_second_order})
-		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssysteme durch Eliminierung von $u_{-1}$ und $u_{N+1}$
+		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssystemes durch Eliminierung von $u_{-1}$ und $u_{N+1}$
 	\end{enumerate}
 
  \begin{mybox}
-	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots , z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
+	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots, z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
 \end{mybox}
 	
  
@@ -106,55 +106,60 @@ Approximation der Ableitung zweiter Ordnung:
 
 Durch Einsetzen von \cref{eq:approx_second_order} in \cref{eq:linearDGL} erhält man:
 \begin{equation}
-	D\cdot\frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} -k\cdot u = -s_i
+	D\cdot\frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} -k\cdot u_i = -s_i
 \end{equation}
 
 Nun wird nach der Variable $u_i$ sortiert und folgende Gleichung aufgestellt:
 \begin{equation}
-\frac{D}{h^2}\cdot u_{i-1} - \frac{2D}{h^2+k}\cdot u_i + \frac{D}{h^2}\cdot u_{i+1} = -s_i
-\end{equation}
+\frac{D}{h^2}\cdot u_{i-1} - \cancel{\frac{2D}{h^2+k}} \frac{2D+kh^2}{h^2}\cdot u_i + \frac{D}{h^2}\cdot u_{i+1} = -s_i
+\end{equation} \todo{Ich glaube $\frac{2D}{h^2+k}$ ist falsch. es müsste $\frac{2D+kh^2}{h^2}$ sein imo }
 
 \begin{mybox}
 	\textbf{Aufgabe 3.}	Approximieren Sie die ersten Ableitungen an den Randbedingungen:
+	
+	\begin{equation}
+	 \tcbhighmath{	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)}
+	\end{equation}
+	durch:
+	
+	\begin{equation}
+	 \tcbhighmath{	u'(0) \approx \frac{u_1-u_{-1}}{2h}, \quad u'(d) \approx \frac{u_{N+1}-u_{N-1}}{2h}}
+	\end{equation}
+	
+	und lösen Sie die Gleichungen nach $u_1$ bzw. $u_N+1$ auf. Setzen Sie diese Ausdrücke in die Gleichungen für die Knoten $z_0$ und $z_N$ der letzten Teilaufgabe ein.
 \end{mybox}
 
 
-\begin{equation}
-	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
-\end{equation}
-durch:
 
-\begin{equation}
-	u' = \frac{u_1-u_{-1}}{2h}, \quad u'(d) = \frac{u_{N+1}-u_{N-1}}{2h}
-\end{equation}
-
-und lösen Sie die Gleichungen nach $u_1$ bzw. $u_N+1$ auf. Setzen Sie diese Ausdrücke in die Gleichungen für die Knoten $z_0$ und $z_N$ der letzten Teilaufgabe ein.
-
-Erste Randbedingungen:
+Erste Randbedingung:
 
 \begin{equation}
 	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0)
 \end{equation}
 
 \begin{equation}
-	\frac{\partial u(0)}{\partial z}=S_Lu(0)/D	
+	\frac{\partial u(0)}{\partial z}=\frac{S_Lu(0)}{D}
+\end{equation}
+Mit der Approximation der Ableitung erster Ordnung (\cref{eq:approx_first_order}):
+\begin{equation}
+	\frac{S_Lu_0}{D} = \frac{u_1-u_{-1}}{2h}
 \end{equation}
 
 \begin{equation}
-	S_Lu(0)/D = \frac{u_1-u_-1}{2*h}
+	u_0 = D\cdot \frac{u_1-u_{-1}}{2h\cdot S_\mathrm{L}}
 \end{equation}
 
 \begin{equation}
-	u(0) = D\cdot \frac{u_1-u_-1}{2*h}/S_L
+	u_0 = \frac{D}{2h\cdot S_L} \cdot u_1 - \frac{D}{2h\cdot S_L} \cdot u_{-1}
 \end{equation}
 
-\begin{equation}
-	u(0) = \frac{D}{2*h*S_L} * u_1 - \frac{D}{2*h*S_L} * u_-1
-\end{equation}
+\begin{qed}
+	\textbf{Damit folgt für $u_{-1}$:}
+	\begin{equation}
+	 \tcbhighmath{	u_{\text{-}1} = u_1 - \frac{2h\cdot S_L}{D} \cdot u_0}
+	\end{equation}
+\end{qed}
 
-\begin{equation}
-	u_-1 = u_1 - \frac{2*h*S_L}{D} * u_(0)
-\end{equation}
 
 Zweite Randbedingungen:
 
@@ -165,40 +170,47 @@ Zweite Randbedingungen:
 \begin{equation}
 	\frac{\partial u}{\partial z}(d)=-S_Ru(d)/D
 \end{equation}
-
+Durch Approximation der Randbedingung folgt:
 \begin{equation}
-	-S_Ru(d)/D = \frac{u_N+1-u_N-1}{2*h}
+	\frac{-S_R}{D}\cdot u_\mathrm{N} = \frac{u_{\mathrm{N}+1}-u_{\mathrm{N}-1}}{2h}
 \end{equation}
 
 \begin{equation}
-	u(d) = D\cdot \frac{u_N+1-u_N-1}{-2*h*S_R}
+	u_\mathrm{N} = D\cdot \frac{u_{N+1}-u_{N-1}}{-2hS_R}
 \end{equation}
 
 \begin{equation}
-	u(d) = \frac{D}{-2*h*S_R} * u_N+1 - \frac{D}{-2*h*S_R} * u_N-1
+	u_\mathrm{N} = \frac{D}{-2hS_R} \cdot u_{N+1} - \frac{D}{-2hS_R} \cdot u_{\mathrm{N}-1}
 \end{equation}
 
 \begin{equation}
-	u_N-1 = \frac{-2*h*S_R}{D} \cdot u_(d) + u_N-1
+	\cancel{
+		u_{\mathrm{N}-1} = \frac{-2*h*S_R}{D} \cdot u_\mathrm{N} + u_{\mathrm{N}-1}
+	}
 \end{equation}
+\todo{Wird nicht benötigt und ist außerdem falsch}
 
-\begin{equation}
-	u_N+1 = \frac{-2\cdot h\cdot S_R}{D} \cdot u_(N) + u_N-1
-\end{equation}
+\begin{qed}
+	\textbf{Damit folgt für $u_{\mathrm{N}+1}$}:
+	\begin{equation}
+	\tcbhighmath{	u_{N+1} = \frac{-2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N} + u_{\mathrm{N}-1}}
+	\end{equation}
+\end{qed}
+
 
 
 für $z_0$:
 
 \begin{equation}
-	z_0: \frac{u_1-2\cdot h\cdot S_R/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_(0) = -s_(0)
+	z_0: \frac{u_1-2\cdot h\cdot S_R/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_0 = -s_0
 \end{equation}
 
 
 für $z_N$:
 
 \begin{equation}
-	z_N: \frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2}\cdot  D-k\cdot u_(N) = -s_(N)
-\end{equation}
+	z_N: \frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2}\cdot  D-k\cdot u_N = -s_N
+q\end{equation}
 
 für $z_0$:
 \begin{equation}
@@ -225,6 +237,7 @@ für $z_i$:
 
 
 für $z_0$:
+\todo{Ist das nicht für $z_N$ ?}
 \begin{equation}
 	\begin{split}
 		\frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2} \cdot D-k\cdot u_(N) = -s_(N)\\
