@@ -1,5 +1,5 @@
 %Dokumentenklasse "scrbook" - Erweitert um den Verweis auf die Verzeichnisse und Texteigenschaften
-\documentclass[ 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod]{scrreprt}
+\documentclass[ 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod,ngerman]{scrreprt}
 
 
 %Anpassung der Seitenränder (Standard bottom ca. 52mm anbzüglich von ca. 4mm für die nach oben rechts gewanderte Seitenzahl)
@@ -19,7 +19,8 @@
 \usepackage{amsmath}
 %Kompakte Listen
 \usepackage{paralist}
-
+% Multiline comments
+\usepackage{comment}
 %Zitate besser formatieren und darstellen
 \usepackage{epigraph}
 
@@ -74,12 +75,27 @@
 
 %Grafiken von Text umlaufen lassen
 \usepackage{wrapfig}
+\usepackage{pgfplots}
 
 %Ermöglicht Verknüpfungen innerhalb des Dokumentes (e.g. for PDF), Links werden durch "hidelink" nicht explizit hervorgehoben
 \usepackage[hidelinks,german]{hyperref}
 \usepackage{cleveref}
 \usepackage{siunitx}
+\usepackage{physics}
+\usepackage[most]{tcolorbox}
+\newtcolorbox{mybox}{
+	enhanced,
+	boxrule=0pt,frame hidden,
+	borderline west={4pt}{0pt}{green!75!black},
+	colback=green!10!white,
+	sharp corners
+}
 %Einbindung und Verwaltung von Literaturverzeichnissen
 \usepackage{csquotes} %wird von biber benötigt
-\usepackage[style=alphabetic, backend=biber, bibencoding=ascii]{biblatex}
+\usepackage[style=ieee, backend=biber, bibencoding=ascii]{biblatex}
 \addbibresource{references/references.bib}
+
+
+\newenvironment{conditions}[1][mit:]
+{#1 \begin{tabular}[t]{>{$}l<{$} @{${}={}$} l}}
+	{\end{tabular}\\[\belowdisplayskip]}

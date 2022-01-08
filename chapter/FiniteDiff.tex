@@ -7,10 +7,19 @@ Die allgemeine DGL ist gegeben durch:
 	\frac{\partial u}{\partial t}= D\cdot\frac{\partial ^2 u }{\partial z^2}-(k1+k2\cdot N_D)\cdot u -k2u^2 +s(t,z)
 \end{equation}
 
+\begin{conditions}
+	s(t,z)     &  Ladungsträgerdichte durch Bestrahlung \\
+	D     &  Diffusionskonstante \\   
+	N_D &  Dotierungsdichte \\
+	k1,k2 &  Rekombinationskonstanten \\
+	\alpha & Absorptionskonstante\\
+	S_L,S_R  & Rekombinationsraten an den jeweiligen Grenzschichten
+\end{conditions}
+
 Mit $\frac{\partial u}{\partial t}=0$ folgt die stationäre Gleichung:
 
 \begin{equation}\label{eq:stationDGL}
-	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
+	D\cdot \pdv[2]{u}{z} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
 \end{equation}
 
 mit den Randbedingungen:
@@ -22,39 +31,93 @@ mit den Randbedingungen:
 \section{Lineare stationäre Gleichung}
 Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne den quadratischen Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
 
-1. . Erarbeiten Sie sich Abschnitt 8.8 aus [1] und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung (6).
+ 
+ \begin{mybox}
+ 	\textbf{Aufgabe 1.} Erarbeiten Sie sich Abschnitt 8.8 aus \cite{Atkinson.2004} und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung.\cite{Prof.Dr.AndreasZeiser.April2021} 
+ \end{mybox}
 
-Mit der Verwendung dieser Methode auf die Gleichung 6 lässt sich ein Matrix berechnen, womit man die zeitabhängige Stelle der Leitungsträgerdichte u mathematisch beschreiben kann.dadurch kann ein Modell aus der Diskretisierung der Methode erstellt, das die lange dieser Ladungsträgerdichte an einer Zeit beschreibt.
+	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch Finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
+	Als Ergebnis erhält man eine Matrix , wodurch sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
+	
+	Für diese Methode sind drei Schritte Notwendig:
+	\begin{enumerate}
+		\item Diskretisierung eines Bereiches ($z\in [0,d]$) der Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$ (\cref{fig:bsp_knotenpunkte})
+		\item Diskretisierung der Differenzialgleichung an den Knotenpunkten mit Approximation der Ableitung (\cref{eq:approx_first_order,eq:approx_second_order})
+		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssysteme durch Eliminierung von $u_{-1}$ und $u_{N+1}$
+	\end{enumerate}
 
-2. Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  u0, u1, . . . , uN an den Punkten z0, . . . , zN her. Die Gleichungen enthalten $u_1 und u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ si = s(zi)$.
+ \begin{mybox}
+	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots , z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
+\end{mybox}
+	
+ 
+ \begin{figure}[htb]
+ 	\centering
+ 	 \begin{tikzpicture}
+ 		\begin{axis}[
+ 			axis x line = middle,
+ 			axis y line = middle,
+ 			 xmin=-1,
+ 			xmax=5,
+ 			ymin=-5,
+ 			ymax=20,
+ 			xtick={-1,0,1,2,3,4,5},
+ 			ytick={-5,0,5,10,15,20},
+ 			xticklabels={$z_{-1}$,$z_0$,$z_1$,$z_2$,$z_3$,$z_N$}
+ 			]
+ 			\addplot[domain=-1:5]{x^2-x+10};
+ 			\draw [dashed] (axis cs:1,1^2-1+10) -- (axis cs:1,0);
+ 			\draw [dashed] (axis cs:2,2^2-2+10) -- (axis cs:2,0);
+ 			
+ 			\draw [thick,decoration={brace,mirror,raise=2pt},decorate] 
+ 			(axis cs:1,0) --
+ 			node[below=7pt] {$h$} 
+ 			(axis cs:2,0);
+		\end{axis}
+ 	\end{tikzpicture}
+\caption{Beispieldarstellung: Knotenpunkte mit Schrittweite $h$}
+\label{fig:bsp_knotenpunkte}
+ \end{figure}
 
+Stationäre Differenzialgleichung(\cref{eq:stationDGL}) ohne den quadratischen Term $-k^2u^2$:
+\begin{equation}\label{eq:linearDGL}
+	D \pdv[2]{u}{z} -ku=-s(z), \quad 0 <z<d
+\end{equation}
+mit $k=k_1+k_2\cdot N_D$.
 
-\begin{equation}
-	D\cdot \frac{du}{dt} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
-\end{equation}\label{eq:stationDGL}
 \begin{align*}
 	k&=k_1+k_2*N_D\\
-	s_i&=s(z_i)\\
-	u(i)&\approx u_i
+	s_i&= s(z_i)\\
+	u_i&\approx u(z_i)
 \end{align*}
+\begin{conditions}
+	u_i & Approximierte Ladungsträgerdichte an den Stellen $z_i$ \\
+	s_i & Ladungsträgerdichte die durch externe Bestrahlung an den Stellen $z_i$ erzeugt wird
+\end{conditions}
 
-\begin{equation}
-	\frac{\partial u}{\partial z} = (u_i+1 - u_i)/(2\cdot h)
+Approximation der Ableitung erster Ordnung:
+\begin{equation}\label{eq:approx_first_order}
+	\frac{\partial u}{\partial z} = \frac{u_{i+1} - u_{i-1}}{2h}
+\end{equation}
+Approximation der Ableitung zweiter Ordnung:
+\begin{equation}\label{eq:approx_second_order}
+	\frac{\partial ^2 u }{\partial z^2} = \frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} \quad i=1,2,\dots,N
 \end{equation}
 
+Durch Einsetzen von \cref{eq:approx_second_order} in \cref{eq:linearDGL} erhält man:
 \begin{equation}
-	\frac{\partial ^2 u }{\partial z^2} = (u_i+1 - 2\cdot u_i + u_i-1)/(h^2) \quad i=1,2,\dots,N
+	D\cdot\frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} -k\cdot u = -s_i
 \end{equation}
 
+Nun wird nach der Variable $u_i$ sortiert und folgende Gleichung aufgestellt:
 \begin{equation}
-	D\cdot ((u_i+1 - 2\cdot u_i + u_i-1)/(h^2)) -k\cdot u = -s_i
+\frac{D}{h^2}\cdot u_{i-1} - \frac{2D}{h^2+k}\cdot u_i + \frac{D}{h^2}\cdot u_{i+1} = -s_i
 \end{equation}
 
-\begin{equation}
-	(D/h^2)\cdot u_i-1 - (2D/h^2+k)\cdot u_i + (D/h^2)\cdot u_i+1 = -s_i
-\end{equation}
+\begin{mybox}
+	\textbf{Aufgabe 3.}	Approximieren Sie die ersten Ableitungen an den Randbedingungen:
+\end{mybox}
 
-3. Approximieren Sie die ersten Ableitungen an den Randbedingungen:
 
 \begin{equation}
 	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
@@ -62,7 +125,7 @@ Mit der Verwendung dieser Methode auf die Gleichung 6 lässt sich ein Matrix ber
 durch:
 
 \begin{equation}
-	u' = \frac{u_1-u_-1}{2*h}, \quad u'(d) = \frac{u_N+1-u_N-1}{2*h}
+	u' = \frac{u_1-u_{-1}}{2h}, \quad u'(d) = \frac{u_{N+1}-u_{N-1}}{2h}
 \end{equation}
 
 und lösen Sie die Gleichungen nach $u_1$ bzw. $u_N+1$ auf. Setzen Sie diese Ausdrücke in die Gleichungen für die Knoten $z_0$ und $z_N$ der letzten Teilaufgabe ein.
@@ -172,8 +235,10 @@ für $z_0$:
 
 
 
+\begin{mybox}
+	\textbf{Aufgabe 4.} Stellen Sie das lineare Gleichungssystem für die Größen analog zu Gleichung (8.133) in \cite{Atkinson.2004} und folgende dar:
+\end{mybox}
 
-4. Stellen Sie das lineare Gleichungssystem für die Größen  analog zu Gleichung (8.133) in Atkinson Han Elementary Numerical Analysis 2004 AuszugDatei und folgende dar:
 $ A\cdot u = b,\quad u = [u_i],\quad b = [b_i]$
 Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
 
@@ -219,7 +284,7 @@ bestimmt.
 \section{Nicht Lineare stationäre Gleichung}
 Nichtlineare DGL:
 \begin{equation}
-	D\pdv[order={2}]{u}{z}-(k_1+k_2N_D)u-k_2u^2=-s(z)
+	D\pdv[2]{u}{z}-(k_1+k_2N_D)u-k_2u^2=-s(z)
 \end{equation}
 
 Diskretisierung der DGL:

@@ -18,7 +18,36 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global}
+  \datalist[entry]{none/global//global/global}
+    \entry{Prof.Dr.AndreasZeiser.April2021}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6aeaa74e48dd1272a5fbc845ddddc14f}{%
+           family={{Prof. Dr. Andreas Zeiser}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {HTW Berlin}%
+      }
+      \list{location}{1}{%
+        {Moodle}%
+      }
+      \strng{namehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{fullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{bibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authorbibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authornamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \strng{authorfullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Version 6.}
+      \field{title}{Angewandte Mathematik: Projekt Zeitaufgelöste Photolumineszenz}
+      \verb{file}
+      \verb TRPL{\_}Projekt{\_}AM{\_}Zeiser:Attachments/TRPL{\_}Projekt{\_}AM{\_}Zeiser.pdf:application/pdf
+      \endverb
+      \warn{\item Entry 'Prof.Dr.AndreasZeiser.April2021' (references/references.bib): Invalid format 'April 2021' of date field 'date' - ignoring}
+    \endentry
     \entry{Atkinson.2004}{book}{}
       \name{author}{2}{}{%
         {{hash=6ef9daa385688cbe68f62d197b6b8808}{%
@@ -44,9 +73,8 @@
       \strng{authorbibnamehash}{f2fe3de594da2bcc30e0579af9023cbb}
       \strng{authornamehash}{f2fe3de594da2bcc30e0579af9023cbb}
       \strng{authorfullhash}{f2fe3de594da2bcc30e0579af9023cbb}
-      \field{labelalpha}{AH04}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3rd ed. / Kendall Atkinson, Weimin Han}
@@ -60,36 +88,6 @@
       \verb http://worldcatlibraries.org/wcpa/oclc/52418321
       \endverb
       \keyw{Numerical analysis}
-    \endentry
-    \entry{Prof.Dr.AndreasZeiser.April2021}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=6aeaa74e48dd1272a5fbc845ddddc14f}{%
-           family={{Prof. Dr. Andreas Zeiser}},
-           familyi={P\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {HTW Berlin}%
-      }
-      \list{location}{1}{%
-        {Moodle}%
-      }
-      \strng{namehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \strng{fullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \strng{bibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \strng{authorbibnamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \strng{authornamehash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \strng{authorfullhash}{6aeaa74e48dd1272a5fbc845ddddc14f}
-      \field{labelalpha}{Pro}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{Version 6.}
-      \field{title}{Angewandte Mathematik: Projekt Zeitaufgelöste Photolumineszenz}
-      \verb{file}
-      \verb TRPL{\_}Projekt{\_}AM{\_}Zeiser:Attachments/TRPL{\_}Projekt{\_}AM{\_}Zeiser.pdf:application/pdf
-      \endverb
-      \warn{\item Entry 'Prof.Dr.AndreasZeiser.April2021' (references/references.bib): Invalid format 'April 2021' of date field 'date' - ignoring}
     \endentry
   \enddatalist
 \endrefsection
