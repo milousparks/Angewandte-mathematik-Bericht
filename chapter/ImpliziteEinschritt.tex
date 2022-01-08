@@ -42,19 +42,19 @@ Ein allgemeines System von Anfangswertproblemen für eine Funktion y kann als fo
 
 Der Wert von y wird näherungsweise an den Zeitpunkten berechnet:
 \begin{equation}
-	 y^i \approx y(t_i),\quad i = 0,1,\dots;N 
+	 y^i \approx y(t_i),\quad i = 0,1,\dots,N 
 \end{equation}
 
 
 Das implizite Euler-Verfahren:
 \begin{equation}
-	 y^{(i+1)} = y(i) + hf(t_i+1,y^{(i+1)}] 
+	 y^{i+1} = y(i) + hf(t_{i+1},y^{i+1}) 
 \end{equation}
 
 
 Die implizite Trapezregel:
 \begin{equation}
-	y^{i+1} = y(i) + h/2[f(t_i, y^(i) + f(t_{i+1},y^{i+1})))] 
+	y^{i+1} = y(i) + \frac{h}{2}\left[f\left(t_i, y^i + f(t_{i+1},y^{i+1})\right)\right] 
 \end{equation}
 
 
@@ -71,19 +71,19 @@ Die implizite Trapezregel:
 	\textbf{Aufgabe 2:}
 	Setzen Sie in den Gleichungen des impliziten Euler-Verfahrens und der impliziten Trapezregel
 	\begin{equation*}
-	 \mathbf{y}^{i+1} = \mathbf{y}(i) + \mathbf{z} 
+	\tcbhighmath{\mathbf{y}^{i+1} = \mathbf{y}(i) + \mathbf{z}}  
 	\end{equation*}
 	
 	und formulieren Sie jeweils die Gleichung für  als Nullstellenproblem:
 	\begin{equation*}
-		 \mathbf{F}_{\mathrm{euler}}(\mathbf{z}) = 0,\quad \mathbf{F}_{\mathrm{trapez}}(\mathbf{z}) = 0  
+		\tcbhighmath[]{\mathbf{F}_{\mathrm{euler}}(\mathbf{z}) = 0,\quad \mathbf{F}_{\mathrm{trapez}}(\mathbf{z}) = 0}   
 	\end{equation*}
 	
 \end{mybox}
 
 
 \begin{equation}
- 	y^{i+1} = y(i) + hf[t_{i+1},y^{i+1}] 
+ 	y^{i+1} = y(i) + hf(t_{i+1},y^{i+1}) 
 \end{equation}
 
 
