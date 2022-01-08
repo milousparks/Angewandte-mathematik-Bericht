@@ -25,7 +25,7 @@ Die Dynamik der Konzentrationen der einzelnen Komponenten können durch Anfangsw
 mit den Anfangswerten
 
 \begin{equation*}
-y_1(0) = 1, y^2_2(0) = 0, y_3(0) = 0
+y_1(0) = 1, y_2(0) = 0, y_3(0) = 0
 \end{equation*}  
 
 modelliert werden. Anhand dieses Systems sollen im folgenden steife Differenzialgleichungen untersucht
@@ -35,14 +35,14 @@ und ein effizientes numerisches Verfahren entwickelt werden.
 
 Ein allgemeines System von Anfangswertproblemen für eine Funktion y kann als folgendes geschrieben werden:
 \begin{equation}
-	 y' = f(t,y) ,quad t \in [a,b],quad y(a) = y_a 
+	 y' = f(t,y) ,\quad t \in [a,b],\quad y(a) = y_a 
 \end{equation}
 
 
 
 Der Wert von y wird näherungsweise an den Zeitpunkten berechnet:
 \begin{equation}
-	 y^(i) \approx y(t_i),quad i = 0,1,\dots;N 
+	 y^i \approx y(t_i),\quad i = 0,1,\dots;N 
 \end{equation}
 
 
@@ -76,7 +76,7 @@ Die implizite Trapezregel:
 	
 	und formulieren Sie jeweils die Gleichung für  als Nullstellenproblem:
 	\begin{equation*}
-		 \mathbf{F}_{euler}(\mathbf{z}) = 0,\quad \mathbf{F}_{trapez}(\mathbf{z}) = 0  
+		 \mathbf{F}_{\mathrm{euler}}(\mathbf{z}) = 0,\quad \mathbf{F}_{\mathrm{trapez}}(\mathbf{z}) = 0  
 	\end{equation*}
 	
 \end{mybox}
