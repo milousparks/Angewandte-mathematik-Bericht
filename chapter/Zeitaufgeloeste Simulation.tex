@@ -13,10 +13,10 @@ Die Randbedingungen
 und:
 
 \begin{align*}
-	k&=k_1+k_2\cdot N_D\\
-	s_i&=s(z_i)\\
-	h&=\frac{d}{N}\\
-	u(i)&\approx u_i
+	&k=k_1+k_2\cdot N_D\\
+	&s_i=s(z_i)\\
+	&h=\frac{d}{N}\\
+	&u(i)\approx u_i
 \end{align*}
 
 Analog wie im zweiten Abschnitt
@@ -26,7 +26,7 @@ Analog wie im zweiten Abschnitt
 \end{equation}
 
 \begin{equation}
-	\frac{\partial u}{\partial t}(t,z_i) =\frac{\partial^2 u}{\partial z^2}(t,z_i)- \frac{u_{i+1}(t) - (k_1 + K_2N_D)\cdot u(t,z_i) - k_2\cdot u^2(t,z_i) + s(t,z_i)
+	\frac{\partial u}{\partial t}(t,z_i) =\frac{\partial^2 u}{\partial z^2}(t,z_i)- \frac{u_{i+1}(t) - (k_1 + K_2N_D)\cdot u(t,z_i)} - k_2\cdot u^2(t,z_i) + s(t,z_i)
 \end{equation}
 	
 	\begin{equation}
