@@ -94,12 +94,12 @@
 	enhanced,
 	boxrule=0pt,frame hidden,
 	borderline west={4pt}{0pt}{blue!75!black},
-	colback=Aquamarine!10!white,
+	colback=cyan!5!white,
 	sharp corners
 }
 \usepackage{todonotes}
 \usepackage{cancel}%Durchstreichen von sachen
-
+\usepackage[numbered,framed]{matlab-prettifier}
 %Einbindung und Verwaltung von Literaturverzeichnissen
 \usepackage{csquotes} %wird von biber benötigt
 \usepackage[style=ieee, backend=biber, bibencoding=ascii]{biblatex}
@@ -109,3 +109,14 @@
 \newenvironment{conditions}[1][mit:]
 {#1 \begin{tabular}[t]{>{$}l<{$} @{${}={}$} l}}
 	{\end{tabular}\\[\belowdisplayskip]}
+
+\usepackage{fancyvrb}
+\lstset{literate=% Allow for German characters in lstlistings.
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}2
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
