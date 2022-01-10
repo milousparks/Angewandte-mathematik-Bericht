@@ -26,25 +26,25 @@ Analog wie im zweiten Abschnitt
 \end{equation}
 
 \begin{equation}
-	\frac{\partial u}{\partial t}(t,z_i) =\frac{\partial^2 u}{\partial z^2}(t,z_i)- \frac{u_{i+1}(t) - (k_1 + K_2N_D)\cdot u(t,z_i)} - k_2\cdot u^2(t,z_i) + s(t,z_i)
+	\frac{\partial u}{\partial t}(t,z_i) =\frac{\partial^2 u}{\partial z^2}(t,z_i)- \frac{u_{i+1}(t) - (k_1 + K_2N_D)\cdot u(t,z_i)}{h^2} - k_2\cdot u^2(t,z_i) + s(t,z_i)
 \end{equation}
 	
-	\begin{equation}
+\begin{equation}
 		\frac{\partial u}{\partial t}(t,z_i) = D\cdot \frac{u_{i+1}(t) - 2\cdot u_i(t) + u_{i-1}(t)}{h^2} - ku_i(t) - K_2u^2_i(t) + s_i(t)
-	\end{equation}
+\end{equation}
 	
-	\begin{equation}
+\begin{equation}
 		\frac{\partial u}{\partial t}(t,z_i) = 	\frac{D}{h^2}u_{i+1}(t) - 2\cdot \frac{D}{h^2}u_i(t) + \frac{D}{h^2}u_{i-1}(t) - ku_i(t) - K_2u^2_i(t) + s_i(t)
-	\end{equation}
+\end{equation}
 	
-	\begin{equation}
+\begin{equation}
 		\frac{\partial u}{\partial t}(t,z_i) = 	\frac{D}{h^2}u_{i+1}(t) - (2\cdot \frac{D}{h^2} + k)u_i(t) + \frac{D}{h^2}u_{i-1}(t) - K_2u^2_i(t) + s_i(t)
-	\end{equation}
+\end{equation}
 	
 	
-	Nun werden die Gleichungen für $z_0$ und $z_N$ hergeleitet:
+Nun werden die Gleichungen für $z_0$ und $z_N$ hergeleitet:
 	
-	\begin{equation}
+\begin{equation}
 		\frac{\partial u}{\partial t}(z_i) = \frac{u_{i+1}(t) - u_{i-1}(t)}{2\cdot h}\\
 		u'(0) \sim \frac{u_1-u_{-1}}{2\cdot h}, \quad u'(d) \sim \frac{u_N+1-u_{N-1}}{2\cdot h}
-	\end{equation}
+\end{equation}
