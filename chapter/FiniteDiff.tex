@@ -24,7 +24,7 @@ Mit $\frac{\partial u}{\partial t}=0$ folgt die stationäre Gleichung:
 
 mit den Randbedingungen:
 
-\begin{equation}
+\begin{equation}\label{eq:randbedingungen}
 	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
 \end{equation}
 
@@ -295,6 +295,21 @@ und die rechte Seite:
 bestimmt.
 
 \section{Nicht Lineare stationäre Gleichung}
+\begin{mybox}
+	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL} mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
+	zum letzten Abschnitt wird ein nichtlineares Gleichungssystem aufgestellt, das mithilfe des Newton-
+	Verfahrens aus der Belegarbeit gelöst werden soll. Gehen Sie wie folgt vor.\cite{Prof.Dr.AndreasZeiser.April2021}
+\end{mybox}
+
+\begin{mybox}
+	\textbf{Aufgabe 1. :} Leiten Sie die nichtlinearen Gleichungen für die gesuchten Werte $u_0,u_1,\dots ,uN$ her und stellen Sie
+	sie in Form
+	\begin{equation*}
+		\tcbhighmath{\mathbf{F}(\mathbf{u})=\mathbf{b}}
+	\end{equation*}
+dar. Berücksichtigen Sie die Randbedingungen wie im letzten Abschnitt.
+\cite{Prof.Dr.AndreasZeiser.April2021}
+\end{mybox}
 Nichtlineare DGL:
 \begin{equation}
 	D\pdv[2]{u}{z}-(k_1+k_2N_D)u-k_2u^2=-s(z)
@@ -331,7 +346,7 @@ umgestellt nach $u_{N+1}$
 
 
 
-Damit folgt für die Funktion $F(u)=b$:
+Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 
 \begin{align*}
 	F_0&= \quad \frac{D}{h^2}u_1-\frac{2D+kh^2}{h^2}u_0+\frac{D}{h^2}\cdot\left( -\frac{S_L 2h}{D}\cdot u_0+u_1\right) -k_2u_0^2\\
@@ -341,16 +356,50 @@ Damit folgt für die Funktion $F(u)=b$:
 	F_N &= \frac{D}{h^2}\left( -\frac{S_R2h}{D}\cdot u_N+u_{N-1}\right) -\frac{2D+kh^2}{h^2}u_N+\frac{D}{h^2} u_{N-1}-k_2u^2_N\\
 \end{align*}
 
+\begin{qed}
+	Vereinfacht zu :
+	
+	\begin{align*}
+		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\left( \frac{S_L2h+2D+kh^2}{h^2}\right) u_0 -k_2u_0^2\\
+		\vdots \\
+		F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
+		\vdots \\
+		F_N &= -\frac{2D+kh^2+S_R2h}{h^2}u_N+2\frac{D}{h^2}u_{N-1}-k_2u^2_N\\
+	\end{align*}
+\end{qed}
 
-Vereinfacht zu :
+\begin{mybox}
+	\textbf{Aufgabe 2. :} Implementieren Sie eine Routine zur Berechnung von $\mathbf{F}$ der letzten Teilaufgabe.\cite{Prof.Dr.AndreasZeiser.April2021}
+\end{mybox}
 
-\begin{align*}
-	F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\left( \frac{S_L2h+2D+kh^2}{h^2}\right) u_0 -k_2u_0^2\\
-	\vdots \\
-	F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
-	\vdots \\
-	F_N &= -\frac{2D+kh^2+S_R2h}{h^2}u_N+2\frac{D}{h^2}u_{N-1}-k_2u^2_N\\
-\end{align*}
+\begin{lstlisting}[style=Matlab-editor]
+	function [F] = fd_nonlin(u,N)
+	% Eingabe:
+	%   u Vektor u der Groeße (N + 1)
+	%   N Anzahl von Teilintervallen N.
+	% Ausgabe:
+	%   F Vektor F(u) der Groeße (N + 1) 
+	D=0.003;
+	h=1;
+	Sl=10;
+	Sr=10e5;
+	k=11e6;
+	k2=10e-8;
+	u0=u(1);
+	u1=u(2);
+	un=u(N);
+	
+	F(1)=2*D/h^2*u1-((Sl*2*h+2*D+k*h^2)/(h^2))*u0-k2*u0^2;
+	F(N+1)=-(2*D+k*h^2+Sr*2*h)/(h^2)*un+2*(D)/(h^2)*u(N-1)-k2*un^2;
+	for i=2:N
+	F(i)=D/h^2*u(i+1)-(2*D+k*h^2)/(h^2)*u(i)+D/h^2*u(i-1)-k2*u(i)^2;
+	end
+	end
+	
+\end{lstlisting}
 
+\begin{mybox}
+	\textbf{Aufgabe 3. :} Berechnen Sie die Jacobi-Matrix $D\mathbf{F}$ von $\mathbf{F}$ bezüglich u und geben Sie sie an
+\end{mybox}
 
 
