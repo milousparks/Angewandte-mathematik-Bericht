@@ -186,12 +186,6 @@ Durch Approximation der Randbedingung folgt:
 	u_\mathrm{N} = \frac{D}{-2hS_R} \cdot u_{N+1} - \frac{D}{-2hS_R} \cdot u_{\mathrm{N}-1}
 \end{equation}
 
-\begin{equation}
-	\cancel{
-		u_{\mathrm{N}-1} = \frac{-2*h*S_R}{D} \cdot u_\mathrm{N} + u_{\mathrm{N}-1}
-	}
-\end{equation}
-\todo{Wird nicht benötigt und ist außerdem falsch}
 
 \begin{qed}
 	\textbf{Damit folgt für $u_{\mathrm{N}+1}$}:
@@ -226,101 +220,41 @@ mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 \end{equation}
 
 \begin{qed}
+		Es ergibt sich der Wert für $Z_0$ damit zu:
+	\begin{equation}
+		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{R}+kh^2}{h^2}\cdot u_0=-s_0}
+	\end{equation}
 	Es ergibt sich der Wert für $Z_\mathrm{N}$ damit zu:
 	\begin{equation}
 	\tcbhighmath{Z_N: \quad	\frac{2D}{h^2}\cdot u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}}
 	\end{equation}
-	Es ergibt sich der Wert für $Z_0$ damit zu:
-	\begin{equation}
-		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{R}+kh^2}{h^2}\cdot u_0=-s_0}
-	\end{equation}
+
 \end{qed}
-
-Alls nächstes wird die Randbedingung für $Z_0$ betrachtet. Es wird \cref{eq:rand_u-1} in 
-
-für $z_0$:
-
-\begin{equation}
-	z_0: \frac{u_1-2\cdot h\cdot S_R/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_0 = -s_0
-\end{equation}
-
-
-für $z_N$:
-
-\begin{equation}
-	z_N: \frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2}\cdot  D-k\cdot u_N = -s_N
-\end{equation}
-
-für $z_0$:
-\begin{equation}
-	\begin{split}
-		\frac{u_1-2\cdot h\cdot S_L/D\cdot u_0-2\cdot u_0+u_1}{h^2} \cdot D-k\cdot u_(0) = -s_(0)\\
-		\frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}+\frac{D\cdot u_1}{h^2}-k\cdot u_(0) = -s_(0)\\
-		2\cdot \frac{D\cdot u_1}{h^2}-\frac{2\cdot S_L\cdot u_0}{h}-\frac{-2\cdot u_0}{h}-k\cdot u_(0) = -s_(0)\\
-		2\cdot \frac{D}{h^2}\cdot u_1-(\frac{2\cdot S_L}{h}+\frac{-2}{h}+k)\cdot u_(0) = -s_(0)
-	\end{split}
-\end{equation}
-
-
-für $z_i$:
-
-\begin{equation}
-	\begin{split}
-		D\cdot \frac{u_{i-1}-2\cdot u_i+u_{i+1}}{h^2}-k\cdot u_i= -s_i\\
-		\frac{D\cdot u_i-1}{h^2}-\frac{2\cdot D\cdot u_i}{h^2}+\cancel{\frac{-2\cdot u_0}{h}-k}\frac{-2\cdot u_0}{h^2}-k\cdot u_i = -s_i\\
-		\frac{D\cdot u_{i-1}}{h^2}+\frac{D\cdot u_i+1}{h^2}-(\frac{-2\cdot D}{h}+k)\cdot u_i = -s_i\\
-	\end{split}
-\end{equation}
-
-
-
-
-für $z_N$:
-\todo{Ist das nicht für $z_N$ ?}
-\begin{equation}
-	\begin{split}
-		\frac{u_N-1-2\cdot h\cdot S_R/D\cdot u_N-2\cdot u_N+u_N-1}{h^2} \cdot D-k\cdot u_(N) = -s_(N)\\
-		\frac{D\cdot u_N-1}{h^2}-\frac{2\cdot S_R\cdot u_N}{h}-\frac{2\cdot u_N\cdot D}{h}+\frac{D\cdot u_N}{h^2}-k\cdot u_(N) = -s_(N)\\
-		2\cdot \frac{D\cdot u_N-1}{h^2}-(\frac{2\cdot}{h^2} + \frac{2\cdot S_R}{h} + k)\cdot u_(N) = -s_(N)\\
-	\end{split}
-\end{equation}
 
 
 
 \begin{mybox}
 	\textbf{Aufgabe 4.} Stellen Sie das lineare Gleichungssystem für die Größen analog zu Gleichung (8.133) in \cite{Atkinson.2004} und folgende dar:
+	\begin{equation*}
+		\mathbf{A} u = \mathbf{b},\quad \mathbf{u} = [u_i],\quad \mathbf{b} = [b_i]
+	\end{equation*}
+
+	Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
 \end{mybox}
 
-$ A\cdot u = b,\quad u = [u_i],\quad b = [b_i]$
-Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
-
-für $ u_1$:
-\begin{equation}
-	\begin{split}
-		\frac{D\cdot u_1-1}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_1+1}{h^2} = -s_1\\
-		\frac{D\cdot u_0}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_1  + \frac{D\cdot u_2}{h^2} = -s_1\\
-	\end{split}
-\end{equation}
 
 
-für $ u_N-1$:
 
-\begin{align*}
-	\frac{D\cdot u_-1-1}{h^2}-(\frac{2\cdot D}{h^2} + k)\cdot u_N-1  + \frac{D\cdot u_N-1+1}{h^2} &= -s_N-1\\
-	\frac{D\cdot u_N-2}{h^2} - (\frac{2\cdot D}{h^2} + k)\cdot u_N-1  + \frac{D\cdot u_N}{h^2} &
-	= -s_N-1
-\end{align*}
-
-Mit Hilfe der Matrixform $ A\cdot u = b $ lässt sich dieses Gleichungssystem mit Hilfe von Matlab durch  gelöst werden. Dazu wird die Koeffizientenmatrix
+Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses Gleichungssystem mit Hilfe von Matlab lösen. Dazu wird die Koeffizientenmatrix
 
 \begin{equation}
-	\begin{bmatrix}
-		-\frac{(2*S_L}{h + 2} & \frac{2*D}{h^2} & \dots &  \dots &  \dots &  \dots \\
-		\frac{D}{h^2} & -\frac{(2*D}{h^2 + k)} & \frac{D}{h^2} &  \dots &  \dots &  \dots \\
+\mathbf{A}=	\begin{bmatrix}
+		-\frac{2hS_R+2D+kh^2}{h^2} & \frac{2D}{h^2} & \dots &  \dots &  \dots &  \dots \\
+		\frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} &  \dots &  \dots &  \vdots \\
 	\vdots	&  \ddots &  \ddots &  \ddots &  &  \\
 	\vdots	& \ddots & \ddots & \ddots &  &  \\
-	\vdots	&  &  & \frac{D}{h^2} & -\frac{(2*D}{h^2 + k))} & \frac{D}{h^2} \\
-	\vdots	&  &  &  & \frac{2*D}{h^2} & -\frac{(2}{h^2 + 2*S_R} 
+	\vdots	&  &  & \frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} \\
+	\vdots	&  &  &  & \frac{2D}{h^2} & -\frac{2hS_R+2D+kh^2}{h^2}
 	\end{bmatrix}
 \end{equation}
  
