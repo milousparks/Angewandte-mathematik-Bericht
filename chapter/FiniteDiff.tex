@@ -214,15 +214,15 @@ mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 
 	\begin{equation}
 	\begin{split}
-		Z_0: \quad	D\cdot \frac{u_1-2u_0+u_1-\frac{2\cdot h\cdot S_R}{D} \cdot u_0 }{h^2}-ku_0=-s_0\\
-		\frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot s_\mathrm{R}+kh^2}{h^2}\cdot u_0=-S_0
+		Z_0: \quad	D\cdot \frac{u_1-2u_0+u_1-\frac{2\cdot h\cdot S_L}{D} \cdot u_0 }{h^2}-ku_0=-s_0\\
+		\frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-S_0
 	\end{split}
 \end{equation}
 
 \begin{qed}
 		Es ergibt sich der Wert für $Z_0$ damit zu:
 	\begin{equation}
-		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{R}+kh^2}{h^2}\cdot u_0=-s_0}
+		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-s_0}
 	\end{equation}
 	Es ergibt sich der Wert für $Z_\mathrm{N}$ damit zu:
 	\begin{equation}
@@ -249,21 +249,40 @@ Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses Gleichu
 
 \begin{equation}
 \mathbf{A}=	\begin{bmatrix}
-		-\frac{2hS_R+2D+kh^2}{h^2} & \frac{2D}{h^2} & \dots &  \dots &  \dots &  \dots \\
-		\frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} &  \dots &  \dots &  \vdots \\
-	\vdots	&  \ddots &  \ddots &  \ddots &  &  \\
-	\vdots	& \ddots & \ddots & \ddots &  &  \\
-	\vdots	&  &  & \frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} \\
-	\vdots	&  &  &  & \frac{2D}{h^2} & -\frac{2hS_R+2D+kh^2}{h^2}
+		-\frac{2hS_\mathrm{L}+2D+kh^2}{h^2} & \frac{2D}{h^2} & & &  &   \\
+		\frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} &  &  & \\
+	\ddots	&  \ddots &  \ddots &  \ddots &  &  \\
+		& \ddots & \ddots & \ddots & \ddots  & \ddots \\
+		&  &  & \frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} \\
+		&  &  &  & \frac{2D}{h^2} & -\frac{2hS_R+2D+kh^2}{h^2}
 	\end{bmatrix}
 \end{equation}
  
 
-der unbekannten Vektor:
+
 
 
 und die rechte Seite:
+\begin{equation}
+	\mathbf{b}=\begin{bmatrix}
+	-	s_0 \\
+	-	s_1 \\
+		\vdots \\
+	-	s_{\mathrm{N}-1} \\
+	-	s_{\mathrm{N}} \\
+	\end{bmatrix}
+\end{equation}
 
+der unbekannten Vektor:
+\begin{equation}
+	\mathbf{u}=\begin{bmatrix}
+		u_0 \\
+		u_1 \\
+		\vdots \\
+		u_{\mathrm{N}-1} \\
+		u_\mathrm{N}
+	\end{bmatrix}
+\end{equation}
 
 bestimmt.
 \begin{mybox}
