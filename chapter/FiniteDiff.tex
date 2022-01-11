@@ -235,9 +235,9 @@ mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 
 \begin{mybox}
 	\textbf{Aufgabe 4.} Stellen Sie das lineare Gleichungssystem für die Größen analog zu Gleichung (8.133) in \cite{Atkinson.2004} und folgende dar:
-	\begin{equation*}
+	\begin{equation}\label{eq:lgs}
 		\mathbf{A} u = \mathbf{b},\quad \mathbf{u} = [u_i],\quad \mathbf{b} = [b_i]
-	\end{equation*}
+	\end{equation}
 
 	Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
 \end{mybox}
@@ -257,12 +257,11 @@ Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses Gleichu
 		&  &  &  & \frac{2D}{h^2} & -\frac{2hS_R+2D+kh^2}{h^2}
 	\end{bmatrix}
 \end{equation}
- 
+sowie die recht Seite $\mathbf{b}$ und der gesucht Vektor $\mathbf{u}$
+\begin{equation}
+	\vec{b}=-\vec{s}_\mathrm{i}\quad,	\vec{u}=-\vec{u}_\mathrm{i} \quad i=0,1,\dots,N
+\end{equation}
 
-
-
-
-und die rechte Seite:
 \begin{equation}
 	\mathbf{b}=\begin{bmatrix}
 	-	s_0 \\
@@ -270,12 +269,7 @@ und die rechte Seite:
 		\vdots \\
 	-	s_{\mathrm{N}-1} \\
 	-	s_{\mathrm{N}} \\
-	\end{bmatrix}
-\end{equation}
-
-der unbekannten Vektor:
-\begin{equation}
-	\mathbf{u}=\begin{bmatrix}
+	\end{bmatrix} \quad \mathbf{u}=\begin{bmatrix}
 		u_0 \\
 		u_1 \\
 		\vdots \\
@@ -283,14 +277,25 @@ der unbekannten Vektor:
 		u_\mathrm{N}
 	\end{bmatrix}
 \end{equation}
-
 bestimmt.
+\pagebreak
 \begin{mybox}
 	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung der Matrix A der letzten Teilaufgabe. Verwenden
 	Sie dabei dünnbesetzte Matrizen (sparse matrix, siehe z.B. spdiags).
-	
+\end{mybox}
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{code/fd_lin_matrix.m}
+\end{figure}
+\clearpage
+\begin{mybox}
+	\textbf{Aufgabe 6. :} 
+	Implementieren Sie eine Routine zur Lösung des entsprechenden Gleichungssystems \cref{eq:lgs} unter Verwendung
+\verb*|fd_lin_matrix|. Lösen Sie das lineare Gleichungssystem mithilfe des Operators \textbackslash .
 \end{mybox}
 
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{code/stationaer_lin.m}
+	\end{figure}
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL} mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
