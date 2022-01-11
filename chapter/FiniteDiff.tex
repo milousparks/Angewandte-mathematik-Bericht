@@ -105,7 +105,7 @@ Approximation der Ableitung zweiter Ordnung:
 \end{equation}
 
 Durch Einsetzen von \cref{eq:approx_second_order} in \cref{eq:linearDGL} erhält man:
-\begin{equation}
+\begin{equation}\label{eq:stationare_approx}
 	D\cdot\frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} -k\cdot u_i = -s_i
 \end{equation}
 
@@ -158,8 +158,8 @@ Mit der Approximation der Ableitung erster Ordnung (\cref{eq:approx_first_order}
 
 \begin{qed}
 	\textbf{Damit folgt für $u_{-1}$:}
-	\begin{equation}
-	 \tcbhighmath{	u_{\text{-}1} = u_1 - \frac{2h\cdot S_L}{D} \cdot u_0}
+	\begin{equation}\label{eq:rand_u-1}
+		u_{\text{-}1} = u_1 - \frac{2h\cdot S_L}{D} \cdot u_0
 	\end{equation}
 \end{qed}
 
@@ -196,32 +196,47 @@ Durch Approximation der Randbedingung folgt:
 \begin{qed}
 	\textbf{Damit folgt für $u_{\mathrm{N}+1}$}:
 	\begin{equation}\label{eq:approx_RN}
-	\tcbhighmath{	u_{N+1} = \frac{-2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N} + u_{\mathrm{N}-1}}
+		u_{N+1} =u_{\mathrm{N}-1} -\frac{2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N} 
 	\end{equation}
 \end{qed}
 
 
-Im folgendem werden die Approximationen der Randbedigungen in die stationäre DGL (\cref{eq:stationDGL}) eingesetzt:
+Im folgendem werden die Approximationen der Randbedingungen in die stationäre, diskretisierte DGL (\cref{eq:stationare_approx}) eingesetzt. Dazu wird die Diskretisierung zunächst an die Randbedingungen angepasst:
 \begin{equation}
-Z_N: \quad	D\cdot \frac{u_{N+1}-2u_n+u_{N-1}}{h^2}-ku_N=-s_N
+	\begin{split}
+		Z_N&: \quad	D\cdot \frac{u_{N+1}-2u_\mathrm{N}+u_{N-1}}{h^2}-ku_N=-s_N \\
+		Z_0&: \quad D\cdot \frac{u_{1}-2u_0+u_{-1}}{h^2}-ku_0=-s_0
+	\end{split}
 \end{equation}
-mit der Approximation \cref{eq:approx_RN} folgt:
+mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 
 	\begin{equation}
 		\begin{split}
-				Z_N: \quad	D\cdot \frac{\frac{-2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N} + u_{\mathrm{N}-1}-2u_n+u_{N-1}}{h^2}-ku_N=-s_N \\
+				Z_N: \quad	D\cdot \frac{u_{\mathrm{N}-1}-\frac{2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N}  -2u_\mathrm{N}+u_{\mathrm{N}-1}}{h^2}-ku_N=-s_N \\
 					\frac{-2hS_R-2D}{h^2}\cdot u_\mathrm{N}+\frac{2D}{h^2}\cdot u_{N-1}-ku_\mathrm{N}=-s_\mathrm{N}\\
-						\frac{-2hS_R-2D-kh^2}{h^2}\cdot u_\mathrm{N}+\frac{2D}{h^2}\cdot u_{N-1}=-s_\mathrm{N}
+						\frac{2D}{h^2}\cdot u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}
 		\end{split}
 	\end{equation}
+
+	\begin{equation}
+	\begin{split}
+		Z_0: \quad	D\cdot \frac{u_1-2u_0+u_1-\frac{2\cdot h\cdot S_R}{D} \cdot u_0 }{h^2}-ku_0=-s_0\\
+		\frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot s_\mathrm{R}+kh^2}{h^2}\cdot u_0=-S_0
+	\end{split}
+\end{equation}
 
 \begin{qed}
 	Es ergibt sich der Wert für $Z_\mathrm{N}$ damit zu:
 	\begin{equation}
-	\tcbhighmath{Z_N: \quad	\frac{-2hS_R-2D-kh^2}{h^2}\cdot u_\mathrm{N}+\frac{2D}{h^2}\cdot u_{N-1}=-s_\mathrm{N}}
+	\tcbhighmath{Z_N: \quad	\frac{2D}{h^2}\cdot u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}}
+	\end{equation}
+	Es ergibt sich der Wert für $Z_0$ damit zu:
+	\begin{equation}
+		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{R}+kh^2}{h^2}\cdot u_0=-s_0}
 	\end{equation}
 \end{qed}
 
+Alls nächstes wird die Randbedingung für $Z_0$ betrachtet. Es wird \cref{eq:rand_u-1} in 
 
 für $z_0$:
 
