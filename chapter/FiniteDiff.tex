@@ -293,9 +293,64 @@ bestimmt.
 \verb*|fd_lin_matrix|. Lösen Sie das lineare Gleichungssystem mithilfe des Operators \textbackslash .
 \end{mybox}
 
+
 \begin{figure}[htb]
 	\lstinputlisting[style=Matlab-editor]{code/stationaer_lin.m}
 	\end{figure}
+
+\begin{mybox}
+	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine, indem Sie sich eine Funktion u(z) und Konstanten $d, D, k$ vorgeben und
+	dann eine geeignete rechte Seite $s$ und Konstanten $SL, SR$ berechnen und die Anzahl der Teilintervalle
+	$n$ variieren.
+\end{mybox}
+Als Testfunktion wird
+\begin{equation}
+	\vec{s}(z_\mathrm{i}):=\vec{e_\mathrm{i}}\quad i=0,1,\dots,N
+\end{equation}
+definiert, wobei $\vec{e}$ der Einheitsvektor ist.
+
+Für die Konstanten  $d, D, k, SL, SR$ werden die Werte (\cref{t:const})
+\begin{table}
+	\centering
+	\caption{Konstanten}
+	\label{t:const}
+	\begin{tabular}{lccc}
+		\toprule
+		
+		Parameter& Wert &Einheit   \\
+		\midrule
+		$d$	& $0.3$ & $\si{\mu\meter}$    \\
+		
+		$D$ & $0.3$	&  $\si{\mu\square\m\per \mu \s}$  \\
+		
+		$k$ & $1001$	& $\si{\mu\second^{-1}}$  \\
+		
+		$S_\mathrm{L}$ 	& $0.1$ & $\si{\mu\m\per\mu\sec}$ \\
+		
+		$S_\mathrm{R}$ 	&$1000$ &  $\si{\mu\m\per\mu\sec}$  \\
+		\bottomrule
+		
+	\end{tabular}
+	
+\end{table} 
+festgelegt.
+
+Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Ränder unterscheiden sich um den Faktor $\frac{1}{10000}$. Da die Ladungsträgerdichte $u(z)$, an den Rändern, maßgeblich durch die Rekombinationsraten bestimmte werden (\cref{eq:randbedingungen}), ist mit einem geringeren Ladungsträgerdichte an $i=0$ sowie $i=\mathrm{N}$ zu rechnen. 
+Dies wird auch durch die Simulation (\cref{fig:aufgabe7test}) deutlich. 
+\begin{figure}[htb]
+	
+	\begin{subfigure}[b]{.5\textwidth}
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test}
+		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
+		\label{fig:aufgabe7test}
+	\end{subfigure}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
+		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
+	\end{subfigure}
+\end{figure}
+\clearpage
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL} mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
