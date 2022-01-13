@@ -1,5 +1,5 @@
 %Dokumentenklasse "scrbook" - Erweitert um den Verweis auf die Verzeichnisse und Texteigenschaften
-\documentclass[ 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod,ngerman]{scrreprt}
+\documentclass[ 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod,ngerman,dvipsnames]{scrreprt}
 
 
 %Anpassung der Seitenränder (Standard bottom ca. 52mm anbzüglich von ca. 4mm für die nach oben rechts gewanderte Seitenzahl)
@@ -90,6 +90,16 @@
 	colback=green!10!white,
 	sharp corners
 }
+\newtcolorbox{qed}{
+	enhanced,
+	boxrule=0pt,frame hidden,
+	borderline west={4pt}{0pt}{blue!75!black},
+	colback=cyan!5!white,
+	sharp corners
+}
+\usepackage{todonotes}
+\usepackage{cancel}%Durchstreichen von sachen
+\usepackage[numbered,framed]{matlab-prettifier}
 %Einbindung und Verwaltung von Literaturverzeichnissen
 \usepackage{csquotes} %wird von biber benötigt
 \usepackage[style=ieee, backend=biber, bibencoding=ascii]{biblatex}
@@ -99,3 +109,17 @@
 \newenvironment{conditions}[1][mit:]
 {#1 \begin{tabular}[t]{>{$}l<{$} @{${}={}$} l}}
 	{\end{tabular}\\[\belowdisplayskip]}
+
+\usepackage{fancyvrb}
+\lstset{literate=% Allow for German characters in lstlistings.
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}2
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
