@@ -283,9 +283,11 @@ bestimmt.
 	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung der Matrix A der letzten Teilaufgabe. Verwenden
 	Sie dabei dünnbesetzte Matrizen (sparse matrix, siehe z.B. spdiags).
 \end{mybox}
+
 \begin{figure}[htb]
 	\lstinputlisting[style=Matlab-editor]{code/fd_lin_matrix.m}
 \end{figure}
+
 \clearpage
 \begin{mybox}
 	\textbf{Aufgabe 6. :} 
@@ -428,7 +430,7 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	Vereinfacht zu :
 	
 	\begin{align*}
-		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\left( \frac{S_L2h+2D+kh^2}{h^2}\right) u_0 -k_2u_0^2\\
+		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\ \frac{S_L2h+2D+kh^2}{h^2} u_0 -k_2u_0^2\\
 		\vdots \\
 		F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
 		\vdots \\
@@ -470,25 +472,17 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	\textbf{Aufgabe 3. :} Berechnen Sie die Jacobi-Matrix $D\mathbf{F}$ von $\mathbf{F}$ bezüglich u und geben Sie sie an
 \end{mybox}
 \begin{equation}
+	J_\mathrm{F}(u)=
 	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
+		\pdv{F_0(u)}{u_0} & \pdv{F_0(u)}{u_1} & \dots & \pdv{F_0(u)}{u_\mathrm{N}} \\
+			\pdv{F_1(u)}{u_0} & \pdv{F_1(u)}{u_1} & \dots & \pdv{F_1(u)}{u_\mathrm{N}} \\
+			\vdots & \vdots & \vdots & \vdots \\
+			\pdv{F_N(u)}{u_0} & \pdv{F_N(u)}{u_1} & \dots & \pdv{F_N(u)}{u_\mathrm{N}}		
 		
 	\end{bmatrix}
 \end{equation}
 
-\begin{equation}
-	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
-		
-	\end{bmatrix}
-\end{equation}
 
-\begin{equation}
-	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
-		
-	\end{bmatrix}
-\end{equation}
 
 
 
