@@ -1,0 +1,28 @@
+function DF = fd_nonlin_jac(u,N)
+%Eingabe:
+% u Vektor u der Größe (N + 1) x 1
+% N Anzahl von Teilintervallen N.
+% Ausgabe:
+% J Jacobi-Matrix DF(u) der Größe (N + 1) x (N + 1) als sparse matrix
+
+c = konstanten;   %Konstanten
+h=c.d/N; %Schrittweite
+
+%Wiederverwendete Koeffizienten
+a = c.D;
+b = -2*(c.h^2*c.k2);
+b2 = -(c.h^2*c.k+2*c.D);
+d = a;
+
+%Jacobi sparse-Matrix definieren
+DF = spdiags(ones(N+1,1)*[a,1,d],-1:1,N+1,N+1);
+DF = spdiags(u*b+b2, 0, DF);    %Variablen Term Hinzufuegen
+
+%Matrix an der Randstelle z_0 ueberschreiben 
+DF(1,1) = -2*(c.h^2*c.k2)*u(1)-(c.h^2*c.k+2*c.D+2*c.h*c.S_L);
+DF(1,2) = 2*c.D;
+
+%Matrix an der Randstelle z_d ueberschreiben 
+DF(N+1,N) = 2*c.D;
+DF(N+1,N+1) = -2*(c.h^2*c.k2)*u(N+1)-(c.h^2*c.k+2*c.D+2*c.h*c.S_R);
+end
