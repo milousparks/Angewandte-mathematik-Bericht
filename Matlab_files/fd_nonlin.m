@@ -15,7 +15,7 @@ for i=2 : N
 end
 %F=ones(N+1,3).*(c.D/h^2*u-(2*c.D+c.k*h^2)/(h^2)*u+c.D/h^2*u-c.k2*u^2);
 % Randwerte in Matrix einfügen
-F(1)=2*c.D/h^2*u(1)-((c.SL*2*h+2*c.D+c.k*h^2)/(h^2))*u(0)-c.k2*u(0)^2;
-F(N+1)=-(2*c.D+c.k*h^2+c.SR*2*h)/(h^2)*u(N)+2*(c.D)/(h^2)*u(N-1)-k2*u(N)^2;
+F(1)=2*c.D/h^2*u(2)-((c.SL*2*h+2*c.D+c.k*h^2)/(h^2))*u(1)-c.k2*u(1)^2;
+F(N+1)=-(2*c.D+c.k*h^2+c.SR*2*h)/(h^2)*u(N)+2*(c.D)/(h^2)*u(N-1)-c.k2*u(N)^2;
 end
 
