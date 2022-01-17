@@ -361,6 +361,15 @@ Dies wird auch durch die Simulation (\cref{fig:aufgabe7test}) deutlich.
 	\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=10$}
 \end{subfigure}
 \end{figure}
+\begin{mybox}
+\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung für die Fälle 
+\begin{equation}
+	s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4 \frac{1}{\si{\mu\meter^3 \mu \s}}
+\end{equation}
+Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der relative Fehler in $u_i$
+maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
+\end{mybox}
+
 \clearpage
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
@@ -482,6 +491,17 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	Implementieren Sie eine Routine zur Lösung des Gleichungssystems (8) unter Verwendung \verb*|fd_nonlin|
 	und \verb*|fd_nonlin_jac| und des Newton-Verfahrens wie in der Belegaufgabe. Wählen Sie einen geeigneten
 	Startwert.
+\end{mybox}
+\lstinputlisting[style=Matlab-editor]{Matlab_files/stationaer_nonlin.m}
+
+\begin{mybox}
+	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung für die Fälle 
+	\begin{equation}
+		s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4 \frac{1}{\si{\mu\meter^3 \mu \s}}
+	\end{equation}
+	Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der relative Fehler in $u_i$
+	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.Vergleichen Sie die Lösung mit den
+	entsprechenden Lösungen der linearen Gleichung.
 \end{mybox}
 
 

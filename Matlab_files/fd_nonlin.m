@@ -13,6 +13,7 @@ h=c.d/N;% Schrittgröße
 for i=2 : N
    F(i,1) = u(i-1)*((c.D)/ h ^2 ) + u(i)*((-2*c.D)/h^2-c.k) + u(i+1)*(c.D/h^2)+u(i)^2*(-c.k2);
 end
+
 %F=ones(N+1,3).*(c.D/h^2*u-(2*c.D+c.k*h^2)/(h^2)*u+c.D/h^2*u-c.k2*u^2);
 % Randwerte in Matrix einfügen
 F(1)=2*c.D/h^2*u(2)-((c.SL*2*h+2*c.D+c.k*h^2)/(h^2))*u(1)-c.k2*u(1)^2;
