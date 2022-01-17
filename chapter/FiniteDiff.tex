@@ -243,8 +243,6 @@ mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 \end{mybox}
 
 
-
-
 Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses Gleichungssystem mit Hilfe von Matlab lösen. Dazu wird die Koeffizientenmatrix
 
 \begin{equation}
@@ -283,9 +281,11 @@ bestimmt.
 	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung der Matrix A der letzten Teilaufgabe. Verwenden
 	Sie dabei dünnbesetzte Matrizen (sparse matrix, siehe z.B. spdiags).
 \end{mybox}
+
 \begin{figure}[htb]
 	\lstinputlisting[style=Matlab-editor]{code/fd_lin_matrix.m}
 \end{figure}
+
 \clearpage
 \begin{mybox}
 	\textbf{Aufgabe 6. :} 
@@ -428,7 +428,7 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	Vereinfacht zu :
 	
 	\begin{align*}
-		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\left( \frac{S_L2h+2D+kh^2}{h^2}\right) u_0 -k_2u_0^2\\
+		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\ \frac{S_L2h+2D+kh^2}{h^2} u_0 -k_2u_0^2\\
 		\vdots \\
 		F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
 		\vdots \\
@@ -440,55 +440,49 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	\textbf{Aufgabe 2. :} Implementieren Sie eine Routine zur Berechnung von $\mathbf{F}$ der letzten Teilaufgabe.\cite{Prof.Dr.AndreasZeiser.April2021}
 \end{mybox}
 
-\begin{lstlisting}[style=Matlab-editor]
-	function [F] = fd_nonlin(u,N)
-	% Eingabe:
-	%   u Vektor u der Groeße (N + 1)
-	%   N Anzahl von Teilintervallen N.
-	% Ausgabe:
-	%   F Vektor F(u) der Groeße (N + 1) 
-	D=0.003;
-	h=1;
-	Sl=10;
-	Sr=10e5;
-	k=11e6;
-	k2=10e-8;
-	u0=u(1);
-	u1=u(2);
-	un=u(N);
-	
-	F(1)=2*D/h^2*u1-((Sl*2*h+2*D+k*h^2)/(h^2))*u0-k2*u0^2;
-	F(N+1)=-(2*D+k*h^2+Sr*2*h)/(h^2)*un+2*(D)/(h^2)*u(N-1)-k2*un^2;
-	for i=2:N
-	F(i)=D/h^2*u(i+1)-(2*D+k*h^2)/(h^2)*u(i)+D/h^2*u(i-1)-k2*u(i)^2;
-	end
-	end
-	
-\end{lstlisting}
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/fd_nonlin.m}
+\end{figure}
 
 \begin{mybox}
 	\textbf{Aufgabe 3. :} Berechnen Sie die Jacobi-Matrix $D\mathbf{F}$ von $\mathbf{F}$ bezüglich u und geben Sie sie an
 \end{mybox}
 \begin{equation}
+	J_\mathrm{F}(u)=
 	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
+		\pdv{F_0(u)}{u_0} & \pdv{F_0(u)}{u_1} & \dots & \pdv{F_0(u)}{u_\mathrm{N}} \\
+			\pdv{F_1(u)}{u_0} & \pdv{F_1(u)}{u_1} & \dots & \pdv{F_1(u)}{u_\mathrm{N}} \\
+			\vdots & \vdots & \vdots & \vdots \\
+			\pdv{F_N(u)}{u_0} & \pdv{F_N(u)}{u_1} & \dots & \pdv{F_N(u)}{u_\mathrm{N}}		
 		
 	\end{bmatrix}
 \end{equation}
 
-\begin{equation}
-	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
-		
-	\end{bmatrix}
-\end{equation}
 
-\begin{equation}
-	\begin{bmatrix}
-		\pdv{F_0}{U_0} & \pdv{F_0}{U_0}  \\
-		
-	\end{bmatrix}
-\end{equation}
+\begin{align}
+		&DF(u)\mathrm= \\
+		&\begin{bmatrix}
+			-	\frac{S_L2h+2D+kh^2}{h^2}-2\cdot k_2u_0	& 2\cdot \frac{D}{h^2} &   \\
+			\frac{D}{h^2}&  \frac{2D+kh^2}{h^2}-2\cdot k_2 u_\mathrm{1} &  \frac{D}{h^2}   \\
+			&\ddots & \ddots & \ddots &  \\
+			&	\frac{D}{h^2}& - \frac{2D+kh^2}{h^2}-2\cdot k_2 u_\mathrm{N-1} &  \frac{D}{h^2}  \\	
+			&		&2\frac{D}{h^2}	&	-\frac{2D+kh^2+S_R2h}{h^2}-2\cdot k_2u_N \\	
+		\end{bmatrix}
+\end{align}
+
+\begin{mybox}
+	\textbf{Aufgabe 4. :}Implementieren Sie eine Routine zur Berechnung der Jacobi-Matrix $DF$ von $F$ der letzten Teilaufgabe.
+	Verwenden Sie dabei dünnbesetzte Matrizen.
+\end{mybox}
+
+\lstinputlisting[style=Matlab-editor]{Matlab_files/fd_nonlin_jac.m}
+
+\begin{mybox}
+	\textbf{Aufgabe 5. :} 
+	Implementieren Sie eine Routine zur Lösung des Gleichungssystems (8) unter Verwendung \verb*|fd_nonlin|
+	und \verb*|fd_nonlin_jac| und des Newton-Verfahrens wie in der Belegaufgabe. Wählen Sie einen geeigneten
+	Startwert.
+\end{mybox}
 
 
 

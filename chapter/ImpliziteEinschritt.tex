@@ -108,9 +108,11 @@ $ F_euler(z) = z - hf(t_i+1, y^(i) + z) = 0 $
 und 
 
 $F_trapez(z) =  z - h/2 [f(t_i, y^(i) + f(t_i+1,y^(i) + z)] = 0$
+\begin{mybox}
+\textbf{Aufgabe 3. :}
+Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von, d.h. der Jacobi-Matrix von $f$ bezüglich $y$ .
+\end{mybox}
 
-Aufgabe 3.
-Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von , d.h. der Jacobi-Matrix von  bezüglich .
 
 $ D\cdot F_euler(z) = D\cdot z - h\cdot D_(y)\cdot f(t_i+1, y^(i) + z) $
 
@@ -120,8 +122,9 @@ $ D\cdot F_euler(z) = h/2\cdot [D_(y)\cdot f(t_i+1, y^(i)) +  h\cdot D_(y)f(t_i+
 
 für das implizite Trapez-Verfahren,
 
-wobei $D, f $=
+wobei 
 \begin{equation}
+	D, f =
 \begin{bmatrix}
 	\frac{\partial f_1 }{\partial y_1} & \frac{\partial f_1 }{\partial y_2} & ... & \frac{\partial f_1 }{\partial y_n} \\
 	\frac{\partial f_2 }{\partial y_1} & \frac{\partial f_2 }{\partial y_2} & ... & \frac{\partial f_2 }{\partial y_n} \\
@@ -141,8 +144,24 @@ und $Dz$ =
 \end{bmatrix}  
 \end{equation}
 
+\begin{mybox}
+	\textbf{Aufgabe 4. :}
+	Implementieren Sie die folgenden zwei Routinen. Verwenden Sie fÜr die Jacobi-Matrix $J$ dünnbesetzte
+	Matrizen.
+\end{mybox}
 
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/Anfangswertproblem/F_euler.m}
+\end{figure}
 
+\begin{mybox}
+	\textbf{Aufgabe 5. :}
+	Implementieren Sie die Löser aufbauend auf den Routinen des letzten Abschnitts und des Newton-Verfahrens aus der Belegarbeit. Als Startwert der Newtoniteration wählen Sie für $z$ den Nullvektor.
+\end{mybox}
+
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/Anfangswertproblem/impl_euler.m}
+\end{figure}
 \section{Anwendung}
 \begin{mybox}
 	\textbf{Aufgabe 1. :} Formulieren Sie Gleichung (9) als System der Form (11) mit Funktion $f_{\mathrm{chem}}(t; y)$
