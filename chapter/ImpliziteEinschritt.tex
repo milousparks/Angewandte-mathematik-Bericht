@@ -48,14 +48,14 @@ Der Wert von y wird näherungsweise an den Zeitpunkten berechnet:
 
 Das implizite Euler-Verfahren:
 \begin{equation}
-	 y^{i+1} = y(i) + hf(t_{i+1},y^{i+1}) 
-\end{equation}\todo{Müsste glaube ich $y_i$ sein da wir nun im diskreten sind oder?}
+	 y^{(i+1)} = y^{(i)} + hf(t_{i+1},y^{(i+1)}) 
+\end{equation}
 
 
 Die implizite Trapezregel:
 \begin{equation}
-	y^{i+1} = y(i) + \frac{h}{2}\left[f\left(t_i, y^i + f(t_{i+1},y^{i+1})\right)\right] 
-\end{equation}\todo{Hier auch}
+	y^{(i+1)} = y^{(i)} + \frac{h}{2}\left[f\left(t_i, y^{(i)} + f(t_{i+1},y^{(i+1)})\right)\right] 
+\end{equation}
 
 
 
@@ -191,15 +191,31 @@ mit $ t\in [0,\sim], y(0) = $
 \end{mybox}
 
 
-\todo{Code!}!
+
+\begin{lstlisting}[style=Matlab-editor]
+	% dy=f_chem(t,y)
+	%--------------------------------------
+	% Eingabe:
+	% t Zeit t
+	% y Vektor y der Größe 3 x 1
+	%--------------------------------------
+	% Ausgabe:
+	% dy Vektor fchem(t; y) der Größe 3 x 1
+
+	function dy = f_chem(t, y)
+	a = 0.04;
+	b = 10^4;
+	c = 10^7;
+	dy(1,1) = -a*y(1) + b*y(2)*y(3);
+	dy(2,1) =  a*y(1) - b*y(2)*y(3) - 3*c*y(2)^2;
+	dy(3,1) =                         3*c*y(2)^2;
+	end
+\end{lstlisting}
+
 
 \begin{mybox}
 	\textbf{Aufgabe 3. :}	Berechnen Sie die Jacobi-Matrix $ D_yf_chem(t,y) $ von $ f_chem $ bezüglich $ y $
-\end{mybox}
- 
-
-
- 
+\end{mybox} 
 
 \begin{equation}
 	D_yf_chem(t,y) =
@@ -214,3 +230,32 @@ mit $ t\in [0,\sim], y(0) = $
 	\textbf{Aufgabe 4. :}	Implementieren Sie die Funktion als Routine $ J = f-chem-jac(t,y) $
 \end{mybox}
  
+\begin{lstlisting}[style=Matlab-editor]
+	% J=f_chem_jac(t,y)
+	%-----------------------------------------
+	% Eingabe:
+	% t Zeit t
+	% y Vektor y der Größe 3 x 1
+	%-----------------------------------------
+	% Ausgabe:
+	% J Matrix Dyfchem(t; y) der Groeße 3 x 3
+
+	function J = f_chem_jac(t, y)
+	a = 0.04;
+	b = 10^4;
+	c = 10^7;
+
+	J(1,1) = -a;
+	J(1,2) =  b*y(3); 
+	J(1,3) =  b*y(2);
+
+	J(2,1) =  a;
+	J(2,2) = -b*y(3) - 6*c*y(2);
+	J(2,3) = -b*y(2);
+
+	J(3,1) =  0;
+	J(3,2) =  6*c*y(2);
+	J(3,3) =  0;
+	end
+\end{lstlisting}
+
