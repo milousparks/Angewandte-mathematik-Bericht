@@ -1,7 +1,6 @@
-N=5;
+N=10;
 tol=10^-6;
-nmax=1000;
-[z,u]=stationaer_nonlin(@(z) 1+0*z,N,tol,nmax);
+nmax=1000;[z,u]=stationaer_nonlin(@(z) 1+0*z,N,tol,nmax);
 plot(z,u,'b-',z,u,'r*',LineWidth=4)
 ylabel("u(z) in \mum^3")
 xlabel("z in \mum") 
