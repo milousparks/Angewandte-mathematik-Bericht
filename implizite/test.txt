@@ -1,0 +1,7 @@
+syms t
+y = exp(-t)*sin(t)
+dy = diff(y,t)
+d2y = diff(y,t,2)
+r = d2y + dy + (y+y^3)
+matlabFunction(r)
+

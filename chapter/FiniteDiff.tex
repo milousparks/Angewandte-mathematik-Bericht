@@ -1,15 +1,18 @@
 \chapter{Finite Differenzen der stationären Gleichung}
-Im folgendem Kapitel soll die stationäre Verteilung der Ladungsträger bei kontinuierlicher Bestrahlung modelliert werden. 
-Dadurch kann die zeitliche Abhängigkeit vernachlässige werden ($\frac{\partial u}{\partial t}=0$)
- 
+Im folgendem Kapitel soll die stationäre Verteilung der Ladungsträger bei
+kontinuierlicher Bestrahlung modelliert werden.
+Dadurch kann die zeitliche Abhängigkeit vernachlässige werden ($\frac{\partial
+		u}{\partial t}=0$)
+
 Die allgemeine DGL ist gegeben durch:
 \begin{equation}
-	\frac{\partial u}{\partial t}= D\cdot\frac{\partial ^2 u }{\partial z^2}-(k1+k2\cdot N_D)\cdot u -k2u^2 +s(t,z)
+	\frac{\partial u}{\partial t}= D\cdot\frac{\partial ^2 u }{\partial
+		z^2}-(k1+k2\cdot N_D)\cdot u -k2u^2 +s(t,z)
 \end{equation}
 
 \begin{conditions}
-	s(t,z)     &  Ladungsträgerdichte durch Bestrahlung \\
-	D     &  Diffusionskonstante \\   
+	s(t,z)	   &  Ladungsträgerdichte durch Bestrahlung \\
+	D     &  Diffusionskonstante \\
 	N_D &  Dotierungsdichte \\
 	k1,k2 &  Rekombinationskonstanten \\
 	\alpha & Absorptionskonstante\\
@@ -19,80 +22,101 @@ Die allgemeine DGL ist gegeben durch:
 Mit $\frac{\partial u}{\partial t}=0$ folgt die stationäre Gleichung:
 
 \begin{equation}\label{eq:stationDGL}
-	D\cdot \pdv[2]{u}{z} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot u^2=-s(z), \quad 0 <z<d
+	D\cdot \pdv[2]{u}{z} -\left( k_1 +k_2 N_D\right)\cdot u-k_2\cdot
+	u^2=-s(z), \quad 0 <z<d
 \end{equation}
 
 mit den Randbedingungen:
 
 \begin{equation}\label{eq:randbedingungen}
-	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
+	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial
+		u}{\partial z}(d)=-S_Ru(d)
 \end{equation}
 
 \section{Lineare stationäre Gleichung}
-Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären, zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne den quadratischen Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
+Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären,
+zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne den quadratischen
+Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
 
- 
- \begin{mybox}
- 	\textbf{Aufgabe 1.} Erarbeiten Sie sich Abschnitt 8.8 aus \cite{Atkinson.2004} und beschreiben Sie Ihr Vorgehen für die Anwendung der Methode auf Gleichung.\cite{Prof.Dr.AndreasZeiser.April2021} 
- \end{mybox}
-
-	Mit der Methode der finiten Differenzen für Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004}, können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden dabei die Ableitungen der Gleichung durch finite Differenzen substituiert, um eine diskretisierte Gleichung zu erhalten.
-	Als Ergebnis erhält man eine Matrix, mit der sich die zeitabhängige Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen. 
-	
-	Für diese Methode sind drei Schritte notwendig:
-	\begin{enumerate}
-		\item Diskretisierung eines Bereiches ($z\in [0,d]$) der Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$ (\cref{fig:bsp_knotenpunkte})
-		\item Diskretisierung der Differenzialgleichung an den Knotenpunkten mit Approximation der Ableitung (\cref{eq:approx_first_order,eq:approx_second_order})
-		\item Diskretisierung der Randbedingung und Aufstellung eines Gleichungssystemes durch Eliminierung von $u_{-1}$ und $u_{N+1}$
-	\end{enumerate}
-
- \begin{mybox}
-	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten $z_0,\dots, z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i = s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021} 
+\begin{mybox}
+	\textbf{Aufgabe 1.} Erarbeiten Sie sich Abschnitt 8.8 aus
+	\cite{Atkinson.2004} und beschreiben Sie Ihr Vorgehen für die Anwendung der
+	Methode auf Gleichung.\cite{Prof.Dr.AndreasZeiser.April2021}
 \end{mybox}
-	
- 
- \begin{figure}[htb]
- 	\centering
- 	 \begin{tikzpicture}
- 		\begin{axis}[
- 			axis x line = middle,
- 			axis y line = middle,
- 			 xmin=-1,
- 			xmax=5,
- 			ymin=-5,
- 			ymax=20,
- 			xtick={-1,0,1,2,3,4,5},
- 			ytick={-5,0,5,10,15,20},
- 			xticklabels={$z_{-1}$,$z_0$,$z_1$,$z_2$,$z_3$,$z_N$}
- 			]
- 			\addplot[domain=-1:5]{x^2-x+10};
- 			\draw [dashed] (axis cs:1,1^2-1+10) -- (axis cs:1,0);
- 			\draw [dashed] (axis cs:2,2^2-2+10) -- (axis cs:2,0);
- 			
- 			\draw [thick,decoration={brace,mirror,raise=2pt},decorate] 
- 			(axis cs:1,0) --
- 			node[below=7pt] {$h$} 
- 			(axis cs:2,0);
-		\end{axis}
- 	\end{tikzpicture}
-\caption{Beispieldarstellung: Knotenpunkte mit Schrittweite $h$}
-\label{fig:bsp_knotenpunkte}
- \end{figure}
 
-Stationäre Differenzialgleichung(\cref{eq:stationDGL}) ohne den quadratischen Term $-k^2u^2$:
+Mit der Methode der finiten Differenzen für
+Zweipunkt-Grenzwertprobleme, beschrieben in \cite[p. 442]{Atkinson.2004},
+können lineare Differenzialgleichungen zweiter Ordnung gelöst werden. Es werden
+dabei die Ableitungen der Gleichung durch finite Differenzen substituiert, um
+eine diskretisierte Gleichung zu erhalten.
+Als Ergebnis erhält man eine Matrix, mit der sich die zeitabhängige
+Stelle der Leitungsträgerdichte $u_i$ mathematisch beschreiben lassen.
+
+Für diese Methode sind drei Schritte notwendig:
+\begin{enumerate}
+	\item Diskretisierung eines Bereiches ($z\in [0,d]$) der
+	      Funktion in $M$ gleich große Intervalle der Länge $h=\frac{(d-0)}{N}$
+	      (\cref{fig:bsp_knotenpunkte})
+	\item Diskretisierung der Differenzialgleichung an den
+	      Knotenpunkten mit Approximation der Ableitung
+	      (\cref{eq:approx_first_order,eq:approx_second_order})
+	\item Diskretisierung der Randbedingung und Aufstellung eines
+	      Gleichungssystemes durch Eliminierung von $u_{-1}$ und $u_{N+1}$
+\end{enumerate}
+
+\begin{mybox}
+	\textbf{Aufgabe 2.} Leiten Sie analog zu Gleichung (8.128) die
+	Gleichungen für die gesuchten Werte  $u_0, u_1, \dots , u_N$ an den Punkten
+	$z_0,\dots, z_N$ her. Die Gleichungen enthalten $u_1$ und $u_\mathrm{N+1}$, die
+	im nächsten Schritt eliminiert werden. Verwenden Sie dabei die Abkürzung $ s_i
+		= s(z_i)$.\cite{Prof.Dr.AndreasZeiser.April2021}
+\end{mybox}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				axis x line = middle,
+				axis y line = middle,
+				xmin=-1,
+				xmax=5,
+				ymin=-5,
+				ymax=20,
+				xtick={-1,0,1,2,3,4,5},
+				ytick={-5,0,5,10,15,20},
+				xticklabels={$z_{-1}$,$z_0$,$z_1$,$z_2$,$z_3$,$z_N$}
+			]
+			\addplot[domain=-1:5]{x^2-x+10};
+			\draw [dashed] (axis cs:1,1^2-1+10) -- (axis cs:1,0);
+			\draw [dashed] (axis cs:2,2^2-2+10) -- (axis cs:2,0);
+
+			\draw
+			[thick,decoration={brace,mirror,raise=2pt},decorate]
+			(axis cs:1,0) --
+			node[below=7pt] {$h$}
+			(axis cs:2,0);
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Beispieldarstellung: Knotenpunkte mit Schrittweite $h$}
+	\label{fig:bsp_knotenpunkte}
+\end{figure}
+
+Stationäre Differenzialgleichung(\cref{eq:stationDGL}) ohne den quadratischen
+Term $-k^2u^2$:
 \begin{equation}\label{eq:linearDGL}
 	D \pdv[2]{u}{z} -ku=-s(z), \quad 0 <z<d
 \end{equation}
 mit $k=k_1+k_2\cdot N_D$.
 
 \begin{align*}
-	k&=k_1+k_2*N_D\\
-	s_i&= s(z_i)\\
-	u_i&\approx u(z_i)
+	k   & =k_1+k_2*N_D   \\
+	s_i & = s(z_i)       \\
+	u_i & \approx u(z_i)
 \end{align*}
 \begin{conditions}
 	u_i & Approximierte Ladungsträgerdichte an den Stellen $z_i$ \\
-	s_i & Ladungsträgerdichte die durch externe Bestrahlung an den Stellen $z_i$ erzeugt wird
+	s_i & Ladungsträgerdichte die durch externe Bestrahlung an den Stellen
+	$z_i$ erzeugt wird
 \end{conditions}
 
 Approximation der Ableitung erster Ordnung:
@@ -101,38 +125,43 @@ Approximation der Ableitung erster Ordnung:
 \end{equation}
 Approximation der Ableitung zweiter Ordnung:
 \begin{equation}\label{eq:approx_second_order}
-	\frac{\partial ^2 u }{\partial z^2} = \frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} \quad i=1,2,\dots,N
+	\frac{\partial ^2 u }{\partial z^2} = \frac{u_{i+1} - 2\cdot u_i +
+		u_{i-1}}{h^2} \quad i=1,2,\dots,N
 \end{equation}
 
-Durch Einsetzen von \cref{eq:approx_second_order} in \cref{eq:linearDGL} erhält man:
+Durch Einsetzen von \cref{eq:approx_second_order} in \cref{eq:linearDGL} erhält
+man:
 \begin{equation}\label{eq:stationare_approx}
 	D\cdot\frac{u_{i+1} - 2\cdot u_i + u_{i-1}}{h^2} -k\cdot u_i = -s_i
 \end{equation}
 
 \begin{qed}
-Nun wird nach der Variable $u_i$ sortiert und folgende Gleichung aufgestellt:
-\begin{equation}
-	\frac{D}{h^2}\cdot u_{i-1} - \frac{2D+kh^2}{h^2}\cdot u_i + \frac{D}{h^2}\cdot u_{i+1} = -s_i
-\end{equation}
+	Nun wird nach der Variable $u_i$ sortiert und folgende Gleichung aufgestellt:
+	\begin{equation}
+		\frac{D}{h^2}\cdot u_{i-1} - \frac{2D+kh^2}{h^2}\cdot u_i +
+		\frac{D}{h^2}\cdot u_{i+1} = -s_i
+	\end{equation}
 \end{qed}
 
-
 \begin{mybox}
-	\textbf{Aufgabe 3.}	Approximieren Sie die ersten Ableitungen an den Randbedingungen:
-	
+	\textbf{Aufgabe 3.}	Approximieren Sie die ersten Ableitungen an den
+	Randbedingungen:
+
 	\begin{equation}
-	 \tcbhighmath{	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)}
+		\tcbhighmath{	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad
+			D\frac{\partial u}{\partial z}(d)=-S_Ru(d)}
 	\end{equation}
 	durch:
-	
+
 	\begin{equation}
-	 \tcbhighmath{	u'(0) \approx \frac{u_1-u_{-1}}{2h}, \quad u'(d) \approx \frac{u_{N+1}-u_{N-1}}{2h}}
+		\tcbhighmath{	u'(0) \approx \frac{u_1-u_{-1}}{2h}, \quad u'(d)
+		\approx \frac{u_{N+1}-u_{N-1}}{2h}}
 	\end{equation}
-	
-	und lösen Sie die Gleichungen nach $u_1$ bzw. $u_N+1$ auf. Setzen Sie diese Ausdrücke in die Gleichungen für die Knoten $z_0$ und $z_N$ der letzten Teilaufgabe ein.
+
+	und lösen Sie die Gleichungen nach $u_1$ bzw. $u_N+1$ auf. Setzen Sie
+	diese Ausdrücke in die Gleichungen für die Knoten $z_0$ und $z_N$ der letzten
+	Teilaufgabe ein.
 \end{mybox}
-
-
 
 Erste Randbedingung:
 
@@ -143,7 +172,8 @@ Erste Randbedingung:
 \begin{equation}
 	\frac{\partial u(0)}{\partial z}=\frac{S_Lu(0)}{D}
 \end{equation}
-Mit der Approximation der Ableitung erster Ordnung (\cref{eq:approx_first_order}):
+Mit der Approximation der Ableitung erster Ordnung
+(\cref{eq:approx_first_order}):
 \begin{equation}
 	\frac{S_Lu_0}{D} = \frac{u_1-u_{-1}}{2h}
 \end{equation}
@@ -153,7 +183,8 @@ Mit der Approximation der Ableitung erster Ordnung (\cref{eq:approx_first_order}
 \end{equation}
 
 \begin{equation}
-	u_0 = \frac{D}{2h\cdot S_L} \cdot u_1 - \frac{D}{2h\cdot S_L} \cdot u_{-1}
+	u_0 = \frac{D}{2h\cdot S_L} \cdot u_1 - \frac{D}{2h\cdot S_L} \cdot
+	u_{-1}
 \end{equation}
 
 \begin{qed}
@@ -162,7 +193,6 @@ Mit der Approximation der Ableitung erster Ordnung (\cref{eq:approx_first_order}
 		u_{\text{-}1} = u_1 - \frac{2h\cdot S_L}{D} \cdot u_0
 	\end{equation}
 \end{qed}
-
 
 Zweite Randbedingungen:
 
@@ -175,7 +205,8 @@ Zweite Randbedingungen:
 \end{equation}
 Durch Approximation der Randbedingung folgt:
 \begin{equation}
-	\frac{-S_R}{D}\cdot u_\mathrm{N} = \frac{u_{\mathrm{N}+1}-u_{\mathrm{N}-1}}{2h}
+	\frac{-S_R}{D}\cdot u_\mathrm{N} =
+	\frac{u_{\mathrm{N}+1}-u_{\mathrm{N}-1}}{2h}
 \end{equation}
 
 \begin{equation}
@@ -183,94 +214,109 @@ Durch Approximation der Randbedingung folgt:
 \end{equation}
 
 \begin{equation}
-	u_\mathrm{N} = \frac{D}{-2hS_R} \cdot u_{N+1} - \frac{D}{-2hS_R} \cdot u_{\mathrm{N}-1}
+	u_\mathrm{N} = \frac{D}{-2hS_R} \cdot u_{N+1} - \frac{D}{-2hS_R} \cdot
+	u_{\mathrm{N}-1}
 \end{equation}
-
 
 \begin{qed}
 	\textbf{Damit folgt für $u_{\mathrm{N}+1}$}:
 	\begin{equation}\label{eq:approx_RN}
-		u_{N+1} =u_{\mathrm{N}-1} -\frac{2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N} 
+		u_{N+1} =u_{\mathrm{N}-1} -\frac{2\cdot h\cdot S_R}{D} \cdot
+		u_\mathrm{N}
 	\end{equation}
 \end{qed}
 
-
-Im folgendem werden die Approximationen der Randbedingungen in die stationäre, diskretisierte DGL (\cref{eq:stationare_approx}) eingesetzt. Dazu wird die Diskretisierung zunächst an die Randbedingungen angepasst:
+Im folgendem werden die Approximationen der Randbedingungen in die stationäre,
+diskretisierte DGL (\cref{eq:stationare_approx}) eingesetzt. Dazu wird die
+Diskretisierung zunächst an die Randbedingungen angepasst:
 \begin{equation}
 	\begin{split}
-		Z_N&: \quad	D\cdot \frac{u_{N+1}-2u_\mathrm{N}+u_{N-1}}{h^2}-ku_N=-s_N \\
+		Z_N&: \quad	D\cdot
+		\frac{u_{N+1}-2u_\mathrm{N}+u_{N-1}}{h^2}-ku_N=-s_N \\
 		Z_0&: \quad D\cdot \frac{u_{1}-2u_0+u_{-1}}{h^2}-ku_0=-s_0
 	\end{split}
 \end{equation}
 mit der Approximation der Randbedingung \cref{eq:approx_RN,eq:rand_u-1} folgt:
 
-	\begin{equation}
-		\begin{split}
-				Z_N: \quad	D\cdot \frac{u_{\mathrm{N}-1}-\frac{2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N}  -2u_\mathrm{N}+u_{\mathrm{N}-1}}{h^2}-ku_N=-s_N \\
-					\frac{-2hS_R-2D}{h^2}\cdot u_\mathrm{N}+\frac{2D}{h^2}\cdot u_{N-1}-ku_\mathrm{N}=-s_\mathrm{N}\\
-						\frac{2D}{h^2}\cdot u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}
-		\end{split}
-	\end{equation}
-
-	\begin{equation}
+\begin{equation}
 	\begin{split}
-		Z_0: \quad	D\cdot \frac{u_1-2u_0+u_1-\frac{2\cdot h\cdot S_L}{D} \cdot u_0 }{h^2}-ku_0=-s_0\\
-		\frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-S_0
+		Z_N: \quad	D\cdot
+		\frac{u_{\mathrm{N}-1}-\frac{2\cdot h\cdot S_R}{D} \cdot u_\mathrm{N}
+		-2u_\mathrm{N}+u_{\mathrm{N}-1}}{h^2}-ku_N=-s_N \\
+		\frac{-2hS_R-2D}{h^2}\cdot
+		u_\mathrm{N}+\frac{2D}{h^2}\cdot u_{N-1}-ku_\mathrm{N}=-s_\mathrm{N}\\
+		\frac{2D}{h^2}\cdot
+		u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		Z_0: \quad	D\cdot \frac{u_1-2u_0+u_1-\frac{2\cdot h\cdot
+				S_L}{D} \cdot u_0 }{h^2}-ku_0=-s_0\\
+		\frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot
+			S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-S_0
 	\end{split}
 \end{equation}
 
 \begin{qed}
-		Es ergibt sich der Wert für $Z_0$ damit zu:
+	Es ergibt sich der Wert für $Z_0$ damit zu:
 	\begin{equation}
-		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 - \frac{2D+2h\cdot S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-s_0}
+		\tcbhighmath{Z_0: \quad \frac{2D}{h^2}\cdot u_1 -
+			\frac{2D+2h\cdot S_\mathrm{L}+kh^2}{h^2}\cdot u_0=-s_0}
 	\end{equation}
 	Es ergibt sich der Wert für $Z_\mathrm{N}$ damit zu:
 	\begin{equation}
-	\tcbhighmath{Z_N: \quad	\frac{2D}{h^2}\cdot u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}}
+		\tcbhighmath{Z_N: \quad \frac{2D}{h^2}\cdot
+			u_{N-1}-\frac{2hS_R+2D+kh^2}{h^2}\cdot u_\mathrm{N}=-s_\mathrm{N}}
 	\end{equation}
 
 \end{qed}
 
-
-
 \begin{mybox}
-	\textbf{Aufgabe 4.} Stellen Sie das lineare Gleichungssystem für die Größen analog zu Gleichung (8.133) in \cite{Atkinson.2004} und folgende dar:
+	\textbf{Aufgabe 4.} Stellen Sie das lineare Gleichungssystem für die
+	Größen analog zu Gleichung (8.133) in \cite{Atkinson.2004} und folgende dar:
 	\begin{equation}\label{eq:lgs}
-		\mathbf{A} u = \mathbf{b},\quad \mathbf{u} = [u_i],\quad \mathbf{b} = [b_i]
+		\mathbf{A} u = \mathbf{b},\quad \mathbf{u} = [u_i],\quad
+		\mathbf{b} = [b_i]
 	\end{equation}
 
 	Ordnen Sie die Gleichungen analog zu den Knotenpunkten.
 \end{mybox}
 
-
-Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses Gleichungssystem mit Hilfe von Matlab lösen. Dazu wird die Koeffizientenmatrix
+Mit Hilfe der Matrixform $\mathbf{A} u =\mathbf{ b} $ lässt sich dieses
+Gleichungssystem mit Hilfe von Matlab lösen. Dazu wird die Koeffizientenmatrix
 
 \begin{equation}
-\mathbf{A}=	\begin{bmatrix}
-		-\frac{2hS_\mathrm{L}+2D+kh^2}{h^2} & \frac{2D}{h^2} & & &  &   \\
-		\frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} &  &  & \\
-	\ddots	&  \ddots &  \ddots &  \ddots &  &  \\
-		& \ddots & \ddots & \ddots & \ddots  & \ddots \\
-		&  &  & \frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} \\
-		&  &  &  & \frac{2D}{h^2} & -\frac{2hS_R+2D+kh^2}{h^2}
+	\mathbf{A}=	\begin{bmatrix}
+		-\frac{2hS_\mathrm{L}+2D+kh^2}{h^2} & \frac{2D}{h^2}        &               &               &                       &
+		\\
+		\frac{D}{h^2}                       & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2} &               &                       &
+		\\
+		\ddots                              & \ddots                & \ddots        & \ddots        &                       &                            \\
+		                                    & \ddots                & \ddots        & \ddots        & \ddots                & \ddots                     \\
+		                                    &                       &               & \frac{D}{h^2} & - \frac{2D+kh^2}{h^2} & \frac{D}{h^2}
+		\\
+		                                    &                       &               &               & \frac{2D}{h^2}        & -\frac{2hS_R+2D+kh^2}{h^2}
 	\end{bmatrix}
 \end{equation}
 sowie die recht Seite $\mathbf{b}$ und der gesucht Vektor $\mathbf{u}$
 \begin{equation}
-	\vec{b}=-\vec{s}_\mathrm{i}\quad,	\vec{u}=-\vec{u}_\mathrm{i} \quad i=0,1,\dots,N
+	\vec{b}=-\vec{s}_\mathrm{i}\quad,	\vec{u}=-\vec{u}_\mathrm{i}
+	\quad i=0,1,\dots,N
 \end{equation}
 
 \begin{equation}
 	\mathbf{b}=\begin{bmatrix}
-	-	s_0 \\
-	-	s_1 \\
-		\vdots \\
-	-	s_{\mathrm{N}-1} \\
-	-	s_{\mathrm{N}} \\
+		-	s_0              \\
+		-	s_1              \\
+		\vdots            \\
+		-	s_{\mathrm{N}-1} \\
+		-	s_{\mathrm{N}}   \\
 	\end{bmatrix} \quad \mathbf{u}=\begin{bmatrix}
-		u_0 \\
-		u_1 \\
-		\vdots \\
+		u_0              \\
+		u_1              \\
+		\vdots           \\
 		u_{\mathrm{N}-1} \\
 		u_\mathrm{N}
 	\end{bmatrix}
@@ -278,118 +324,144 @@ sowie die recht Seite $\mathbf{b}$ und der gesucht Vektor $\mathbf{u}$
 bestimmt.
 
 \begin{mybox}
-	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung der Matrix A der letzten Teilaufgabe. Verwenden
+	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung
+	der Matrix A der letzten Teilaufgabe. Verwenden
 	Sie dabei dünnbesetzte Matrizen (sparse matrix, siehe z.B. spdiags).
 \end{mybox}
 
-
-	\lstinputlisting[style=Matlab-editor]{Matlab_files/fd_lin_matrix.m}
-
-
+\lstinputlisting[style=Matlab-editor]{Matlab_files/fd_lin_matrix.m}
 
 \begin{mybox}
-	\textbf{Aufgabe 6. :} 
-	Implementieren Sie eine Routine zur Lösung des entsprechenden Gleichungssystems \cref{eq:lgs} unter Verwendung
-\verb*|fd_lin_matrix|. Lösen Sie das lineare Gleichungssystem mithilfe des Operators \textbackslash .
+	\textbf{Aufgabe 6. :}
+	Implementieren Sie eine Routine zur Lösung des entsprechenden
+	Gleichungssystems \cref{eq:lgs} unter Verwendung
+	\verb*|fd_lin_matrix|. Lösen Sie das lineare Gleichungssystem mithilfe des
+	Operators \textbackslash .
 \end{mybox}
-
-
 
 \lstinputlisting[style=Matlab-editor]{Matlab_files/stationaer_lin.m}
-	
 
 \begin{mybox}
-	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine, indem Sie sich eine Funktion u(z) und Konstanten $d, D, k$ vorgeben und
-	dann eine geeignete rechte Seite $s$ und Konstanten $SL, SR$ berechnen und die Anzahl der Teilintervalle
+	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine, indem Sie sich eine
+	Funktion u(z) und Konstanten $d, D, k$ vorgeben und
+	dann eine geeignete rechte Seite $s$ und Konstanten $SL, SR$ berechnen
+	und die Anzahl der Teilintervalle
 	$n$ variieren.
 \end{mybox}
-Als Testfunktion wird
+Es wird die Funktion
 \begin{equation}
-	\vec{s}(z_\mathrm{i}):=\vec{e_\mathrm{i}}\quad i=0,1,\dots,N
+	u(z)=e^{\lambda z}
 \end{equation}
-definiert, wobei $\vec{e}$ der Einheitsvektor ist.
+als Lösung für die lineare DGL (\cref{eq:linearDGL}) mit den Ableitungen
+\begin{align}\label{eq:fundamental_ableitung}
+	\pdv{u(z)}{z}    & =\lambda \cdot e^{\lambda z}   \\
+	\pdv[2]{u(z)}{z} & =\lambda^2 \cdot e^{\lambda z}
+\end{align}
+angesetzt.
 
-Für die Konstanten  $d, D, k, SL, SR$ werden die Werte (\cref{t:const})
+Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 \begin{table}
 	\centering
 	\caption{Konstanten}
 	\label{t:const}
 	\begin{tabular}{lccc}
 		\toprule
-		
-		Parameter& Wert &Einheit   \\
+
+		Parameter      & Wert   & Einheit                        \\
 		\midrule
-		$d$	& $0.3$ & $\si{\mu\meter}$    \\
-		
-		$D$ & $0.3$	&  $\si{\mu\square\m\per \mu \s}$  \\
-		
-		$k$ & $1001$	& $\si{\mu\second^{-1}}$  \\
-		
-		$S_\mathrm{L}$ 	& $0.1$ & $\si{\mu\m\per\mu\sec}$ \\
-		
-		$S_\mathrm{R}$ 	&$1000$ &  $\si{\mu\m\per\mu\sec}$  \\
+		$d$            & $0.3$  & $\si{\mu\meter}$               \\
+
+		$D$            & $0.3$  & $\si{\mu\square\m\per \mu \s}$ \\
+
+		$k$            & $1001$ & $\si{\mu\second^{-1}}$         \\
+
+		$S_\mathrm{L}$ & $0.1$  & $\si{\mu\m\per\mu\sec}$        \\
+
+		$S_\mathrm{R}$ & $1000$ & $\si{\mu\m\per\mu\sec}$        \\
 		\bottomrule
-		
+
 	\end{tabular}
-	
-\end{table} 
+
+\end{table}
 festgelegt.
 
-Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Ränder unterscheiden sich um den Faktor $\frac{1}{10000}$. Da die Ladungsträgerdichte $u(z)$, an den Rändern, maßgeblich durch die Rekombinationsraten bestimmte werden (\cref{eq:randbedingungen}), ist mit einem geringeren Ladungsträgerdichte an $i=0$ sowie $i=\mathrm{N}$ zu rechnen. 
-Dies wird auch durch die Simulation (\cref{fig:aufgabe7test}) deutlich. 
-\begin{figure}[htb]
-	
+Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Randbedingungen
+(\cref{eq:randbedingungen}) wird durch
+\begin{equation}\label{eq:berechnung_S}
+	S_\mathrm{L}=\pdv{u}{z}\cdot\frac{D}{u(0)} \quad
+	S_\mathrm{R}=-\pdv{u}{z}\cdot \frac{D}{u(d)}
+\end{equation}
+bestimmt.
+Mit \cref{eq:fundamental_ableitung} folgt für \cref{eq:berechnung_S}
+\begin{equation}
+	S_\mathrm{L}=\lambda \cdot e^{\lambda z}\cdot\frac{D}{u(0)}
+\end{equation} 
+\begin{figure}
 	\begin{subfigure}[b]{.5\textwidth}
-			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
-		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
+
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
+		\caption{Testfunktion
+			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
 		\label{fig:aufgabe7test}
 	\end{subfigure}
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
-		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
+
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
+		\caption{Testfunktion
+			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
 	\end{subfigure}
-\newline
-\begin{subfigure}[b]{.5\textwidth}
+	\newline
+	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-	\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
-	\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=5$}
-\end{subfigure}
-\begin{subfigure}[b]{.5\textwidth}
-	\centering
-	\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
-	\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=10$}
-\end{subfigure}
+
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
+		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+			$N=5$}
+	\end{subfigure}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
+		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+			$N=10$}
+	\end{subfigure}
 \end{figure}
 \begin{mybox}
-\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung für die Fälle 
-\begin{equation}
-	s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4 \frac{1}{\si{\mu\meter^3 \mu \s}}
-\end{equation}
-Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der relative Fehler in $u_i$
-maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
+	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung
+	für die Fälle
+	\begin{equation}
+		s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4
+		\frac{1}{\si{\mu\meter^3 \mu \s}}
+	\end{equation}
+	Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der
+	relative Fehler in $u_i$
+	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
 \end{mybox}
 \begin{figure}
+
 	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1.m}
 \end{figure}
 
-
-
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
-	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL} mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
-	zum letzten Abschnitt wird ein nichtlineares Gleichungssystem aufgestellt, das mithilfe des Newton-
-	Verfahrens aus der Belegarbeit gelöst werden soll. Gehen Sie wie folgt vor.\cite{Prof.Dr.AndreasZeiser.April2021}
+	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL}
+	mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
+	zum letzten Abschnitt wird ein nichtlineares Gleichungssystem
+	aufgestellt, das mithilfe des Newton-
+	Verfahrens aus der Belegarbeit gelöst werden soll. Gehen Sie wie folgt
+	vor.\cite{Prof.Dr.AndreasZeiser.April2021}
 \end{mybox}
 
 \begin{mybox}
-	\textbf{Aufgabe 1. :} Leiten Sie die nichtlinearen Gleichungen für die gesuchten Werte $u_0,u_1,\dots ,uN$ her und stellen Sie
+	\textbf{Aufgabe 1. :} Leiten Sie die nichtlinearen Gleichungen für die
+	gesuchten Werte $u_0,u_1,\dots ,uN$ her und stellen Sie
 	sie in Form
 	\begin{equation*}
 		\tcbhighmath{\mathbf{F}(\mathbf{u})=\mathbf{b}}
 	\end{equation*}
-dar. Berücksichtigen Sie die Randbedingungen wie im letzten Abschnitt.
-\cite{Prof.Dr.AndreasZeiser.April2021}
+	dar. Berücksichtigen Sie die Randbedingungen wie im letzten Abschnitt.
+	\cite{Prof.Dr.AndreasZeiser.April2021}
 \end{mybox}
 Nichtlineare DGL:
 \begin{equation}
@@ -405,16 +477,19 @@ Diskretisierung der DGL:
 Mit den Randbedingung:
 
 \begin{equation}
-	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial u}{\partial z}(d)=-S_Ru(d)
+	D\cdot \frac{\partial u}{\partial z}(0)=S_Lu(0),\quad D\frac{\partial
+		u}{\partial z}(d)=-S_Ru(d)
 \end{equation}
 
 Und den Approximationen der ersten Ableitung der  Randbedingungen:
 \begin{equation}
-	u'(0)\approx \frac{u_1-u_{-1}}{2h} \quad u'(d)\approx \frac{u_{N+1}-u_{N-1}}{2h}
+	u'(0)\approx \frac{u_1-u_{-1}}{2h} \quad u'(d)\approx
+	\frac{u_{N+1}-u_{N-1}}{2h}
 \end{equation}
 Damit folgt für die Randbedingung:
 \begin{equation}
-	D\cdot \frac{u_1-u_{-1}}{2h}=S_Lu_0,\quad D\frac{u_{N+1}-u_{N-1}}{2h}=-S_Ru_N
+	D\cdot \frac{u_1-u_{-1}}{2h}=S_Lu_0,\quad
+	D\frac{u_{N+1}-u_{N-1}}{2h}=-S_Ru_N
 \end{equation}
 umgestellt nach $u_{-1}$
 \begin{equation}
@@ -425,32 +500,39 @@ umgestellt nach $u_{N+1}$
 	u_{N+1}=-\frac{S_R2h}{D}\cdot u_N+u_{N-1}
 \end{equation}
 
-
-
 Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 
 \begin{align*}
-	F_0&= \quad \frac{D}{h^2}u_1-\frac{2D+kh^2}{h^2}u_0+\frac{D}{h^2}\cdot\left( -\frac{S_L 2h}{D}\cdot u_0+u_1\right) -k_2u_0^2\\
-	\vdots \\
-	F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
-	\vdots \\
-	F_N &= \frac{D}{h^2}\left( -\frac{S_R2h}{D}\cdot u_N+u_{N-1}\right) -\frac{2D+kh^2}{h^2}u_N+\frac{D}{h^2} u_{N-1}-k_2u^2_N\\
+	F_0 & = \quad
+	\frac{D}{h^2}u_1-\frac{2D+kh^2}{h^2}u_0+\frac{D}{h^2}\cdot\left( -\frac{S_L
+	2h}{D}\cdot u_0+u_1\right) -k_2u_0^2                                  \\
+	\vdots                                                                \\
+	F_i & =	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot
+	u_{i-1} -k_2u_i^2                                                     \\
+	\vdots                                                                \\
+	F_N & = \frac{D}{h^2}\left( -\frac{S_R2h}{D}\cdot u_N+u_{N-1}\right)
+	-\frac{2D+kh^2}{h^2}u_N+\frac{D}{h^2} u_{N-1}-k_2u^2_N                \\
 \end{align*}
 
 \begin{qed}
 	Vereinfacht zu :
-	
+
 	\begin{align*}
-		F_0&= \quad 2\cdot \frac{D}{h^2}u_1-\ \frac{S_L2h+2D+kh^2}{h^2} u_0 -k_2u_0^2\\
-		\vdots \\
-		F_i&= 	\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1} -k_2u_i^2\\
-		\vdots \\
-		F_N &= -\frac{2D+kh^2+S_R2h}{h^2}u_N+2\frac{D}{h^2}u_{N-1}-k_2u^2_N\\
+		F_0 & = \quad 2\cdot \frac{D}{h^2}u_1-\ \frac{S_L2h+2D+kh^2}{h^2}
+		u_0 -k_2u_0^2                                                     \\
+		\vdots                                                            \\
+		F_i & =
+		\frac{D}{h^2}u_{i+1}-\frac{2D+kh^2}{h^2}u_i+\frac{D}{h^2}\cdot u_{i-1}
+		-k_2u_i^2                                                         \\
+		\vdots                                                            \\
+		F_N & =
+		-\frac{2D+kh^2+S_R2h}{h^2}u_N+2\frac{D}{h^2}u_{N-1}-k_2u^2_N      \\
 	\end{align*}
 \end{qed}
 
 \begin{mybox}
-	\textbf{Aufgabe 2. :} Implementieren Sie eine Routine zur Berechnung von $\mathbf{F}$ der letzten Teilaufgabe.\cite{Prof.Dr.AndreasZeiser.April2021}
+	\textbf{Aufgabe 2. :} Implementieren Sie eine Routine zur Berechnung
+	von $\mathbf{F}$ der letzten Teilaufgabe.\cite{Prof.Dr.AndreasZeiser.April2021}
 \end{mybox}
 
 \begin{figure}[htb]
@@ -458,55 +540,66 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 \end{figure}
 
 \begin{mybox}
-	\textbf{Aufgabe 3. :} Berechnen Sie die Jacobi-Matrix $D\mathbf{F}$ von $\mathbf{F}$ bezüglich u und geben Sie sie an
+	\textbf{Aufgabe 3. :} Berechnen Sie die Jacobi-Matrix $D\mathbf{F}$ von
+	$\mathbf{F}$ bezüglich u und geben Sie sie an
 \end{mybox}
 \begin{equation}
 	J_\mathrm{F}(u)=
 	\begin{bmatrix}
-		\pdv{F_0(u)}{u_0} & \pdv{F_0(u)}{u_1} & \dots & \pdv{F_0(u)}{u_\mathrm{N}} \\
-			\pdv{F_1(u)}{u_0} & \pdv{F_1(u)}{u_1} & \dots & \pdv{F_1(u)}{u_\mathrm{N}} \\
-			\vdots & \vdots & \vdots & \vdots \\
-			\pdv{F_N(u)}{u_0} & \pdv{F_N(u)}{u_1} & \dots & \pdv{F_N(u)}{u_\mathrm{N}}		
-		
+		\pdv{F_0(u)}{u_0} & \pdv{F_0(u)}{u_1} & \dots  &
+		\pdv{F_0(u)}{u_\mathrm{N}}                              \\
+		\pdv{F_1(u)}{u_0} & \pdv{F_1(u)}{u_1} & \dots  &
+		\pdv{F_1(u)}{u_\mathrm{N}}                              \\
+		\vdots            & \vdots            & \vdots & \vdots \\
+		\pdv{F_N(u)}{u_0} & \pdv{F_N(u)}{u_1} & \dots  &
+		\pdv{F_N(u)}{u_\mathrm{N}}
+
 	\end{bmatrix}
 \end{equation}
 
-
 \begin{align}
-		&DF(u)\mathrm= \\
-		&\begin{bmatrix}
-			-	\frac{S_L2h+2D+kh^2}{h^2}-2\cdot k_2u_0	& 2\cdot \frac{D}{h^2} &   \\
-			\frac{D}{h^2}&  \frac{2D+kh^2}{h^2}-2\cdot k_2 u_\mathrm{1} &  \frac{D}{h^2}   \\
-			&\ddots & \ddots & \ddots &  \\
-			&	\frac{D}{h^2}& - \frac{2D+kh^2}{h^2}-2\cdot k_2 u_\mathrm{N-1} &  \frac{D}{h^2}  \\	
-			&		&2\frac{D}{h^2}	&	-\frac{2D+kh^2+S_R2h}{h^2}-2\cdot k_2u_N \\	
-		\end{bmatrix}
+	 & DF(u)\mathrm=                                                  \\
+	 & \begin{bmatrix}
+		   -	\frac{S_L2h+2D+kh^2}{h^2}-2\cdot k_2u_0 &
+		   2\cdot \frac{D}{h^2}                     &                                                                              \\
+		   \frac{D}{h^2}                            & \frac{2D+kh^2}{h^2}-2\cdot k_2
+		   u_\mathrm{1}                             & \frac{D}{h^2}                                                                \\
+		                                            & \ddots                         & \ddots                           & \ddots & \\
+		                                            & \frac{D}{h^2}                  & - \frac{2D+kh^2}{h^2}-2\cdot k_2
+		   u_\mathrm{N-1}                           & \frac{D}{h^2}                                                                \\
+		                                            &                                & 2\frac{D}{h^2}                   &
+		   -\frac{2D+kh^2+S_R2h}{h^2}-2\cdot k_2u_N                                                                                \\
+	   \end{bmatrix}
 \end{align}
 
 \begin{mybox}
-	\textbf{Aufgabe 4. :}Implementieren Sie eine Routine zur Berechnung der Jacobi-Matrix $DF$ von $F$ der letzten Teilaufgabe.
+	\textbf{Aufgabe 4. :}Implementieren Sie eine Routine zur Berechnung der
+	Jacobi-Matrix $DF$ von $F$ der letzten Teilaufgabe.
 	Verwenden Sie dabei dünnbesetzte Matrizen.
 \end{mybox}
 
 \lstinputlisting[style=Matlab-editor]{Matlab_files/fd_nonlin_jac.m}
 
 \begin{mybox}
-	\textbf{Aufgabe 5. :} 
-	Implementieren Sie eine Routine zur Lösung des Gleichungssystems (8) unter Verwendung \verb*|fd_nonlin|
-	und \verb*|fd_nonlin_jac| und des Newton-Verfahrens wie in der Belegaufgabe. Wählen Sie einen geeigneten
+	\textbf{Aufgabe 5. :}
+	Implementieren Sie eine Routine zur Lösung des Gleichungssystems (8)
+	unter Verwendung \verb*|fd_nonlin|
+	und \verb*|fd_nonlin_jac| und des Newton-Verfahrens wie in der
+	Belegaufgabe. Wählen Sie einen geeigneten
 	Startwert.
 \end{mybox}
 \lstinputlisting[style=Matlab-editor]{Matlab_files/stationaer_nonlin.m}
 
 \begin{mybox}
-	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung für die Fälle 
+	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die
+	Lösung für die Fälle
 	\begin{equation}
-		s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4 \frac{1}{\si{\mu\meter^3 \mu \s}}
+		s(z)=S_0\cdot e^{-\alpha z}, \quad S_0=10^2, \, 10^2, \, 10^4
+		\frac{1}{\si{\mu\meter^3 \mu \s}}
 	\end{equation}
-	Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der relative Fehler in $u_i$
-	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.Vergleichen Sie die Lösung mit den
+	Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass
+	der relative Fehler in $u_i$
+	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch
+	dar.Vergleichen Sie die Lösung mit den
 	entsprechenden Lösungen der linearen Gleichung.
 \end{mybox}
-
-
-
