@@ -1,8 +1,6 @@
-1. Formulieren Sie das System in der Form
-
-\begin{equation*}
-	u' = F(t,u)
-\end{equation*}
+\begin{mybox}
+	\textbf{Aufgabe 1. :}	Formulieren Sie das System in der Form $ u' = F(t,u) $
+\end{mybox}
 
 Die Randbedingungen
 
@@ -22,29 +20,78 @@ und:
 Analog wie im zweiten Abschnitt
 
 \begin{equation}
-	\frac{\partial^2 u}{\partial z^2}(t,z_i) = \frac{u_{i+1}(t) - 2\cdot u_i(t) + u_{i-1}(t)}{h^2}
+	u^{\prime } =\frac{u_{i+1} -u_{i-1} }{2h}
 \end{equation}
 
 \begin{equation}
-	\frac{\partial u}{\partial t}(t,z_i) =\frac{\partial^2 u}{\partial z^2}(t,z_i)- \frac{u_{i+1}(t) - (k_1 + K_2N_D)\cdot u(t,z_i)}{h^2} - k_2\cdot u^2(t,z_i) + s(t,z_i)
+	{u^{\prime } }^{\prime } =\frac{u_{i+1} -{2u}_i +u_{i-1} }{h^2 }
+\end{equation}
+
+Anschliessend werden die Ableitungen jeweils in die Gleichung sowie Randbedingungen eingesetzt:
+
+\begin{equation}
+	u\left(t\right)=D\frac{u_{i+1} \left(t\right)-{2u}_i \left(t\right)+u_{i-1} \left(t\right)}{h^2 }-\left(k_1 +k_2 N_D \right)u\left(t\right)-k_2 u^2 \left(t\right)+s_i \left(t,z_i \right)
+\end{equation}
+
+Dann setzt man die Randbedingungen in die Gleichung fuer $ i = 0 $ und $ i = N $ ein:
+
+\begin{equation}
+	u^{\prime } \left(t,z_i \right)=D\frac{u_{i+1} \left(t\right)-{2u}_i \left(t\right)+u_{i-1} \left(t\right)}{h^2 }-ku_i \left(t\right)-k_2 {u_i }^2 \left(t\right)+s_i \left(t,z\right)
+\end{equation}
+
+fuer $ i = 0 $ gilt:
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=D\frac{u_1 \left(t\right)-{2u}_0 \left(t\right)+u_{-1} \left(t\right)}{h^2 }-ku_0 \left(t\right)-k_2 {u_0 }^2 \left(t\right)+s_0 \left(t,z\right)
+\end{equation}
+
+\begin{equation}
+u^{\prime } \left(t{,z}_i \right)=D\frac{u_1 -{2u}_0 +u_1 -\frac{S_L \cdot 2h}{D}u_0 }{h^2 }-ku_0 -k_2 {u_0 }^2 +s_0 \left(z\right)	
+\end{equation}
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=D\frac{2u_1 -{2u}_0 -\frac{S_L \cdot 2h}{D}u_0 }{h^2 }-ku_0 -k_2 {u_0 }^2 +s_0 \left(z\right)
+\end{equation}
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=\frac{2{Du}_1 }{h^2 }-\frac{2{Du}_0 }{h^2 }-\frac{D\cdot S_L 2{hu}_0 }{D\cdot h^2 }-ku_0 -k_2 {u_0 }^2 +s_0 \left(z\right)
+\end{equation}
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=\frac{2{Du}_1 }{h^2 }-\frac{2{Du}_0 }{h^2 }-\frac{S_L 2u_0 }{h}-ku_0 -k_2 {u_0 }^2 +s_0 \left(z\right)
+\end{equation}
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=u_0 \left(t\right)\left(-\frac{2D}{h^2 }-\frac{{2S}_L }{h}\;-k-k_2 u_0 \left(t\right)\right)+u_1 \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_0 \right)
+\end{equation}
+
+
+fuer $ i = N $ gilt:
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=D\frac{u_{N+1} \left(t\right)-{2u}_N \left(t\right)+u_{N-1} \left(t\right)}{h^2 }-ku_N \left(t\right)-k_2 {u_N }^2 \left(t\right)+s_N \left(z_N \right)
+\end{equation}
+
+
+\begin{equation}
+	u^{\prime } \left(t{,z}_i \right)=D\frac{u_{N-1} -\frac{\;S_R \cdot 2h}{D}\cdot u_N -{2u}_N \left(t\right)+u_{N-1} \left(t\right)}{h^2 }-ku_N \left(t\right)-k_2 {u_N }^2 \left(t\right)+s_N \left(z_N \right)	
 \end{equation}
 	
+	
 \begin{equation}
-		\frac{\partial u}{\partial t}(t,z_i) = D\cdot \frac{u_{i+1}(t) - 2\cdot u_i(t) + u_{i-1}(t)}{h^2} - ku_i(t) - K_2u^2_i(t) + s_i(t)
+	u^{\prime } \left(t{,z}_i \right)=u_N \left(t\right)\left(-\frac{\;2S_R }{h}-\frac{\;2D}{h^2 }-k-k_2 u_N \left(t\right)\right)+u_{N-1} \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_N \right)	
 \end{equation}
-	
+
+Somit kann unsere Gleichung aufgestellt werden:
+
 \begin{equation}
-		\frac{\partial u}{\partial t}(t,z_i) = 	\frac{D}{h^2}u_{i+1}(t) - 2\cdot \frac{D}{h^2}u_i(t) + \frac{D}{h^2}u_{i-1}(t) - ku_i(t) - K_2u^2_i(t) + s_i(t)
-\end{equation}
-	
-\begin{equation}
-		\frac{\partial u}{\partial t}(t,z_i) = 	\frac{D}{h^2}u_{i+1}(t) - (2\cdot \frac{D}{h^2} + k)u_i(t) + \frac{D}{h^2}u_{i-1}(t) - K_2u^2_i(t) + s_i(t)
-\end{equation}
-	
-	
-Nun werden die Gleichungen für $z_0$ und $z_N$ hergeleitet:
-	
-\begin{equation}
-		\frac{\partial u}{\partial t}(z_i) = \frac{u_{i+1}(t) - u_{i-1}(t)}{2\cdot h}\\
-		u'(0) \sim \frac{u_1-u_{-1}}{2\cdot h}, \quad u'(d) \sim \frac{u_N+1-u_{N-1}}{2\cdot h}
+		F(t,u)= 
+\begin{bmatrix}
+	\begin{array}{c}
+		u_0 \left(t\right)\left(-\frac{2D}{h^2 }-\frac{{2S}_L }{h}\;-k-k_2 u_0 \left(t\right)\right)+u_1 \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_0 \right)\;\\
+		D\frac{u_2 \left(t\right)-{2u}_1 \left(t\right)+u_1 \left(t\right)}{h^2 }-ku_1 \left(t\right)-k_2 {u_1 }^2 \left(t\right)+s_1 \left(t,z\right)\\
+		\cdots \\
+		u_N \left(t\right)\left(-\frac{\;2S_R }{h}-\frac{\;2D}{h^2 }-k-k_2 u_N \left(t\right)\right)+u_{N-1} \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_N \right)
+	\end{array}
+\end{bmatrix}  
 \end{equation}
