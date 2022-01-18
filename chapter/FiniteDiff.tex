@@ -276,17 +276,17 @@ sowie die recht Seite $\mathbf{b}$ und der gesucht Vektor $\mathbf{u}$
 	\end{bmatrix}
 \end{equation}
 bestimmt.
-\pagebreak
+
 \begin{mybox}
 	\textbf{Aufgabe 5. :} Implementieren Sie eine Routine zur Berechnung der Matrix A der letzten Teilaufgabe. Verwenden
 	Sie dabei dünnbesetzte Matrizen (sparse matrix, siehe z.B. spdiags).
 \end{mybox}
 
-\begin{figure}[htb]
-	\lstinputlisting[style=Matlab-editor]{code/fd_lin_matrix.m}
-\end{figure}
 
-\clearpage
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/fd_lin_matrix.m}
+
+
+
 \begin{mybox}
 	\textbf{Aufgabe 6. :} 
 	Implementieren Sie eine Routine zur Lösung des entsprechenden Gleichungssystems \cref{eq:lgs} unter Verwendung
@@ -294,9 +294,9 @@ bestimmt.
 \end{mybox}
 
 
-\begin{figure}[htb]
-	\lstinputlisting[style=Matlab-editor]{code/stationaer_lin.m}
-	\end{figure}
+
+\lstinputlisting[style=Matlab-editor]{Matlab_files/stationaer_lin.m}
+	
 
 \begin{mybox}
 	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine, indem Sie sich eine Funktion u(z) und Konstanten $d, D, k$ vorgeben und
@@ -369,8 +369,12 @@ Dies wird auch durch die Simulation (\cref{fig:aufgabe7test}) deutlich.
 Bestimmen Sie näherungsweise experimentell ein geeignetes $N$, so dass der relative Fehler in $u_i$
 maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
 \end{mybox}
+\begin{figure}
+	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1.m}
+\end{figure}
 
-\clearpage
+
+
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL} mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog

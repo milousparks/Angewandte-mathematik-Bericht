@@ -21,6 +21,6 @@ F(2:N)=x1+x2+x3+x4;
 
 % Randwerte in Matrix einfügen
 F(1)=2*c.D/h^2*u(2)-((c.SL*2*h+2*c.D+c.k*h^2)/(h^2))*u(1)-c.k2*u(1)^2;
-F(N+1)=-(2*c.D+c.k*h^2+c.SR*2*h)/(h^2)*u(N)+2*(c.D)/(h^2)*u(N-1)-c.k2*u(N)^2;
+F(N+1)=-(2*c.D+c.k*h^2+c.SR*2*h)/(h^2)*u(N+1)+2*(c.D)/(h^2)*u(N)-c.k2*u(N+1)^2;
 end
 

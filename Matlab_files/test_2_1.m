@@ -7,24 +7,29 @@ grid on
 set(gca,'FontSize',40)
 %%
 c=konstanten;
-N=20:5:60;
+N=100;
 max_rel_F = 0.001;
 rel_F = 1;
 S0=[10^2 10^3 10^4]; %1/um^3us
-[z,u]=stationaer_lin(@(z) S0(1)*exp(-c.a*z),N);
-while rel_F > max_rel_F %Bis Fehler kleiner max Fehler
-
-N = N+1;
-[z_N,u_N] = stationaer_lin_1_6(s, N);              %u(z) mit N
-[z_N2,u_N2] = stationaer_lin_1_6(s, N + 0.05*N);   %u(z) mit N + 0.05*N % Frage
+s=@(z) S0(1)*exp(-c.a*z);
+[z,u]=stationaer_lin(s,N);
+%%
+max_rel_F=0.001;
+for N=2:2:10000
+  
+[z1,u1] = stationaer_lin(s, N);             
+[z2,u2] = stationaer_lin(s, N*2);   
 
 %|F1-F2|/|(Beste Naeherung)|
-d_u_rel = abs(u_N-u_N2(1:2:end)) ./ abs(u_N2(1:2:end));
-rel_F = max(d_u_rel);               %nur Maximalen Fehler betrachten
-F_lin(N) = rel_F;                   %Fehler fuer Plot zwischenspeichern
+d_u_rel = abs(u1-u2(1:2:end)) ./ abs(u2(1:2:end));
+[rel_F,I] = max(d_u_rel);               % max Fehler suchen
+
+if rel_F < max_rel_F %Bis Fehler kleiner max Fehler
+     break;
+end
 
 end
-plot(z,u,'b-',z,u,'r*',LineWidth=1)
+plot(z1,u1,'b-',z2,u2,'r*',LineWidth=1)
 ylabel("u(z) in \mum^3")
 xlabel("z in \mum")
 grid on
