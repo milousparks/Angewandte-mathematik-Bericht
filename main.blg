@@ -1,0 +1,18 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'main.blg'
+[84] biber-MSWIN64:340> INFO - === 
+[109] Biber.pm:415> INFO - Reading 'main.bcf'
+[190] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[202] Biber.pm:4340> INFO - Processing section 0
+[212] Biber.pm:4531> INFO - Looking for bibtex format file 'references/references.bib' for section 0
+[227] bibtex.pm:1644> INFO - Reading ascii input as UTF-8
+[244] bibtex.pm:1689> INFO - LaTeX decoding ...
+[251] bibtex.pm:1494> INFO - Found BibTeX data source 'references/references.bib'
+[273] Utils.pm:395> WARN - Entry 'Prof.Dr.AndreasZeiser.April2021' (references/references.bib): Invalid format 'April 2021' of date field 'date' - ignoring
+[300] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[300] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[300] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[300] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[304] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[305] bbl.pm:757> INFO - Output to main.bbl
+[305] Biber.pm:128> INFO - WARNINGS: 1
