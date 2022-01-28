@@ -34,3 +34,34 @@ ylabel("u(z) in \mum^3")
 xlabel("z in \mum")
 grid on
 set(gca,'FontSize',40)
+
+%%
+%Neuer Testf
+u0=1;
+ud=0.741;
+lamda=-1;
+ufunc=@(z) exp(lamda.*z); 
+N=10;
+c=konstanten;
+
+SL=lamda*exp(0)*c.D/u0;
+SR=-lamda*exp(lamda*c.d)*c.D/ud;
+
+s=@(z) -(c.D*lamda^2-c.k)*exp(lamda*z);
+
+
+[z,u]=stationaer_lin(s,N);
+z2=linspace(0,0.3,1000);
+ufund=ufunc(z2);
+
+plot(z,u,'r*',z2,ufund,'b-',LineWidth=2)
+ylabel("u(z) in \mum^3")
+xlabel("z in \mum")
+set(gca,'FontSize',40)
+grid on
+figure
+
+ufund=ufunc(z);
+ud=abs(ufund-u);
+plot(z,ud)
+set(gca,'FontSize',40)

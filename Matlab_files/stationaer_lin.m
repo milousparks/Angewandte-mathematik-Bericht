@@ -14,3 +14,4 @@ z=(0:N)'*h; % Knotenpunkte
 b=-s(z); % Bestimmung von b an den Knotenpunkten
 A=fd_lin_matrix(N); % matirx berechnen
 u=A\b;
+ 

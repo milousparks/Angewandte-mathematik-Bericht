@@ -349,7 +349,7 @@ bestimmt.
 	$n$ variieren.
 \end{mybox}
 Es wird die Funktion
-\begin{equation}
+\begin{equation}\label{eq:ladungstraegerdichte}
 	u(z)=e^{\lambda z}
 \end{equation}
 als Lösung für die lineare DGL (\cref{eq:linearDGL}) mit den Ableitungen
@@ -386,47 +386,74 @@ Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 festgelegt.
 
 Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Randbedingungen
-(\cref{eq:randbedingungen}) wird durch
+\cref{eq:randbedingungen} wird durch
 \begin{equation}\label{eq:berechnung_S}
 	S_\mathrm{L}=\pdv{u}{z}\cdot\frac{D}{u(0)} \quad
 	S_\mathrm{R}=-\pdv{u}{z}\cdot \frac{D}{u(d)}
 \end{equation}
 bestimmt.
+
 Mit \cref{eq:fundamental_ableitung} folgt für \cref{eq:berechnung_S}
 \begin{equation}
-	S_\mathrm{L}=\lambda \cdot e^{\lambda z}\cdot\frac{D}{u(0)}
+	S_\mathrm{L}=\lambda \cdot e^{\lambda \cdot 0}\cdot\frac{D}{u(0)},\quad	S_\mathrm{R}=-\lambda \cdot e^{\lambda d}\cdot\frac{D}{u(d)}
 \end{equation} 
-\begin{figure}
-	\begin{subfigure}[b]{.5\textwidth}
+Die dafür benötigte Ladungsträgerdichte
+\begin{equation}
+	u(0)=1, \quad u(d)\approx0.741,\quad  \lambda=-1
+\end{equation}
+wird an den Rändern ausgewertet und in \cref{eq:berechnung_S} 
 
-		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
-		\caption{Testfunktion
-			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
-		\label{fig:aufgabe7test}
-	\end{subfigure}
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
+\begin{equation}
+	S_\mathrm{L}=-0.3,\quad S_\mathrm{R}=0.2999
+\end{equation}
+eingefügt.
 
-		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
-		\caption{Testfunktion
-			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
-	\end{subfigure}
-	\newline
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
+Um die Numerische Methode zu testen wird die analytische Lösung der Differenzialgleichung mit der Numerischen verglichen.
+Dazu wird die Anzahl der Teilintervalle $n$ variiert und an den Stützstellen mit der analytischen Lösung vergleichen.
 
-		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
-		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-			$N=5$}
-	\end{subfigure}
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
+Für die lineare, stationäre Differenzialgleichung (\cref{eq:linearDGL}) mit der angesetzten Lösung (\cref{eq:fundamental_ableitung}) folgt
+\begin{equation}
+	D\cdot\lambda^2 e^{\lambda z}-ku(z)=-s(z)
+\end{equation}
+und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt 
+\begin{equation}
+	\begin{split}
+		D\cdot\lambda^2 e^{\lambda z}-ke^{\lambda z}=-s(z) \\
+		-\left(D\lambda^2-k\right)\cdot e^{\lambda z}=s(z)
+	\end{split}
+\end{equation}
 
-		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
-		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-			$N=10$}
-	\end{subfigure}
-\end{figure}
+%\begin{figure}
+%	\begin{subfigure}[b]{.5\textwidth}
+%
+%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
+%		\caption{Testfunktion
+%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
+%		\label{fig:aufgabe7test}
+%	\end{subfigure}
+%	\begin{subfigure}[b]{.5\textwidth}
+%		\centering
+%
+%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
+%		\caption{Testfunktion
+%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
+%	\end{subfigure}
+%	\newline
+%	\begin{subfigure}[b]{.5\textwidth}
+%		\centering
+%
+%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
+%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+%			$N=5$}
+%	\end{subfigure}
+%	\begin{subfigure}[b]{.5\textwidth}
+%		\centering
+%
+%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
+%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+%			$N=10$}
+%	\end{subfigure}
+%\end{figure}
 \begin{mybox}
 	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung
 	für die Fälle
