@@ -2,10 +2,10 @@ function c=konstanten
 c.d= 0.3; %um
 c.D=0.3; % um^2/us
 
-%c.SL=0.1; %  um/us
-%c.SR=10^3; % um/us
-c.SL=-0.3; %Test 2.1
-c.SR=0.299926405134299; %Test 2.1
+c.SL=0.1; %  um/us
+c.SR=10^3; % um/us
+%c.SL=-0.3; %Test 2.1
+%c.SR=0.299926405134299; %Test 2.1
 
 c.k1=1; % us^-1
 c.k2=10^-2; % um^3/us

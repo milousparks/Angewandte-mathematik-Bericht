@@ -357,7 +357,7 @@ als Lösung für die lineare DGL (\cref{eq:linearDGL}) mit den Ableitungen
 	\pdv{u(z)}{z}    & =\lambda \cdot e^{\lambda z}   \\
 	\pdv[2]{u(z)}{z} & =\lambda^2 \cdot e^{\lambda z}
 \end{align}
-angesetzt.
+als Lösung der Differenzialgleichung (\cref{eq:linearDGL}) angesetzt.
 
 Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 \begin{table}
@@ -375,13 +375,9 @@ Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 
 		$k$            & $1001$ & $\si{\mu\second^{-1}}$         \\
 
-		$S_\mathrm{L}$ & $0.1$  & $\si{\mu\m\per\mu\sec}$        \\
-
-		$S_\mathrm{R}$ & $1000$ & $\si{\mu\m\per\mu\sec}$        \\
 		\bottomrule
 
 	\end{tabular}
-
 \end{table}
 festgelegt.
 
@@ -393,20 +389,20 @@ Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Randbedingungen
 \end{equation}
 bestimmt.
 
-Mit \cref{eq:fundamental_ableitung} folgt für \cref{eq:berechnung_S}
-\begin{equation}
-	S_\mathrm{L}=\lambda \cdot e^{\lambda \cdot 0}\cdot\frac{D}{u(0)},\quad	S_\mathrm{R}=-\lambda \cdot e^{\lambda d}\cdot\frac{D}{u(d)}
-\end{equation} 
 Die dafür benötigte Ladungsträgerdichte
-\begin{equation}
-	u(0)=1, \quad u(d)\approx0.741,\quad  \lambda=-1
+\begin{equation}\label{eq:ladungsraender}
+	u(0)=e^{\lambda \cdot 0}=1 , \quad u(d)=e^{\lambda \cdot d}
 \end{equation}
-wird an den Rändern ausgewertet und in \cref{eq:berechnung_S} 
+ wird an den Rändern ausgewertet.
+ 
+Mit \cref{eq:fundamental_ableitung,eq:ladungsraender} folgt für \cref{eq:berechnung_S}
+\begin{equation}
+	S_\mathrm{L}=\lambda \cdot e^{\lambda \cdot 0}\cdot \frac{D}{e^{\lambda \cdot 0}}=\lambda D,\quad	S_\mathrm{R}=-\lambda \cdot e^{\lambda d}\cdot\frac{D}{e^{\lambda \cdot d}}=-\lambda D
+\end{equation} 
 
-\begin{equation}
-	S_\mathrm{L}=-0.3,\quad S_\mathrm{R}=0.2999
-\end{equation}
-eingefügt.
+
+
+
 
 Um die Numerische Methode zu testen wird die analytische Lösung der Differenzialgleichung mit der Numerischen verglichen.
 Dazu wird die Anzahl der Teilintervalle $n$ variiert und an den Stützstellen mit der analytischen Lösung vergleichen.
@@ -415,7 +411,7 @@ Für die lineare, stationäre Differenzialgleichung (\cref{eq:linearDGL}) mit de
 \begin{equation}
 	D\cdot\lambda^2 e^{\lambda z}-ku(z)=-s(z)
 \end{equation}
-und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt 
+und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt die rechte Seite
 \begin{equation}
 	\begin{split}
 		D\cdot\lambda^2 e^{\lambda z}-ke^{\lambda z}=-s(z) \\
@@ -423,37 +419,67 @@ und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt
 	\end{split}
 \end{equation}
 
-%\begin{figure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
-%		\caption{Testfunktion
-%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
-%		\label{fig:aufgabe7test}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
-%		\caption{Testfunktion
-%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
-%	\end{subfigure}
-%	\newline
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
-%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-%			$N=5$}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
-%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-%			$N=10$}
-%	\end{subfigure}
-%\end{figure}
+Um die Methode zu Testen werden die Parameter
+\begin{equation}
+	S_\mathrm{L}=-0.3,\quad S_\mathrm{R}=0.3,\quad \lambda=-1
+\end{equation}
+ für $\lambda=-1$ bestimmt.
+ 
+ \begin{figure}[h]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n100}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	  \end{subfigure}
+ 	\hfill
+ \begin{subfigure}[b]{0.5\textwidth}
+ 	\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_fehler}
+ 	\caption{Absoluter Fehler über $z$}
+  \end{subfigure}
+\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-1$}
+ 	\label{fig:testn10}
+ \end{figure}
+
+  \begin{figure}[h]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n10}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_fehler}
+ 		\caption{Absoluter Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich  Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-1$}
+ 	
+ \end{figure}
+ Für ein $\lambda=-100$ wird die Abweichung der Numerischen Simulation deutlicher:
+  
+ \begin{figure}[h]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n100_l100}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_l100_fehler}
+ 		\caption{Absoluter Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-100$}
+ \end{figure}
+ \begin{figure}[]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n10_l100}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_l100_fehler}
+ 		\caption{Absoluter Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-100$}
+\end{figure}
+
+\clearpage
 \begin{mybox}
 	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung
 	für die Fälle
@@ -465,11 +491,45 @@ und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt
 	relative Fehler in $u_i$
 	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
 \end{mybox}
-\begin{figure}
 
-	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1.m}
+\begin{figure}
+	\begin{subfigure}[b]{.5\textwidth}
+	
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
+			\caption{Testfunktion	$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
+		\end{subfigure}
+	\begin{subfigure}[b]{.5\textwidth}
+			\centering
+	
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
+			\caption{Testfunktion$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
+		\end{subfigure}
+	\newline
+	\begin{subfigure}[b]{.5\textwidth}
+			\centering
+	
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
+			\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+					$N=5$}
+		\end{subfigure}
+	\begin{subfigure}[b]{.5\textwidth}
+			\centering
+	
+			\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
+			\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
+					$N=10$}
+		\end{subfigure}
 \end{figure}
 
+
+
+
+
+
+\begin{figure}
+	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1.m}
+\end{figure}
+\clearpage
 \section{Nicht Lineare stationäre Gleichung}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL}

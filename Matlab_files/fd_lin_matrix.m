@@ -1,10 +1,10 @@
-function [F] = fd_lin_matrix(N)
+function [F] = fd_lin_matrix(N,c)
 % Eingabe:
 % N Anzahl von Teilintervallen N.
 % Ausgabe:
 % A Finite Differenzen Matrix für u der Größe (N + 1) x (N + 1) als sparse matrix.
 
-c=konstanten; % Lade Konstanten 
+%c=konstanten; % Lade Konstanten 
 
 h=c.d/N;% Schrittgröße
 % Matrix besetzen
