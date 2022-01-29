@@ -1,19 +1,8 @@
-N=20:5:60;
-[z,u]=stationaer_lin(@(z) 1+0*z,N);
-plot(z,u,'b-',z,u,'r*',LineWidth=4)
-ylabel("u(z) in \mum^3")
-xlabel("z in \mum")
-grid on
-set(gca,'FontSize',40)
-%%
-c=konstanten;
-N=100;
-max_rel_F = 0.001;
-rel_F = 1;
+close all
 S0=[10^2 10^3 10^4]; %1/um^3us
-s=@(z) S0(1)*exp(-c.a*z);
-[z,u]=stationaer_lin(s,N);
-%%
+s=@(z) S0(3)*exp(-c.a*z);
+
+c=konstanten;
 max_rel_F=0.001;
 for N=2:2:10000
   
@@ -29,10 +18,16 @@ if rel_F < max_rel_F %Bis Fehler kleiner max Fehler
 end
 
 end
-plot(z1,u1,'b-',z2,u2,'r*',LineWidth=1)
+plot(z1,u1,'b-',z2,u2,'r*',LineWidth=4,MarkerSize=6)
 ylabel("u(z) in \mum^3")
 xlabel("z in \mum")
 grid on
-set(gca,'FontSize',40)
+set(gca,'FontSize',45)
 
+figure
+plot(z1,d_u_rel,LineWidth=4)
+grid on
+set(gca,'FontSize',45)
+xlabel("z in \mum")
+ylabel("Abs Fehler in z")
 

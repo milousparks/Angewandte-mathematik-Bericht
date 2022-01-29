@@ -11,10 +11,11 @@ u0=exp(lamda*0);
 c.SL=lamda*exp(lamda*0)*c.D/u0;
 c.SR=-lamda*exp(lamda*c.d)*c.D/ud;
 
-s=@(z) -(c.D*lamda^2-c.k)*exp(lamda*z);
+s=@(z) -(c.D*lamda^2-c.k)*exp(lamda*z)+c.k2*exp(2*lamda*z);
+tol=10^-16;
+nmax=10000;
+[z,u]=stationaer_nonlin(s,N,tol,nmax);
 
-
-[z,u]=stationaer_lin(s,N,c);
 z2=linspace(0,c.d,1000);
 ufund=ufunc(z2);
 
