@@ -12,5 +12,6 @@ function[F,J] = F_trapez(z, ti, h, yi, f, df)
 %J Jacobi-Matrix DFeuler(z) bzw. DFtrapez(z) der Größe  k × k als sparse matrix.
 
 F = z-0.5*h*(f(ti,yi)+ f(ti+h,yi+z));
-J=speye(length(z))-0.5*h*(df(ti,yi)+ f(ti+h,yi+z));
+J=speye(length(z))-0.5*h*df(ti+h,yi+z);
+
 end
