@@ -6,10 +6,8 @@ s=@(z) S0(3)*exp(-c.a*z);
 tol=10^-6;
 nmax=100;
 multi=100;
-max_rel_F=0.01;
-for N=2:2:10000
-
-    [z1,u1] = stationaer_nonlin(s,N,tol,nmax);
+max_rel_F=10^-3;
+for N=2:2:10000    [z1,u1] = stationaer_nonlin(s,N,tol,nmax);
     [z2,u2] = stationaer_nonlin(s,N*multi,tol,nmax);
 
     %|F1-F2|/|(Beste Naeherung)|
