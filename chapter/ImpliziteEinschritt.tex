@@ -179,6 +179,58 @@ und $Dz$ =
 \begin{figure}[htb]
 	\lstinputlisting[style=Matlab-editor]{Matlab_files/Anfangswertproblem/impl_euler.m}
 \end{figure}
+
+\begin{mybox}
+	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine anhand eines geeigneten nichtlinearen, zeitabhängigen Systems von Anfangswertproblemen.
+\end{mybox}
+
+\begin{equation}
+y^{\prime } =\left\lbrack \begin{array}{c}
+	-2t\cdot y_1 -3y_2 \\
+	2y_1 +{t^2 \cdot \;y}_2 
+\end{array}\right\rbrack \;\mathrm{mit}\;y\left(0\right)=\left\lbrack \begin{array}{c}
+	3\\
+	1
+\end{array}\right\rbrack ,t=\left\lbrack 0,2\right\rbrack ,
+\end{equation}
+
+Als Test für das System wird folgendes Gleichungssystem(nichtlinear) entwickelt:
+
+\begin{lstlisting}[style=Matlab-editor]
+	N = 1e+3;
+	y_a =[2;1];
+	t_span = [0,2];
+	tol = 10e-6;
+	N_max=100;
+	
+	fun = @(t,y)[-3*t*y(1)-2*y(2);y(1)+2*t.^2*y(2)];
+	
+	syms y1 y2 t
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=Matlab-editor]
+
+	Ja_Ma_Fun = J([-3*t*y(1)-2*y(2);y(1)+2*t.^2*y(2)]);
+	j_fun = @(t,y)[-3*t,-2;1,2*t.^2];
+	
+	[t_rb_ode,y_rb_ode] = ode45(f,tspan,ya);
+	[t_rb_euler,y_rb_euler] = impl_euler(f_rb,tspan,ya,n,j_rb,tol,nmax);
+	[t_rb_trapez,y_rb_trapez] = impl_trapez(f_rb,tspan,ya,n,j_rb,tol,nmax);
+	plot(t_rb_ode,y_rb_ode); 
+	title("Gleichung mit ode45")
+	xlabel("t");
+	ylabel("y");
+	plot(t_rb_euler,y_rb_euler); 
+	title("Gleichung mit dem impl. Euler-Verfahren")
+	xlabel("t");
+	ylabel("y");
+	plot(t_rb_trapez,y_rb_trapez); 
+	title("Gleichung mit dem impl. Trapez-Verfahren")
+	xlabel("t");
+	ylabel("y");
+\end{lstlisting}
+
 \section{Anwendung}
 \begin{mybox}
 	\textbf{Aufgabe 1. :} Formulieren Sie Gleichung (9) als System der Form (11) mit Funktion $f_{\mathrm{chem}}(t; y)$

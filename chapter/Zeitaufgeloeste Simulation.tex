@@ -96,3 +96,41 @@ Somit kann unsere Gleichung aufgestellt werden:
 	\end{array}
 \end{bmatrix}  
 \end{equation}
+
+\begin{mybox}
+	\textbf{Aufgabe 2. :}	Stellen Sie Routinen zur Berechnung von $ F(t,u) $ und $ DuF(t,u) $ bereit.
+\end{mybox}
+
+Die entsprechenden Funktionen sind in $fd-lin$ und in $fd-lin-jac$ vorhanden.
+
+\begin{mybox}
+	\textbf{Aufgabe 3. + 4. :}	Verwenden Sie die implizite Trapezregel und simulieren Sie das System für $ t \in [-0.05,0.2]\mu s$ \begin{equation}s\left(t,z\right)=S_0 \cdot e^{-\frac{\;t^2 }{2\cdot 0\ldotp {01}^2 }} \cdot e^{-\alpha \;z} \;\;\end{equation} mit \begin{equation} S_0 ={10}^4 ,{10}^5 ,{10}^6 \;\frac{1}{\mu m^3 \mu s\;} \end{equation}
+	Stellen Sie die Ergebnisse geeignet dar (siehe mesh).
+\end{mybox}
+
+
+\begin{lstlisting}[style=Matlab-editor]
+	s_0 =10^6
+	t = [-0.05,0.2];
+	tol = 10^6;
+	N_max = 50;
+	N_ort = 100;
+	N_Zeit = 100;
+	y_a = zeros(N_ort+1,1)
+	z = linspace(0,0.3,N_ort+1)
+	c=konstanten;
+	
+	fun_simu = @(t,y) s_0*e^(-t^2/2*0.01^2)*e*c.a*z;
+	
+	[Trapez_T,Trapez_Y]=impl_trapez(@fun_simu ,t ,y_a ,N_Zeit ,hier kommt fd_nonlinear_JacobiMatrix,tol ,N_max);
+	mesh(z,Trapez_T,Trapez_Y);
+	
+	% mesh(X,Y,Z) erstellt eine Mesh-Darstellung
+	% d.h. eine dreidimensionale Fläche mit einfarbigen
+	% Kantenfarben und ohne Flächenfarben.
+	
+	title('Simulation mit dem Implizites Trapez-Verfahren')
+	xlabel('Halbleiterdicke in z')
+	ylabel('t')
+	zlabel('Ladungsträgerdichte')
+\end{lstlisting}
