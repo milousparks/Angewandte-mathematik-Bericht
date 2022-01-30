@@ -239,6 +239,7 @@ mit $ t\in [0,\sim], y(0) = $
 	0
 \end{bmatrix}
 \end{equation}
+\clearpage
 \begin{mybox}
 	\textbf{Aufgabe 2. :}  Implementieren Sie die Funktion als Routine $ d_\mathrm{y} = f_{\mathrm{chem}}(t,y) $
 \end{mybox}
@@ -278,39 +279,16 @@ mit $ t\in [0,\sim], y(0) = $
 	0 & 3\cdot 10^7 & 0 
 \end{bmatrix}
 \end{equation}
-
+\clearpage
 \begin{mybox}
 	\textbf{Aufgabe 4. :}	Implementieren Sie die Funktion als Routine $ J = f-chem-jac(t,y) $
 \end{mybox}
  
-\begin{lstlisting}[style=Matlab-editor]
-	% J=f_chem_jac(t,y)
-	%-----------------------------------------
-	% Eingabe:
-	% t Zeit t
-	% y Vektor y der Größe 3 x 1
-	%-----------------------------------------
-	% Ausgabe:
-	% J Matrix Dyfchem(t; y) der Groeße 3 x 3
+ \begin{figure}[h]
+ 	 \lstinputlisting[style=Matlab-editor]{Matlab_files/f_chem_jac.m}
+ \end{figure}
 
-	function J = f_chem_jac(t, y)
-	a = 0.04;
-	b = 10^4;
-	c = 10^7;
-
-	J(1,1) = -a;
-	J(1,2) =  b*y(3); 
-	J(1,3) =  b*y(2);
-
-	J(2,1) =  a;
-	J(2,2) = -b*y(3) - 6*c*y(2);
-	J(2,3) = -b*y(2);
-
-	J(3,1) =  0;
-	J(3,2) =  6*c*y(2);
-	J(3,3) =  0;
-	end
-\end{lstlisting}
+\clearpage
 
 \begin{mybox}
 	\textbf{Aufgabe 5. :}	Lösen Sie das Anfangswertproblem auf dem Intervall [0; 1] mit den folgenden Integratoren: explizites
@@ -318,7 +296,7 @@ mit $ t\in [0,\sim], y(0) = $
 	Trapezregel. Bestimmen Sie experimentell jeweils näherungsweise ein geeignetes $n$, so dass der absolute Fehler jeder einzelnen Komponente und Zeitschritts höchstens $10^{-4}$, bzw. $10^{-6}$ ist.
 	Erstellen Sie eine Tabelle der notwendigen Intervalleinteilungen.
 \end{mybox}
-\begin{table}
+\begin{table}[h]
 	\centering
 	\caption{Vergleich der Methoden für eine Genauigkeit von $10^{-4}$}
 	\label{t:fehler}
@@ -337,6 +315,7 @@ mit $ t\in [0,\sim], y(0) = $
 	\end{tabular}
 \end{table}
 
+
 \clearpage
 
 \lstinputlisting[style=Matlab-editor,caption={Berechnung des Absoluten Fehlers für verschiedenen Methoden}]{Matlab_files/Aufgabe_3/Auswertung.m}
@@ -346,5 +325,5 @@ mit $ t\in [0,\sim], y(0) = $
 \end{mybox}
 
 
-Aus 3.2.5 stellt man fest, dass mit kleineren n bei dem Mittelpunktregel-Verfahren auf den Fehler $ 10^-4 $ im Vergleich zum explizit Euler-Verfahren kommt und bei dem impliziten Euler braucht man kleinere Schritte als bei dem implizite Trapez-Verfahren. die Performanz ergibt sich dann als folgendes:
+Mit der \cref{t:fehler} ist zu erkennen, dass die Impliziten Verfahren eine wesentlich bessere Performanz im Vergleich zu den restlichen Methoden liefert. 
 
