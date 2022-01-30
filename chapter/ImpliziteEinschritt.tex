@@ -318,5 +318,25 @@ mit $ t\in [0,\sim], y(0) = $
 	Trapezregel. Bestimmen Sie experimentell jeweils näherungsweise ein geeignetes $n$, so dass der absolute Fehler jeder einzelnen Komponente und Zeitschritts höchstens $10^{-4}$, bzw. $10^{-6}$ ist.
 	Erstellen Sie eine Tabelle der notwendigen Intervalleinteilungen.
 \end{mybox}
+\begin{table}
+	\centering
+	\caption{Vergleich der Methoden für eine Genauigkeit von $10^{-4}$}
+	\label{t:const}
+	\begin{tabular}{lccccc}
+		\toprule
+		
+		Methode      & N  & Abs. Fehler y1 in  &     Abs. Fehler y2 & Abs. Fehler y1                   \\
+		\midrule
+		Implizites Euler  & $26$ & $0.9051\cdot10^{-4}$  & $0.0001\cdot10^{-4} $ &      $0.9053\cdot10^{-4}$        \\
+		Implizites Trapez  & $32$ & $0.7972 \cdot10^{-4} $  & $0.0263\cdot10^{-4} $ &      $0.7709\cdot10^{-4}$        \\
+		Explizit Euler  & $1074$ & $	0.8490\cdot10^{-4}  $  & $0.0561 \cdot10^{-4} $ &      $0.7928\cdot10^{-4}$        \\
+      	Mittelpunkt  & $ 640 $ & $	0.6314\cdot10^{-4}  $  & $0.1866  \cdot10^{-4} $ &      $0.8180\cdot10^{-4}$        \\
+	              
+		\bottomrule
+		
+	\end{tabular}
+\end{table}
+
+
 
 \lstinputlisting[style=Matlab-editor,caption={Berechnung des Absoluten Fehlers für verschiedenen Methoden}]{Matlab_files/Aufgabe_3/Auswertung.m}

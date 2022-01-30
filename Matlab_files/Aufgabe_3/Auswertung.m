@@ -1,11 +1,11 @@
 close all
 y_a =[1;0;0];
 t_span = [0,1];
-N_max=1000;
-tol=10^-6;
+N_max=100;
+tol=10^-8;
 nmax=100;
 multi=10;
-max_rel_F=10^-4;
+max_rel_F=10^-6;
 %Implizites Euler
 for N=2:2:10000
     [t1,y1] = impl_euler(@f_chem ,t_span,y_a,N,@f_chem_jac,tol,N_max);
