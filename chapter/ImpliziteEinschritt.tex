@@ -29,7 +29,7 @@ y_1(0) = 1, y_2(0) = 0, y_3(0) = 0
 \end{equation*}  
 
 modelliert werden. Anhand dieses Systems sollen im folgenden steife Differenzialgleichungen untersucht
-und ein effizientes numerisches Verfahren entwickelt werden.
+und ein effizientes numerisches Verfahren entwickelt werden \cite{Prof.Dr.AndreasZeiser.April2021}.
 
 \section{Entwicklung}
 
@@ -60,8 +60,10 @@ Die implizite Trapezregel:
 \begin{mybox}
 \textbf{Aufgabe 1.}	
 	Erarbeiten Sie sich Abschnitt 8.4 aus \cite{Atkinson.2004} und fassen Sie in eigenen Worten zusammen, was Sie unter steifen Differenzialgleichung verstehen.
-	Unter einer starren Differenzialgleichung versteht man eine Gleichung mit bestimmten numerischen Methoden, die besonders große Störungsfaktoren am Ausgang aufweisen, sofern die Schrittweite nicht allzu klein ausgewählt wird.
 \end{mybox}
+
+	Unter einer steifen Differenzialgleichung versteht man eine Gleichung mit bestimmten numerischen Methoden, die besonders große Störungsfaktoren am Ausgang aufweisen, sofern die Schrittweite nicht allzu klein ausgewählt wird.
+
 
 
 
@@ -125,13 +127,13 @@ Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von, d.h. der
 \end{mybox}
 
 \begin{equation}
-	 D\cdot F_{\mathrm{euler}}(z) = D\cdot z - h\cdot D_(y)\cdot f(t_i+1, y^(i) + z) 
+	 D\cdot F_{\mathrm{euler}}(z) = D\cdot z - h\cdot D_y\cdot f\left(t_{i+1}, y^{(i)} + z\right) 
 \end{equation}
 
 
 für das implizite Euler-Verfahren und
 \begin{equation}
-	 D\cdot F_{\mathrm{euler}}(z) = \frac{h}{2}\cdot \left[D_{(y)}\cdot f\left(t_i+1, y^(i)) +  h\cdot D_(y)f(t_i+1, y^{(i)} + z)\right)\right] - D\cdot z 
+	 D\cdot F_{\mathrm{euler}}(z) = \frac{h}{2}\cdot \left[D_{y}\cdot f\left(t_{i+1}, y^{(i)}) +  h\cdot D_y f(t_{i+1}, y^{(i)} + z)\right)\right] - D\cdot z 
 \end{equation}
 
 
@@ -161,7 +163,7 @@ und $Dz$ =
 
 \begin{mybox}
 	\textbf{Aufgabe 4. :}
-	Implementieren Sie die folgenden zwei Routinen. Verwenden Sie fÜr die Jacobi-Matrix $J$ dünnbesetzte
+	Implementieren Sie die folgenden zwei Routinen. Verwenden Sie für die Jacobi-Matrix $J$ dünnbesetzte
 	Matrizen.
 \end{mybox}
 

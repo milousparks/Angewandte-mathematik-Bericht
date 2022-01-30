@@ -431,7 +431,7 @@ Um die Methode zu Testen werden die Parameter
  	\hfill
  \begin{subfigure}[b]{0.5\textwidth}
  	\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_fehler}
- 	\caption{Absoluter Fehler über $z$}
+ 	\caption{Relativer Fehler über $z$}
   \end{subfigure}
 \caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-1$}
  	\label{fig:testn10}
@@ -445,7 +445,7 @@ Um die Methode zu Testen werden die Parameter
  	\hfill
  	\begin{subfigure}[b]{0.5\textwidth}
  		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_fehler}
- 		\caption{Absoluter Fehler über $z$}
+ 		\caption{Relativer Fehler über $z$}
  	\end{subfigure}
  	\caption{Vergleich  Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-1$}
  \end{figure}
@@ -460,7 +460,7 @@ Um die Methode zu Testen werden die Parameter
  	\hfill
  	\begin{subfigure}[b]{0.5\textwidth}
  		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_l100_fehler}
- 		\caption{Absoluter Fehler über $z$}
+ 		\caption{Relativer Fehler über $z$}
  	\end{subfigure}
  	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-100$}
  \end{figure}
@@ -472,7 +472,7 @@ Um die Methode zu Testen werden die Parameter
  	\hfill
  	\begin{subfigure}[b]{0.5\textwidth}
  		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_l100_fehler}
- 		\caption{Absoluter Fehler über $z$}
+ 		\caption{Relativer Fehler über $z$}
  	\end{subfigure}
  	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-100$}
 \end{figure}
@@ -501,9 +501,9 @@ Um ein passendes $N$ für die Bedingung, den relativen Fehler kleiner als $1\%$ 
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S0_fehler}
-		\caption{Absoluter Fehler über $z$}
+		\caption{Relativer Fehler über $z$}
 	\end{subfigure}
-	\caption{$u_i \,\text{für} \, S_0=10^2$ und der absolute Fehler bei $N=36$ }
+	\caption{$u_i \,\text{für} \, S_0=10^2$ und der relative Fehler bei $N=14$ }
 \end{figure}
 
 \begin{figure}[h]
@@ -514,9 +514,9 @@ Um ein passendes $N$ für die Bedingung, den relativen Fehler kleiner als $1\%$ 
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S1_fehler}
-		\caption{Absoluter Fehler über $z$}
+		\caption{Relativer Fehler über $z$}
 	\end{subfigure}
-	\caption{$u_i \,\text{für} \, S_1=10^3$ und der absolute Fehler bei $N=36$ }
+	\caption{$u_i \,\text{für} \, S_1=10^3$ und der relative Fehler bei $N=14$ }
 \end{figure}
 \clearpage
 \begin{figure}[h]
@@ -527,15 +527,15 @@ Um ein passendes $N$ für die Bedingung, den relativen Fehler kleiner als $1\%$ 
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S3_fehler}
-		\caption{Absoluter Fehler über $z$}
+		\caption{Relativer Fehler über $z$}
 	\end{subfigure}
-	\caption{$u_i \,\text{für} \, S_1=10^4$ und der absolute Fehler bei $N=36$ }
+	\caption{$u_i \,\text{für} \, S_1=10^4$ und der relative Fehler bei $N=14$ }
 \end{figure}
 
 \lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1_findN.m}
 
 
-\section{Nicht Lineare stationäre Gleichung}
+\section{Nicht Lineare stationäre Gleichung}\label{cap:nichtlinear}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL}
 	mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
@@ -709,9 +709,9 @@ Mit \cref{eq:angesetzteloesung} folgt für \cref{eq:quadritsche}
 	\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/test_n100_l1_fehler}
-		\caption{Absoluter Fehler über $z$}
+		\caption{Relativer Fehler über $z$}
 	\end{subfigure}
-	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-100$}
+	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-1$}
 \end{figure}
 \begin{mybox}
 	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die
@@ -726,3 +726,41 @@ Mit \cref{eq:angesetzteloesung} folgt für \cref{eq:quadritsche}
 	dar.Vergleichen Sie die Lösung mit den
 	entsprechenden Lösungen der linearen Gleichung.
 \end{mybox}
+
+Vergleicht man die Ergebnisse aus \cref{cap:linearstationaer} mit den aus \cref{cap:nichtlinear} \todo{Vergleichen}  
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S0}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S0_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^2$ und der relative Fehler bei $N=14$ }
+\end{figure}
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S1}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S1_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^3$ und der relative Fehler bei $N=14$ }
+\end{figure}
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S3}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S3_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^4$ und der relative Fehler bei $N=14$ }
+\end{figure}
