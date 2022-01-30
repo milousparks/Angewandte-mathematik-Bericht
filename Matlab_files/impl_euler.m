@@ -19,7 +19,6 @@ t(1)=tspan(1);
 x0=zeros(k,1);
 for i=1:n
     t(i+1)=tspan(1)+h*i;
-    
    % euler= @(z)F_euler(z,t(i),h,y(i),f,df); 
      z=newton(@(z)F_euler(z,t(i),h,y(i,:)',f,df),x0,tol,nmax);
     y(i+1,:)=y(i,:)+z';

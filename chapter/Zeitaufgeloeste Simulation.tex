@@ -101,36 +101,73 @@ Somit kann unsere Gleichung aufgestellt werden:
 	\textbf{Aufgabe 2. :}	Stellen Sie Routinen zur Berechnung von $ F(t,u) $ und $ DuF(t,u) $ bereit.
 \end{mybox}
 
-Die entsprechenden Funktionen sind in $fd-lin$ und in $fd-lin-jac$ vorhanden.
+\lstinputlisting[style=Matlab-editor,caption={Berechung $F(t,u)$}]{Matlab_files/Aufgabe_4/F_tu.m}
+\lstinputlisting[style=Matlab-editor,caption={Berechung $D_uF(t,u)$}]{Matlab_files/Aufgabe_4/dF_tu.m}
 
 \begin{mybox}
-	\textbf{Aufgabe 3. + 4. :}	Verwenden Sie die implizite Trapezregel und simulieren Sie das System für $ t \in [-0.05,0.2]\mu s$ \begin{equation}s\left(t,z\right)=S_0 \cdot e^{-\frac{\;t^2 }{2\cdot 0\ldotp {01}^2 }} \cdot e^{-\alpha \;z} \;\;\end{equation} mit \begin{equation} S_0 ={10}^4 ,{10}^5 ,{10}^6 \;\frac{1}{\mu m^3 \mu s\;} \end{equation}
+	\textbf{Aufgabe 4. :}	Verwenden Sie die implizite Trapezregel und simulieren Sie das System für $ t \in [-0.05,0.2]\mu s$ \begin{equation}s\left(t,z\right)=S_0 \cdot e^{-\frac{\;t^2 }{2\cdot 0\ldotp {01}^2 }} \cdot e^{-\alpha \;z} \;\;\end{equation} mit \begin{equation} S_0 ={10}^4 ,{10}^5 ,{10}^6 \;\frac{1}{\mu m^3 \mu s\;} \end{equation}
 	Stellen Sie die Ergebnisse geeignet dar (siehe mesh).
 \end{mybox}
+Um die Implementieren Funktionen zu prüfen wird das Ergebnis des Trapezverfahrens (\cref{fig:s0}) mit dem Matlab internen Löser ODE23 verglichen (\cref{fig:s0_ode}).
+Anschließend wird für die verschiedenen $S_0$ simuliert.
+\lstinputlisting[style=Matlab-editor,caption={Auswertung}]{Matlab_files/Aufgabe_4/Auswertung.m}
 
+\begin{figure}
+	\centering
 
-\begin{lstlisting}[style=Matlab-editor]
-	s_0 =10^6
-	t = [-0.05,0.2];
-	tol = 10^6;
-	N_max = 50;
-	N_ort = 100;
-	N_Zeit = 100;
-	y_a = zeros(N_ort+1,1)
-	z = linspace(0,0.3,N_ort+1)
-	c=konstanten;
+\end{figure}
+\begin{figure}
+	\centering
+
+\end{figure}
+
+\begin{figure}[h]
 	
-	fun_simu = @(t,y) s_0*e^(-t^2/2*0.01^2)*e*c.a*z;
+	\begin{subfigure}[b]{0.5\textwidth}
+			\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S0}
+		\caption{Trapezverfahren}
+		\label{fig:s0}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+			\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S0_ode}
+		\caption{ODE23}
+		\label{fig:s0_ode}
+	\end{subfigure}
+	\caption{Auswertung der Zeitaufgelösten Simulation mit $S_0=10^4$ }
+\end{figure}
+
+\begin{figure}
+	\centering
+
+\end{figure}
+
+\begin{figure}[h]
 	
-	[Trapez_T,Trapez_Y]=impl_trapez(@fun_simu ,t ,y_a ,N_Zeit ,hier kommt fd_nonlinear_JacobiMatrix,tol ,N_max);
-	mesh(z,Trapez_T,Trapez_Y);
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S0_dicke}
+	\caption{Betrachtung in $z$}
+	\label{fig:s0dicke}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S0_zeit}
+		\caption{Betrachtung in $t$}
+		\label{fig:s0_zeit}
+	\end{subfigure}
+	\caption{Vergleich von $z$ zu $t$}
+\end{figure}
+\begin{figure}[h]
 	
-	% mesh(X,Y,Z) erstellt eine Mesh-Darstellung
-	% d.h. eine dreidimensionale Fläche mit einfarbigen
-	% Kantenfarben und ohne Flächenfarben.
-	
-	title('Simulation mit dem Implizites Trapez-Verfahren')
-	xlabel('Halbleiterdicke in z')
-	ylabel('t')
-	zlabel('Ladungsträgerdichte')
-\end{lstlisting}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S1}
+		\caption{$S_0=10^5$}
+		
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/zeitaufgeloeste/S2}
+		\caption{$S_0=10^6$}
+	\end{subfigure}
+	\caption{Auswertung der Zeitaufgelösten Simulation mit $S_0=10^5$ und $S_0=10^6$ }
+\end{figure}

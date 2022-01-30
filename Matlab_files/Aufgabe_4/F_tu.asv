@@ -1,0 +1,8 @@
+function [t,y] = F_tu(s,n_Ort)
+%F_TU Summary of this function goes here
+%   Detailed explanation goes here
+c=konstanten;
+z=linspace(0,c.d,n_Ort+1)';
+ [t,y]  =   fd_nonlin(u,n_Ort) + s(t,z);
+end
+
