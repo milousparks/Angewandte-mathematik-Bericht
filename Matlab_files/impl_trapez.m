@@ -1,16 +1,16 @@
 function[t,y]=impl_trapez(f,tspan,ya,n,df,tol,nmax)
 %Eingabe:
-%f Funktionshandle fur¨ f(t, y)
+%f Funktionshandle für f(t, y)
 %tspan Intervall [a, b]
 %ya Anfangswert ya
 %n Anzahl von Teilintervallen.
-%df Funktionshandle fur¨ Dyf(t, y) bezuglich ¨ y
-%tol Toleranz fur Newton-Verfahren ¨
+%df Funktionshandle für Dyf(t, y) bezüglich  y
+%tol Toleranz für Newton-Verfahren 
 %nmax maximale Anzahl an Schritten des Newton-Verfahrens
 %Ausgabe:
-%t Vektor der Stutzpunkte ¨ (t0, t1, . . . , tn) der Große ¨ (n + 1) × 1
-%y Matrix der approximierten Losungswerte ¨ y
-%(i) mit i = 0, . . . , n der Große ¨ (n + 1) × k
+%t Vektor der Stutzpünkte  (t0, t1, . . . , tn) der Größe  (n + 1) x 1
+%y Matrix der approximierten Lösungswerte  y
+%(i) mit i = 0, . . . , n der Größe  (n + 1) x k
 k=length(ya);
 h=(tspan(2)-tspan(1))/n;
 t=zeros(n+1,1);

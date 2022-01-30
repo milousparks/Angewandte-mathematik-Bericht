@@ -12,7 +12,7 @@ syms y1 y2 t
 % syms: Erzeugt symbolische skalare Variablen var1 ... varN vom Typ sym. 
 % Verschiedene Variablen sind durch Leerzeichen zu trennen.
 
-Ja_Ma_Fun = jacobian([-3*t*y1-2*y2;y1+t.^2*y2]);
+Ja_Ma_Fun = jacobian([-3*t*y1-2*y2;y1+t.^2*y2],[y1,y2,t]);
 j_fun = @(t,y) [-3*t,-2;1,2*t.^2];
 
 [t_fun_ode,y_fun_ode] = ode45(fun,t_span,y_a);

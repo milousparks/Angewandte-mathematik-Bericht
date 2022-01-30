@@ -123,7 +123,7 @@ F_{\mathrm{trapez}}(z) =  z - \frac{h}{2} \left[f\left(t_i, y^{(i)} + f(t _{i+1}
 
 \begin{mybox}
 \textbf{Aufgabe 3. :}
-Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von, d.h. der Jacobi-Matrix von $f$ bezüglich $y$ .
+Bestimmen Sie die Jacobi-Matrizen $D\textbf{F}_{\mathrm{euler}}$ und $D\textbf{F}_{\mathrm{trapez}}$ von $\textbf{F}_{\mathrm{euler}}$  und $\textbf{F}_{\mathrm{trapez}}$  in Abhängigkeit von $D_yf$, d.h. der Jacobi-Matrix von $f$ bezüglich $y$ .
 \end{mybox}
 
 \begin{equation}
@@ -168,7 +168,10 @@ und $Dz$ =
 \end{mybox}
 
 \begin{figure}[htb]
-	\lstinputlisting[style=Matlab-editor]{Matlab_files/Anfangswertproblem/F_euler.m}
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/F_euler.m}
+\end{figure}
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/F_trapez.m}
 \end{figure}
 
 \begin{mybox}
@@ -177,9 +180,12 @@ und $Dz$ =
 \end{mybox}
 
 \begin{figure}[htb]
-	\lstinputlisting[style=Matlab-editor]{Matlab_files/Anfangswertproblem/impl_euler.m}
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/impl_euler.m}
 \end{figure}
-
+\begin{figure}[htb]
+	\lstinputlisting[style=Matlab-editor]{Matlab_files/impl_trapez.m}
+\end{figure}
+\clearpage
 \begin{mybox}
 	\textbf{Aufgabe 7. :} Testen Sie Ihre Routine anhand eines geeigneten nichtlinearen, zeitabhängigen Systems von Anfangswertproblemen.
 \end{mybox}
@@ -284,11 +290,11 @@ mit $ t\in [0,\sim], y(0) = $
 
 
 \begin{mybox}
-	\textbf{Aufgabe 3. :}	Berechnen Sie die Jacobi-Matrix $ D_yf_chem(t,y) $ von $ f_chem $ bezüglich $ y $
+	\textbf{Aufgabe 3. :}	Berechnen Sie die Jacobi-Matrix $ D_yf_{\mathrm{chem}}(t,y) $ von $ f_{\mathrm{chem}} $ bezüglich $ y $
 \end{mybox} 
 
 \begin{equation}
-	D_yf_chem(t,y) =
+	D_yf_{\mathrm{chem}}(t,y) =
 \begin{bmatrix}
 	-0.04 & 10^4y_3 & 10^4y_2 \\
 	0.04 & -10^4y_3-6\cdot 10^7y_2 & -10^4y_2 \\

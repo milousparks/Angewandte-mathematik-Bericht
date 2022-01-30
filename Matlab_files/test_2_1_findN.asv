@@ -6,7 +6,7 @@ s=@(z) S0(3)*exp(-c.a*z);
 
 max_rel_F=10^-3;
 multi=2;
-for N=10:2:10000
+for N=2:2:10000
  
 [z1,u1] = stationaer_lin(s, N);             
 [z2,u2] = stationaer_lin(s, N*multi);   
