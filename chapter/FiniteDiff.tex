@@ -33,7 +33,7 @@ mit den Randbedingungen:
 		u}{\partial z}(d)=-S_Ru(d)
 \end{equation}
 
-\section{Lineare stationäre Gleichung}
+\section{Lineare stationäre Gleichung}\label{cap:linearstationaer}
 Im Folgendem Kapitel soll nur der in u lineare Anteil der stationären,
 zeitunabhängigen Gleichung (Eq. \ref{eq:stationDGL}) ohne den quadratischen
 Term $-k_2u^2$ behandelt werden\cite{Prof.Dr.AndreasZeiser.April2021}.
@@ -187,12 +187,12 @@ Mit der Approximation der Ableitung erster Ordnung
 	u_{-1}
 \end{equation}
 
-\begin{qed}
+
 	\textbf{Damit folgt für $u_{-1}$:}
 	\begin{equation}\label{eq:rand_u-1}
 		u_{\text{-}1} = u_1 - \frac{2h\cdot S_L}{D} \cdot u_0
 	\end{equation}
-\end{qed}
+
 
 Zweite Randbedingungen:
 
@@ -218,13 +218,13 @@ Durch Approximation der Randbedingung folgt:
 	u_{\mathrm{N}-1}
 \end{equation}
 
-\begin{qed}
+
 	\textbf{Damit folgt für $u_{\mathrm{N}+1}$}:
 	\begin{equation}\label{eq:approx_RN}
 		u_{N+1} =u_{\mathrm{N}-1} -\frac{2\cdot h\cdot S_R}{D} \cdot
 		u_\mathrm{N}
 	\end{equation}
-\end{qed}
+
 
 Im folgendem werden die Approximationen der Randbedingungen in die stationäre,
 diskretisierte DGL (\cref{eq:stationare_approx}) eingesetzt. Dazu wird die
@@ -357,7 +357,7 @@ als Lösung für die lineare DGL (\cref{eq:linearDGL}) mit den Ableitungen
 	\pdv{u(z)}{z}    & =\lambda \cdot e^{\lambda z}   \\
 	\pdv[2]{u(z)}{z} & =\lambda^2 \cdot e^{\lambda z}
 \end{align}
-angesetzt.
+als Lösung der Differenzialgleichung (\cref{eq:linearDGL}) angesetzt.
 
 Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 \begin{table}
@@ -375,13 +375,9 @@ Für die Konstanten  $d, D, k,$ werden die Werte (\cref{t:const})
 
 		$k$            & $1001$ & $\si{\mu\second^{-1}}$         \\
 
-		$S_\mathrm{L}$ & $0.1$  & $\si{\mu\m\per\mu\sec}$        \\
-
-		$S_\mathrm{R}$ & $1000$ & $\si{\mu\m\per\mu\sec}$        \\
 		\bottomrule
 
 	\end{tabular}
-
 \end{table}
 festgelegt.
 
@@ -393,29 +389,27 @@ Die Rekombinationsraten $S_\mathrm{L},S_\mathrm{R}$ der Randbedingungen
 \end{equation}
 bestimmt.
 
-Mit \cref{eq:fundamental_ableitung} folgt für \cref{eq:berechnung_S}
-\begin{equation}
-	S_\mathrm{L}=\lambda \cdot e^{\lambda \cdot 0}\cdot\frac{D}{u(0)},\quad	S_\mathrm{R}=-\lambda \cdot e^{\lambda d}\cdot\frac{D}{u(d)}
-\end{equation} 
 Die dafür benötigte Ladungsträgerdichte
-\begin{equation}
-	u(0)=1, \quad u(d)\approx0.741,\quad  \lambda=-1
+\begin{equation}\label{eq:ladungsraender}
+	u(0)=e^{\lambda \cdot 0}=1 , \quad u(d)=e^{\lambda \cdot d}
 \end{equation}
-wird an den Rändern ausgewertet und in \cref{eq:berechnung_S} 
+ wird an den Rändern ausgewertet.
+ 
+Mit \cref{eq:fundamental_ableitung,eq:ladungsraender} folgt für \cref{eq:berechnung_S}
+\begin{equation}
+	S_\mathrm{L}=\lambda \cdot e^{\lambda \cdot 0}\cdot \frac{D}{e^{\lambda \cdot 0}}=\lambda D,\quad	S_\mathrm{R}=-\lambda \cdot e^{\lambda d}\cdot\frac{D}{e^{\lambda \cdot d}}=-\lambda D
+\end{equation} 
 
-\begin{equation}
-	S_\mathrm{L}=-0.3,\quad S_\mathrm{R}=0.2999
-\end{equation}
-eingefügt.
+
 
 Um die Numerische Methode zu testen wird die analytische Lösung der Differenzialgleichung mit der Numerischen verglichen.
 Dazu wird die Anzahl der Teilintervalle $n$ variiert und an den Stützstellen mit der analytischen Lösung vergleichen.
 
 Für die lineare, stationäre Differenzialgleichung (\cref{eq:linearDGL}) mit der angesetzten Lösung (\cref{eq:fundamental_ableitung}) folgt
-\begin{equation}
+\begin{equation}\label{eq:rechteseit}
 	D\cdot\lambda^2 e^{\lambda z}-ku(z)=-s(z)
 \end{equation}
-und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt 
+und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt die rechte Seite
 \begin{equation}
 	\begin{split}
 		D\cdot\lambda^2 e^{\lambda z}-ke^{\lambda z}=-s(z) \\
@@ -423,37 +417,69 @@ und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt
 	\end{split}
 \end{equation}
 
-%\begin{figure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_100}
-%		\caption{Testfunktion
-%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=100$}
-%		\label{fig:aufgabe7test}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n1000}
-%		\caption{Testfunktion
-%			$\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für $N=1000$}
-%	\end{subfigure}
-%	\newline
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n5}
-%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-%			$N=5$}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{.5\textwidth}
-%		\centering
-%
-%		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/aufgabe_7_test_n10}
-%		\caption{Testfunktion $\vec{s}(z_\mathrm{i})=\vec{e_\mathrm{i}}$ für
-%			$N=10$}
-%	\end{subfigure}
-%\end{figure}
+Um die Methode zu Testen werden die Parameter
+\begin{equation}
+	S_\mathrm{L}=-0.3,\quad S_\mathrm{R}=0.3,\quad \lambda=-1
+\end{equation}
+ für $\lambda=-1$ bestimmt.
+ 
+ \begin{figure}[p]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n100}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	  \end{subfigure}
+ 	\hfill
+ \begin{subfigure}[b]{0.5\textwidth}
+ 	\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_fehler}
+ 	\caption{Relativer Fehler über $z$}
+  \end{subfigure}
+\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-1$}
+ 	\label{fig:testn10}
+ \end{figure}
+
+  \begin{figure}[p]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n10}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_fehler}
+ 		\caption{Relativer Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich  Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-1$}
+ \end{figure}
+\clearpage
+ Für ein $\lambda=-100$ wird die Abweichung der Numerischen Simulation deutlicher:
+  
+ \begin{figure}[h]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n100_l100}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n100_l100_fehler}
+ 		\caption{Relativer Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-100$}
+ \end{figure}
+ \begin{figure}[]
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=\textwidth]{figures/station_gl_2_1/test_n10_l100}
+ 		\caption{$u(z)$ und $u_{i}(z_i)$}
+ 	\end{subfigure}
+ 	\hfill
+ 	\begin{subfigure}[b]{0.5\textwidth}
+ 		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/test_n10_l100_fehler}
+ 		\caption{Relativer Fehler über $z$}
+ 	\end{subfigure}
+ 	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=10,\,\lambda=-100$}
+\end{figure}
+\begin{figure}
+	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1_vergleich.m}
+\end{figure}
+\clearpage
 \begin{mybox}
 	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die Lösung
 	für die Fälle
@@ -465,12 +491,51 @@ und durch die Fundamentallösung (\cref{eq:ladungstraegerdichte}) folgt
 	relative Fehler in $u_i$
 	maximal $1\%$ beträgt, und stellen Sie die Lösung graphisch dar.
 \end{mybox}
-\begin{figure}
 
-	\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1.m}
+Um ein passendes $N$ für die Bedingung, den relativen Fehler kleiner als $1\%$ zu halten, zu ermitteln, wird über verschiedene $N$ iteriert und der jeweiligen korrespondierenden maximalen Fehler bestimmt.
+\begin{figure}[h]
+		\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_1/S0}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S0_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^2$ und der relative Fehler bei $N=14$ }
 \end{figure}
 
-\section{Nicht Lineare stationäre Gleichung}
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_1/S1}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S1_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_1=10^3$ und der relative Fehler bei $N=14$ }
+\end{figure}
+\clearpage
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_1/S3}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_1/S3_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_1=10^4$ und der relative Fehler bei $N=14$ }
+\end{figure}
+
+\lstinputlisting[style=Matlab-editor,caption={Testfunktion}]{Matlab_files/test_2_1_findN.m}
+
+
+\section{Nicht Lineare stationäre Gleichung}\label{cap:nichtlinear}
 \begin{mybox}
 	Im zweiten Schritt soll nun die volle nichtlineare \cref{eq:stationDGL}
 	mit Randbedingung \cref{eq:randbedingungen} gelöst werden. Analog
@@ -616,7 +681,38 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	Startwert.
 \end{mybox}
 \lstinputlisting[style=Matlab-editor]{Matlab_files/stationaer_nonlin.m}
+\begin{mybox}
+	\textbf{Aufgabe 6. :} Testen Sie Ihre Routine, indem Sie sich eine Funktion u(z) und Konstanten $d$, $D$, $k$ vorgeben und
+	dann eine geeignete rechte Seite $s$ und Konstanten $S_\mathrm{L}$, $S_\mathrm{R}$ berechnen und die Anzahl der Teilintervalle
+	$n$ variieren.
+\end{mybox}
 
+Vergleichbar mit \cref{cap:linearstationaer} wird eine Lösung für die DGL angesetzt.
+\begin{equation}\label{eq:angesetzteloesung}
+	u(z)=e^{\lambda z}
+\end{equation}
+Zusätzlich wird der quadratische Term $k_2u^2$ der \cref{eq:rechteseit} für die Berechnung der rechten Seite hinzugefügt.
+\begin{equation}\label{eq:quadritsche}
+		D\cdot\lambda^2 e^{\lambda z}-ku(z)-k_2u^2=-s(z)
+\end{equation}
+Mit \cref{eq:angesetzteloesung} folgt für \cref{eq:quadritsche}
+
+\begin{equation}\label{eq:quadritsche}
+		D\cdot\lambda^2 e^{\lambda z}-ke^{\lambda z}-k_2e^{2\lambda z}=-s(z)
+\end{equation}
+
+ \begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/test_n100_l1}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/test_n100_l1_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{Vergleich Numerische- mit Analytischelösung der Differentialgleichung bei $N=100,\,\lambda=-1$}
+\end{figure}
 \begin{mybox}
 	\textbf{Aufgabe 7. :}	Berechnen Sie mit Hilfe der obigen Routine die
 	Lösung für die Fälle
@@ -630,3 +726,41 @@ Damit folgt für die Funktion $\mathbf{F}(\mathbf{u})=\mathbf{b}$:
 	dar.Vergleichen Sie die Lösung mit den
 	entsprechenden Lösungen der linearen Gleichung.
 \end{mybox}
+
+Vergleicht man die Ergebnisse aus \cref{cap:linearstationaer} mit den aus \cref{cap:nichtlinear} \todo{Vergleichen}  
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S0}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S0_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^2$ und der relative Fehler bei $N=14$ }
+\end{figure}
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S1}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S1_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^3$ und der relative Fehler bei $N=14$ }
+\end{figure}
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figures/station_gl_2_2/S3}
+		\caption{$u(z)$ und $u_{i}(z_i)$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{figures/station_gl_2_2/S3_fehler}
+		\caption{Relativer Fehler über $z$}
+	\end{subfigure}
+	\caption{$u_i \,\text{für} \, S_0=10^4$ und der relative Fehler bei $N=14$ }
+\end{figure}

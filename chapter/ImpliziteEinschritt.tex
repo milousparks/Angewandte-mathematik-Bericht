@@ -29,7 +29,7 @@ y_1(0) = 1, y_2(0) = 0, y_3(0) = 0
 \end{equation*}  
 
 modelliert werden. Anhand dieses Systems sollen im folgenden steife Differenzialgleichungen untersucht
-und ein effizientes numerisches Verfahren entwickelt werden.
+und ein effizientes numerisches Verfahren entwickelt werden \cite{Prof.Dr.AndreasZeiser.April2021}.
 
 \section{Entwicklung}
 
@@ -48,7 +48,7 @@ Der Wert von y wird näherungsweise an den Zeitpunkten berechnet:
 
 Das implizite Euler-Verfahren:
 \begin{equation}
-	 y^{(i+1)} = y^{(i)} + hf(t_{i+1},y^{(i+1)}) 
+	 y^{(i+1)} = y^{(i)} + hf\left(t_{i+1},y^{(i+1)}\right) 
 \end{equation}
 
 
@@ -60,8 +60,10 @@ Die implizite Trapezregel:
 \begin{mybox}
 \textbf{Aufgabe 1.}	
 	Erarbeiten Sie sich Abschnitt 8.4 aus \cite{Atkinson.2004} und fassen Sie in eigenen Worten zusammen, was Sie unter steifen Differenzialgleichung verstehen.
-	Unter einer starren Differenzialgleichung versteht man eine Gleichung mit bestimmten numerischen Methoden, die besonders große Störungsfaktoren am Ausgang aufweisen, sofern die Schrittweite nicht allzu klein ausgewählt wird.
 \end{mybox}
+
+	Unter einer steifen Differenzialgleichung versteht man eine Gleichung mit bestimmten numerischen Methoden, die besonders große Störungsfaktoren am Ausgang aufweisen, sofern die Schrittweite nicht allzu klein ausgewählt wird.
+
 
 
 
@@ -81,42 +83,59 @@ Die implizite Trapezregel:
 
 
 \begin{equation}
- 	y^{(i+1)} = y(i) + hf(t_{(i+1)},y^{(i+1)}) 
+ 	y^{(i+1)} = y^{(i)} + hf\left(t_{(i+1)},y^{(i+1)}\right) 
 \end{equation}
 
 
 und die implizite Trapezregel:
-$ y^(i+1) = y(i) + h/2[f(t_i, y^(i) + f(t_i+1,y^(i+1)))] $
+\begin{equation}
+	 y^{(i+1)} = y_{(i)} + \dfrac{h}{2}\left[f\left(t_i, y^{(i)} + f\left(t_{(i+1)},y^{(i+1)}\right)\right)\right] 
+\end{equation}
 
 wir setzen nun
-$ y^{i+1} = y^i + z $
+\begin{equation}
+	 y^{(i+1)} = y^{(i)} + z 
+\end{equation}
+
 
 in:
+\begin{equation}
+	 y^{(i)}+ z = y^{(i)} + hf\left(t_i+1,y^{(i)} + z\right) 
+\end{equation}
 
-$ y^(i) + z = y^(i) + hf(t_i+1,y^(i) + z) $
+
 
 und in:
+\begin{equation}
+	 y^{(i)} + z = y^{(i)} + \frac{h}{2} \left[f\left(t_i, y^{(i)} + f\left(t_{i+1},y^{(i)} + z\right)\right)\right] 
+\end{equation}
+ein.
 
-$ y^(i) + z = y^(i) + h/2 [f(t_i, y^(i) + f(t_i+1,y^(i) + z)] $
-
-ein. Formulieren wir nun beides als Nullstellenproblem für  erhalten wir
-
-$ F_euler(z) = z - hf(t_i+1, y^(i) + z) = 0 $
+Formulieren wir nun beides als Nullstellenproblem für  erhalten wir
+\begin{equation}
+	 F_{\mathrm{euler}}(z) = z - hf(t_{i+1}, y^{(i)} + z) = 0 
+\end{equation}
 
 und 
+\begin{equation}
+F_{\mathrm{trapez}}(z) =  z - \frac{h}{2} \left[f\left(t_i, y^{(i)} + f(t _{i+1},y^{(i)} + z)\right)\right] = 0
+\end{equation}
 
-$F_trapez(z) =  z - h/2 [f(t_i, y^(i) + f(t_i+1,y^(i) + z)] = 0$
 \begin{mybox}
 \textbf{Aufgabe 3. :}
 Bestimmen Sie die Jacobi-Matrizen  und  von  und  in Abhängigkeit von, d.h. der Jacobi-Matrix von $f$ bezüglich $y$ .
 \end{mybox}
 
+\begin{equation}
+	 D\cdot F_{\mathrm{euler}}(z) = D\cdot z - h\cdot D_y\cdot f\left(t_{i+1}, y^{(i)} + z\right) 
+\end{equation}
 
-$ D\cdot F_euler(z) = D\cdot z - h\cdot D_(y)\cdot f(t_i+1, y^(i) + z) $
 
 für das implizite Euler-Verfahren und
+\begin{equation}
+	 D\cdot F_{\mathrm{euler}}(z) = \frac{h}{2}\cdot \left[D_{y}\cdot f\left(t_{i+1}, y^{(i)}) +  h\cdot D_y f(t_{i+1}, y^{(i)} + z)\right)\right] - D\cdot z 
+\end{equation}
 
-$ D\cdot F_euler(z) = h/2\cdot [D_(y)\cdot f(t_i+1, y^(i)) +  h\cdot D_(y)f(t_i+1, y^(i) + z)] - D\cdot z $
 
 für das implizite Trapez-Verfahren,
 
@@ -144,7 +163,7 @@ und $Dz$ =
 
 \begin{mybox}
 	\textbf{Aufgabe 4. :}
-	Implementieren Sie die folgenden zwei Routinen. Verwenden Sie fÜr die Jacobi-Matrix $J$ dünnbesetzte
+	Implementieren Sie die folgenden zwei Routinen. Verwenden Sie für die Jacobi-Matrix $J$ dünnbesetzte
 	Matrizen.
 \end{mybox}
 

@@ -6,7 +6,7 @@ function [z,u] = stationaer_lin(s,N)
 %   Ausgabe:
 %       z Knotenpunkte (z0; z1,..., zN) der Größe (N + 1) x 1
 %       u Vektor u der Größe (N + 1) x 1
-c=konstanten;
+ c=konstanten;
 
 h=c.d/N; %Schrittweite
 z=(0:N)'*h; % Knotenpunkte

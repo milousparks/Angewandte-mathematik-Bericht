@@ -1,3 +1,4 @@
+\chapter{Zeitaufgelöste Simulation}
 \begin{mybox}
 	\textbf{Aufgabe 1. :}	Formulieren Sie das System in der Form $ u' = F(t,u) $
 \end{mybox}
@@ -20,26 +21,26 @@ und:
 Analog wie im zweiten Abschnitt
 
 \begin{equation}
-	u^{\prime } =\frac{u_{i+1} -u_{i-1} }{2h}
+	u' =\frac{u_{i+1} -u_{i-1}}{2h}
 \end{equation}
 
 \begin{equation}
-	{u^{\prime } }^{\prime } =\frac{u_{i+1} -{2u}_i +u_{i-1} }{h^2 }
+	u''=\frac{u_{i+1} -{2u}_i +u_{i-1} }{h^2 }
 \end{equation}
 
-Anschliessend werden die Ableitungen jeweils in die Gleichung sowie Randbedingungen eingesetzt:
+Anschließend werden die Ableitungen jeweils in die Gleichung sowie Randbedingungen eingesetzt:
 
 \begin{equation}
-	u\left(t\right)=D\frac{u_{i+1} \left(t\right)-{2u}_i \left(t\right)+u_{i-1} \left(t\right)}{h^2 }-\left(k_1 +k_2 N_D \right)u\left(t\right)-k_2 u^2 \left(t\right)+s_i \left(t,z_i \right)
+	u'_i\left(t\right)=D\frac{u_{i+1} \left(t\right)-{2u}_i \left(t\right)+u_{i-1} \left(t\right)}{h^2 }-\left(k_1 +k_2 N_D \right)u\left(t\right)-k_2 u^2 \left(t\right)+s_i \left(t,z_i \right)
 \end{equation}
 
-Dann setzt man die Randbedingungen in die Gleichung fuer $ i = 0 $ und $ i = N $ ein:
+Dann setzt man die Randbedingungen in die Gleichung für $ i = 0 $ und $ i = N $ ein:
 
 \begin{equation}
 	u^{\prime } \left(t,z_i \right)=D\frac{u_{i+1} \left(t\right)-{2u}_i \left(t\right)+u_{i-1} \left(t\right)}{h^2 }-ku_i \left(t\right)-k_2 {u_i }^2 \left(t\right)+s_i \left(t,z\right)
 \end{equation}
 
-fuer $ i = 0 $ gilt:
+für $ i = 0 $ gilt:
 
 \begin{equation}
 	u^{\prime } \left(t{,z}_i \right)=D\frac{u_1 \left(t\right)-{2u}_0 \left(t\right)+u_{-1} \left(t\right)}{h^2 }-ku_0 \left(t\right)-k_2 {u_0 }^2 \left(t\right)+s_0 \left(t,z\right)
@@ -66,7 +67,7 @@ u^{\prime } \left(t{,z}_i \right)=D\frac{u_1 -{2u}_0 +u_1 -\frac{S_L \cdot 2h}{D
 \end{equation}
 
 
-fuer $ i = N $ gilt:
+für $ i = N $ gilt:
 
 \begin{equation}
 	u^{\prime } \left(t{,z}_i \right)=D\frac{u_{N+1} \left(t\right)-{2u}_N \left(t\right)+u_{N-1} \left(t\right)}{h^2 }-ku_N \left(t\right)-k_2 {u_N }^2 \left(t\right)+s_N \left(z_N \right)
@@ -90,7 +91,7 @@ Somit kann unsere Gleichung aufgestellt werden:
 	\begin{array}{c}
 		u_0 \left(t\right)\left(-\frac{2D}{h^2 }-\frac{{2S}_L }{h}\;-k-k_2 u_0 \left(t\right)\right)+u_1 \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_0 \right)\;\\
 		D\frac{u_2 \left(t\right)-{2u}_1 \left(t\right)+u_1 \left(t\right)}{h^2 }-ku_1 \left(t\right)-k_2 {u_1 }^2 \left(t\right)+s_1 \left(t,z\right)\\
-		\cdots \\
+		\vdots \\
 		u_N \left(t\right)\left(-\frac{\;2S_R }{h}-\frac{\;2D}{h^2 }-k-k_2 u_N \left(t\right)\right)+u_{N-1} \left(t\right)\left(\frac{2D}{h^2 }\right)+s_0 \left(t,z_N \right)
 	\end{array}
 \end{bmatrix}  
