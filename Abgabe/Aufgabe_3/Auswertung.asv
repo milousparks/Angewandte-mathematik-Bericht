@@ -1,0 +1,29 @@
+close all
+%N = 1e+3;
+y_a =[1;0;0];
+t_span = [0,1];
+
+N_max=100;
+
+
+%[t_fun_euler,y_fun_euler] = impl_euler(fun,t_span,y_a,N,j_fun,tol,N_max);
+%[t_fun_trapez,y_fun_trapez] = impl_trapez(fun,t_span,y_a,N,j_fun,tol,N_max);
+%f=@() f_chem;    
+
+tol=10^-6;
+nmax=100;
+multi=10;
+max_rel_F=10^-4;
+
+for N=2:2:10000   
+    [t1,y1] = impl_euler(@f_chem ,t_span,y_a,N,@f_chem_jac,tol,N_max);
+    [t2,y2] = impl_euler(@f_chem,t_span,y_a,N*2,@f_chem_jac,tol,N_max);
+    %|F1-F2|/|(Beste Naeherung)|
+    d_u_abs = abs(y1(:,:)-y2(1:2:end,:));
+    [u_abs] = max(d_u_abs);               % max Fehler suchen
+    if u_abs < max_rel_F %Bis Fehler kleiner max Fehler
+        N 
+        d_u_abs()
+        break;
+    end
+end
