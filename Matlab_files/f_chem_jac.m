@@ -5,7 +5,7 @@
 % y Vektor y der Größe 3 x 1
 %-----------------------------------------
 % Ausgabe:
-% J Matrix Dyfchem(t; y) der Größe 3  3
+% J Matrix Dyfchem(t; y) der Größe 3 x 3
 
 function J = f_chem_jac(t, y)
     a = 0.04;
